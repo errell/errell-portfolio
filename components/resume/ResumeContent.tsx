@@ -54,7 +54,7 @@ export function ResumeContent() {
             <span>{site.location}</span>
             <span>{site.email}</span>
             <span>{site.phone}</span>
-            <span>linkedin.com/in/e-nino</span>
+            <span>www.linkedin.com/in/e-nino</span>
           </p>
         </header>
 
