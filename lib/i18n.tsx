@@ -54,9 +54,9 @@ const en = {
     capsTitle: "A design leader who speaks product, not just pixels",
     skillTitles: [
       "UX & Design Leadership",
-      "Product & Project Mgmt",
-      "Industry Experience",
       "Service & Product Design",
+      "Product & Project Management",
+      "Industry Domains",
     ],
     ctaTitle: "Let's work together",
     ctaDesc:
@@ -258,9 +258,9 @@ const tl: Dict = {
     capsTitle: "Isang design leader na marunong sa produkto, hindi lang sa pixel",
     skillTitles: [
       "UX & Design Leadership",
-      "Pamamahala ng Produkto & Proyekto",
-      "Karanasan sa Industriya",
       "Service & Product Design",
+      "Pamamahala ng Produkto & Proyekto",
+      "Mga Domain sa Industriya",
     ],
     ctaTitle: "Magtulungan tayo",
     ctaDesc:
