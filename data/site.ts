@@ -7,7 +7,7 @@ export const site = {
   phone: "+63 908 889 3730",
   location: "Manila, Philippines",
   linkedin: "https://linkedin.com/in/e-nino",
-  credly: "https://www.credly.com/users/errellnino",
+  credly: "https://www.credly.com/users/errell/",
   calUsername: process.env.NEXT_PUBLIC_CAL_USERNAME || "errellnino",
 };
 
