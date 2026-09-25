@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme tokens as space-separated RGB channels so Tailwind's <alpha-value>
+ * (e.g. bg-surface/60) works. Default (:root) is the dark brand theme; .light
+ * overrides for light mode. .dark is explicit for the toggle.
+ */
+:root,
+.dark {
+  --c-base: 10 10 15; /* #0A0A0F */
+  --c-surface: 26 26 46; /* #1A1A2E */
+  --c-elevated: 32 32 54; /* #202036 */
+  --c-border: 45 45 68; /* #2D2D44 */
+  --c-primary: 240 240 240; /* #F0F0F0 */
+  --c-accent: 0 212 255; /* #00D4FF */
+  --c-amber: 255 179 71; /* #FFB347 */
+  --c-on-accent: 8 12 20; /* dark text on bright accent */
+
+  --grid-dot: 45 45 68;
+  --grad-from: 240 240 240;
+  --grad-to: 0 212 255;
+  --shadow-color: 0 0 0;
+  color-scheme: dark;
+}
+
+.light {
+  --c-base: 246 247 249; /* #F6F7F9 */
+  --c-surface: 255 255 255; /* #FFFFFF */
+  --c-elevated: 255 255 255;
+  --c-border: 226 229 236; /* #E2E5EC */
+  --c-primary: 18 21 28; /* #12151C */
+  --c-accent: 14 116 144; /* #0E7490 cyan-700 (AA on white) */
+  --c-amber: 180 83 9; /* #B45309 amber-700 (AA on white) */
+  --c-on-accent: 255 255 255; /* white text on deep accent */
+
+  --grid-dot: 190 198 210;
+  --grad-from: 18 21 28;
+  --grad-to: 14 116 144;
+  --shadow-color: 30 41 59;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--c-base));
+    color: rgb(var(--c-primary));
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: rgb(var(--c-accent) / 0.25);
+    color: rgb(var(--c-primary));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-sora), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-accent));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Figma-canvas style dot grid used on the hero */
+  .dot-grid {
+    background-image: radial-gradient(
+      rgb(var(--grid-dot) / 0.55) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+    background-position: -14px -14px;
+  }
+
+  .line-grid {
+    background-image: linear-gradient(
+        to right,
+        rgb(var(--grid-dot) / 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(var(--grid-dot) / 0.35) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .grid-fade {
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #000 40%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #000 40%,
+      transparent 100%
+    );
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--grad-from)) 0%,
+      rgb(var(--grad-to)) 120%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Frosted-glass surface — a calm, modern depth cue used on floating UI */
+  .glass {
+    background-color: rgb(var(--c-surface) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Duotone brand overlay for stock imagery so photos stay on-brand */
+  .img-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgb(var(--c-accent) / 0.28) 0%,
+      rgb(var(--c-base) / 0.55) 100%
+    );
+    mix-blend-mode: multiply;
+  }
+}
+
+/* Print styles for the resume page */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  .print-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .print-surface {
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+    color: #111111 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
