@@ -10,6 +10,7 @@ import { FindingsList } from "@/components/case-study/FindingsList";
 import { PersonaCard } from "@/components/case-study/PersonaCard";
 import { JourneyMap } from "@/components/case-study/JourneyMap";
 import { DecisionList } from "@/components/case-study/DecisionList";
+import { PrototypeGallery } from "@/components/case-study/PrototypeGallery";
 import { WireframeBlock } from "@/components/case-study/WireframeBlock";
 import { MetricsGrid } from "@/components/case-study/MetricsGrid";
 import { KeyLearnings } from "@/components/case-study/KeyLearnings";
@@ -215,6 +216,13 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                 </Reveal>
               </div>
             </div>
+
+            {study.prototypes?.length ? (
+              <div>
+                <SubHeading>{cs.sub.prototypes}</SubHeading>
+                <PrototypeGallery screens={study.prototypes} />
+              </div>
+            ) : null}
           </div>
         </section>
 

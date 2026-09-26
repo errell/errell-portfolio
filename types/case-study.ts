@@ -99,6 +99,14 @@ export interface OutcomesSection {
   metrics: Metric[];
 }
 
+export interface PrototypeScreen {
+  id: string;
+  src: string;
+  title: string;
+  caption: string;
+  decision: string;
+}
+
 export interface CaseStudy {
   slug: string;
   number: string; // "01", "02", "03"
@@ -118,4 +126,5 @@ export interface CaseStudy {
     outcomes: OutcomesSection;
   };
   keyLearnings: string[];
+  prototypes: PrototypeScreen[];
 }

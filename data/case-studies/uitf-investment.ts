@@ -334,6 +334,49 @@ export const uitfInvestment: CaseStudy = {
       ],
     },
   },
+  prototypes: [
+    {
+      id: "uitf-01",
+      src: "/images/case-studies/uitf-investment/01-goal-first-entry.jpg",
+      title: "Goal-First Entry",
+      caption:
+        "“What are you saving for?” — Bahay, Emergency Fund, Travel, Retirement. Removes the word “UITF” as the first barrier.",
+      decision: "Goal-first navigation",
+    },
+    {
+      id: "uitf-02",
+      src: "/images/case-studies/uitf-investment/02-guided-csa-conversation.jpg",
+      title: "Guided CSA Conversation",
+      caption:
+        "12-question BSP CSA form rewritten as a 5-step illustrated chat with Taglish reply chips.",
+      decision: "CSA as guided conversation",
+    },
+    {
+      id: "uitf-03",
+      src: "/images/case-studies/uitf-investment/03-peso-projection-funds.jpg",
+      title: "Peso Projection + Curated Funds",
+      caption:
+        "“If you invest ₱5,000 today… ≈ ₱6,200 in 3 years.” Only 1–3 funds shown, plus “withdraw anytime.”",
+      decision: "Curated choice + peso projections",
+    },
+    {
+      id: "uitf-04",
+      src: "/images/case-studies/uitf-investment/04-empty-state-first-time.jpg",
+      title: "First-Time / Empty State",
+      caption:
+        "Encouraging empty state for the 97% of savers who have never invested.",
+      decision: "Progressive disclosure onboarding",
+    },
+    {
+      id: "uitf-05",
+      src: "/images/case-studies/uitf-investment/05-risk-warning-heads-up.jpg",
+      title: "Soft Risk Heads-Up",
+      caption:
+        "Loss-aversion handled with a calm warning and a safer-options path — no fear language.",
+      decision: "Loss-aversion handling",
+    },
+  ],
+
   keyLearnings: [
     "People invest in goals, not products. Leading with 'what are you saving for?' unlocked an audience the fund list had turned away.",
     "Compliance is an experience you design, not a form you inherit. The suitability conversation drove momentum instead of killing it.",

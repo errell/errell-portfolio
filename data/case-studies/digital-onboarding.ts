@@ -380,6 +380,48 @@ export const digitalOnboarding: CaseStudy = {
       ],
     },
   },
+  prototypes: [
+    {
+      id: "do-01",
+      src: "/images/case-studies/digital-onboarding/01-id-capture-camera-coach.jpg",
+      title: "ID Capture + Camera Coach",
+      caption:
+        "Alignment frame, lighting coach, and Taglish tips — designed to cut the 73% photo-step drop-off.",
+      decision: "Camera Coach overlay",
+    },
+    {
+      id: "do-02",
+      src: "/images/case-studies/digital-onboarding/02-trust-ladder-consent.jpg",
+      title: "Trust Ladder / Consent",
+      caption:
+        "BSP license → data collected → privacy policy, shown before selfie/liveness.",
+      decision: "Trust Ladder",
+    },
+    {
+      id: "do-03",
+      src: "/images/case-studies/digital-onboarding/03-success-account-opened.jpg",
+      title: "Success — Account Opened",
+      caption: "Time-to-complete proof (5 min 48 sec) plus next-action CTAs.",
+      decision: "Outcome celebration",
+    },
+    {
+      id: "do-04",
+      src: "/images/case-studies/digital-onboarding/04-network-recovery-state.jpg",
+      title: "Network Recovery",
+      caption:
+        "“Nawalan ng signal. Don’t worry — your progress is saved.” Auto-save every 15 seconds.",
+      decision: "Auto-Save every 15 s",
+    },
+    {
+      id: "do-05",
+      src: "/images/case-studies/digital-onboarding/05-senior-friendly-success.jpg",
+      title: "Senior-Friendly Success",
+      caption:
+        "Larger type, high contrast, generous tap targets for Lolo Ben and similar users.",
+      decision: "Senior-friendly mode",
+    },
+  ],
+
   keyLearnings: [
     "Trust is a design surface. Earning consent before the camera opened did more for completion than any single UI tweak.",
     "Inclusion is a metric. Accepting the IDs people actually carry unlocked an entire underbanked segment the old flow silently rejected.",

@@ -355,6 +355,49 @@ export const paymentsHub: CaseStudy = {
       ],
     },
   },
+  prototypes: [
+    {
+      id: "pay-01",
+      src: "/images/case-studies/payments-hub/01-unified-hub-home.jpg",
+      title: "Unified Hub Home",
+      caption:
+        "Single entry point — “Who are you paying?” — replacing 7 fragmented navigation paths.",
+      decision: "Single entry point",
+    },
+    {
+      id: "pay-02",
+      src: "/images/case-studies/payments-hub/02-confirm-amount-in-words.jpg",
+      title: "Confirm + Amount in Words",
+      caption:
+        "₱12,500.00 spelled out as “Twelve Thousand Five Hundred Pesos Only” plus smart-rail badge.",
+      decision: "Amount-in-words confirm",
+    },
+    {
+      id: "pay-03",
+      src: "/images/case-studies/payments-hub/03-transaction-status-qr.jpg",
+      title: "Real-Time Status + QR Ph",
+      caption:
+        "In-app status (Sent → Processing → Received) plus elevated QR Ph shortcut to cut hotline anxiety.",
+      decision: "Real-time status + QR Ph elevation",
+    },
+    {
+      id: "pay-04",
+      src: "/images/case-studies/payments-hub/04-error-incorrect-account.jpg",
+      title: "Error — Incorrect Account",
+      caption:
+        "Clear recovery for the #1 error (wrong account number, 32%) with an actionable tip.",
+      decision: "Error-prevention + recovery",
+    },
+    {
+      id: "pay-05",
+      src: "/images/case-studies/payments-hub/05-senior-friendly-confirm.jpg",
+      title: "Senior-Friendly Confirm",
+      caption:
+        "Large type, amount in words, and “Tap to hear amount spoken” for transfers above ₱5,000.",
+      decision: "Senior-friendly mode + voice confirmation",
+    },
+  ],
+
   keyLearnings: [
     "Match the mental model or pay for it at the hotline. Organizing around 'who' instead of 'which rail' erased a whole class of confusion.",
     "Confirmation is the cheapest error prevention there is. Spelling the amount in words beat every input-validation trick we tried.",
