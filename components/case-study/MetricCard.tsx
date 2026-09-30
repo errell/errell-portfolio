@@ -1,5 +1,6 @@
 import type { Metric } from "@/types/case-study";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
+import { InfoTooltip } from "@/components/ui/InfoTooltip";
 import { cn } from "@/lib/utils";
 
 // Minimal inline SVG icons keyed by Metric.icon. Kept dependency-free.
@@ -87,6 +88,7 @@ export function MetricCard({ metric, className }: MetricCardProps) {
     suffix,
     decimals,
     icon,
+    tooltip,
   } = metric;
 
   return (
@@ -124,8 +126,11 @@ export function MetricCard({ metric, className }: MetricCardProps) {
         )}
       </div>
 
-      <p className="mt-2 text-sm font-medium leading-snug text-primary">
-        {label}
+      <p className="mt-2 flex items-start text-sm font-medium leading-snug text-primary">
+        <span>{label}</span>
+        {tooltip ? (
+          <InfoTooltip text={tooltip} label={`What is ${label}?`} />
+        ) : null}
       </p>
       {baseline && (
         <p className="mt-1 text-xs text-primary/45">{baseline}</p>

@@ -14,6 +14,7 @@ export const paymentsHub: CaseStudy = {
     {
       value: "71%",
       label: "Payment error rate",
+      tooltip: "Share of payment attempts that failed due to user or input mistakes.",
       baseline: "19% → 5.5%",
       direction: "down",
       countTo: 71,
@@ -23,6 +24,7 @@ export const paymentsHub: CaseStudy = {
     {
       value: "68%",
       label: "Fewer support calls",
+      tooltip: "Reduction in hotline volume about failed or confusing payments.",
       baseline: "45K → 14.4K/mo",
       direction: "down",
       countTo: 68,
@@ -32,6 +34,7 @@ export const paymentsHub: CaseStudy = {
     {
       value: "₱12.2M",
       label: "Monthly savings",
+      tooltip: "Estimated monthly support-cost savings from fewer payment-related calls.",
       baseline: "support cost",
       countTo: 12.2,
       prefix: "₱",
@@ -42,6 +45,7 @@ export const paymentsHub: CaseStudy = {
     {
       value: "3×",
       label: "QR Ph adoption",
+      tooltip: "Share of users paying via QR Ph, the Philippines’ national QR payment standard.",
       baseline: "8% → 24%",
       direction: "up",
       countTo: 3,
@@ -53,12 +57,13 @@ export const paymentsHub: CaseStudy = {
     {
       value: "71%",
       label: "Error rate reduction",
+      tooltip: "How much the payment error rate fell after the unified hub shipped.",
       direction: "down",
     },
     {
       value: "₱12.2M",
       label: "Monthly support savings",
-    },
+      tooltip: "Estimated monthly support-cost savings from fewer payment-related calls.",    },
   ],
   sections: {
     overview: {
@@ -298,6 +303,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "71%",
           label: "Lower payment error rate",
+          tooltip: "Share of payment attempts that failed — reduction vs. the fragmented flows.",
           baseline: "19% → 5.5%",
           direction: "down",
           countTo: 71,
@@ -307,6 +313,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "68%",
           label: "Fewer support calls",
+          tooltip: "Reduction in hotline volume about failed or confusing payments.",
           baseline: "45K → 14.4K/mo",
           direction: "down",
           countTo: 68,
@@ -316,6 +323,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "₱12.2M",
           label: "Monthly support savings",
+          tooltip: "Estimated monthly support-cost savings from fewer payment-related calls.",
           countTo: 12.2,
           prefix: "₱",
           suffix: "M",
@@ -325,6 +333,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "3×",
           label: "QR Ph adoption",
+          tooltip: "Share of users paying via QR Ph, the Philippines’ national QR payment standard.",
           baseline: "8% → 24%",
           direction: "up",
           countTo: 3,
@@ -334,6 +343,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "84%",
           label: "Faster to payment screen",
+          tooltip: "Reduction in time to reach the pay/confirm step from the app home.",
           direction: "down",
           countTo: 84,
           suffix: "%",
@@ -342,6 +352,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "4.6/5.0",
           label: "CSAT",
+          tooltip: "Customer Satisfaction score from post-flow surveys (typically 1–5).",
           countTo: 4.6,
           suffix: "/5.0",
           decimals: 1,
@@ -350,6 +361,7 @@ export const paymentsHub: CaseStudy = {
         {
           value: "AA",
           label: "WCAG 2.1 compliance",
+          tooltip: "Web Content Accessibility Guidelines — accessibility standard for inclusive UI.",
           icon: "accessibility",
         },
       ],
@@ -369,7 +381,7 @@ export const paymentsHub: CaseStudy = {
       src: "/images/case-studies/payments-hub/02-confirm-amount-in-words.jpg",
       title: "Confirm + Amount in Words",
       caption:
-        "Wise-style “You send / They get” clarity — ₱12,500.00 spelled out plus smart-rail badge.",
+        "Clear “You send / They get” Material confirm — ₱12,500.00 spelled out plus smart-rail badge.",
       decision: "Amount-in-words confirm",
     },
     {
@@ -393,7 +405,7 @@ export const paymentsHub: CaseStudy = {
       src: "/images/case-studies/payments-hub/05-senior-friendly-confirm.jpg",
       title: "Senior-Friendly Confirm",
       caption:
-        "Large type, amount in words, and “Tap to hear amount spoken” for transfers above ₱5,000.",
+        "Android Material large type, amount in words, and “Tap to hear amount spoken” for transfers above ₱5,000.",
       decision: "Senior-friendly mode + voice confirmation",
     },
   ],

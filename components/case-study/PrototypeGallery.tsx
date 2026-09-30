@@ -30,13 +30,13 @@ export function PrototypeGallery({ screens }: Props) {
                 type="button"
                 onClick={() => setActive(screen)}
                 aria-label={`View larger: ${screen.title}`}
-                className="group relative mx-auto mt-5 aspect-[390/844] w-[min(100%,200px)] cursor-zoom-in overflow-hidden rounded-[1.65rem] border border-black/10 bg-[#F7F9FC] shadow-[0_12px_40px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,255,255,0.06)] ring-1 ring-white/10 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas hover:scale-[1.02]"
+                className="group relative mx-auto mt-5 aspect-[360/800] w-[min(100%,200px)] cursor-zoom-in overflow-hidden rounded-[1.65rem] border border-black/10 bg-[#FFFBFE] shadow-[0_12px_40px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,255,255,0.06)] ring-1 ring-white/10 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas hover:scale-[1.02]"
               >
                 <Image
                   src={screen.src}
                   alt={`${screen.title}: ${screen.caption}`}
-                  width={780}
-                  height={1688}
+                  width={720}
+                  height={1600}
                   sizes="(max-width: 640px) 60vw, (max-width: 1024px) 30vw, 200px"
                   className="h-full w-full object-cover object-top transition-opacity group-hover:opacity-95"
                 />

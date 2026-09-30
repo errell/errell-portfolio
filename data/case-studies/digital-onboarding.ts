@@ -14,6 +14,7 @@ export const digitalOnboarding: CaseStudy = {
     {
       value: "58%",
       label: "Drop-off rate",
+      tooltip: "Share of users who start but don’t finish the onboarding flow.",
       baseline: "abandonment reduced",
       direction: "down",
       countTo: 58,
@@ -23,6 +24,7 @@ export const digitalOnboarding: CaseStudy = {
     {
       value: "5.8 min",
       label: "Avg. completion",
+      tooltip: "Average time from start to a successfully opened digital account.",
       baseline: "vs. 90 min branch",
       countTo: 5.8,
       suffix: " min",
@@ -32,6 +34,7 @@ export const digitalOnboarding: CaseStudy = {
     {
       value: "4.7/5.0",
       label: "CSAT",
+      tooltip: "Customer Satisfaction score from post-flow surveys (typically 1–5).",
       baseline: "target 4.5",
       countTo: 4.7,
       suffix: "/5.0",
@@ -41,6 +44,7 @@ export const digitalOnboarding: CaseStudy = {
     {
       value: "91%",
       label: "First-attempt ID capture",
+      tooltip: "Share of eKYC ID photos accepted on the first try without retakes.",
       baseline: "vs. 34% baseline",
       countTo: 91,
       suffix: "%",
@@ -51,12 +55,13 @@ export const digitalOnboarding: CaseStudy = {
     {
       value: "58%",
       label: "Drop-off reduction",
+      tooltip: "How much abandonment fell after the redesigned flow shipped.",
       direction: "down",
     },
     {
       value: "5.8 min",
       label: "Avg. completion time",
-    },
+      tooltip: "Average minutes to finish digital account opening end-to-end.",    },
   ],
   sections: {
     overview: {
@@ -314,6 +319,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "58%",
           label: "Drop-off rate reduction",
+          tooltip: "Share of users who start but don’t finish — reduction vs. the old flow.",
           direction: "down",
           countTo: 58,
           suffix: "%",
@@ -322,6 +328,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "5.8 min",
           label: "Average completion",
+          tooltip: "Average time from start to a successfully opened digital account.",
           baseline: "vs. 90 min branch",
           countTo: 5.8,
           suffix: " min",
@@ -331,6 +338,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "4.7/5.0",
           label: "CSAT",
+          tooltip: "Customer Satisfaction score from post-flow surveys (typically 1–5).",
           baseline: "target 4.5",
           countTo: 4.7,
           suffix: "/5.0",
@@ -340,6 +348,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "+31",
           label: "NPS points",
+          tooltip: "Net Promoter Score change — how likely customers are to recommend the product.",
           baseline: "target +25",
           countTo: 31,
           prefix: "+",
@@ -348,6 +357,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "91%",
           label: "First-attempt ID capture",
+          tooltip: "Share of eKYC ID photos accepted on the first try without retakes.",
           baseline: "vs. 34%",
           countTo: 91,
           suffix: "%",
@@ -356,6 +366,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "67%",
           label: "Fewer branch eKYC visits",
+          tooltip: "Drop in customers who still had to finish identity checks at a branch.",
           baseline: "within 60 days",
           direction: "down",
           countTo: 67,
@@ -365,6 +376,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "12",
           label: "Accepted ID types",
+          tooltip: "Number of government IDs the eKYC flow accepts (e.g. PhilID, driver’s license).",
           baseline: "from 5",
           countTo: 12,
           icon: "id",
@@ -372,6 +384,7 @@ export const digitalOnboarding: CaseStudy = {
         {
           value: "94%",
           label: "Mobile completion",
+          tooltip: "Share of successful account openings completed entirely on a phone.",
           baseline: "budget Android",
           countTo: 94,
           suffix: "%",
@@ -417,7 +430,7 @@ export const digitalOnboarding: CaseStudy = {
       src: "/images/case-studies/digital-onboarding/05-senior-friendly-success.jpg",
       title: "Senior-Friendly Success",
       caption:
-        "Larger type, high contrast, generous tap targets for Lolo Ben and similar users.",
+        "Material large type, high contrast, and generous tap targets for Lolo Ben and similar users on Android.",
       decision: "Senior-friendly mode",
     },
   ],

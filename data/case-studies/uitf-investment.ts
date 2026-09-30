@@ -14,6 +14,7 @@ export const uitfInvestment: CaseStudy = {
     {
       value: "+142%",
       label: "New UITF investors",
+      tooltip: "First-time customers who invested in a Unit Investment Trust Fund via the product.",
       baseline: "vs. prior year",
       direction: "up",
       countTo: 142,
@@ -24,6 +25,7 @@ export const uitfInvestment: CaseStudy = {
     {
       value: "₱2.1B",
       label: "New AUM",
+      tooltip: "Assets Under Management — total customer money invested through the product.",
       baseline: "within 6 months",
       countTo: 2.1,
       prefix: "₱",
@@ -34,6 +36,7 @@ export const uitfInvestment: CaseStudy = {
     {
       value: "91%",
       label: "Task success rate",
+      tooltip: "Share of usability-test participants who completed the primary investment task.",
       countTo: 91,
       suffix: "%",
       icon: "check",
@@ -41,6 +44,7 @@ export const uitfInvestment: CaseStudy = {
     {
       value: "44%",
       label: "Fewer support tickets",
+      tooltip: "Reduction in UITF-related help requests after the redesign.",
       baseline: "UITF-related",
       direction: "down",
       countTo: 44,
@@ -52,10 +56,11 @@ export const uitfInvestment: CaseStudy = {
     {
       value: "₱2.1B",
       label: "New AUM in 6 months",
-    },
+      tooltip: "Assets Under Management — customer money invested in the first six months.",    },
     {
       value: "+142%",
       label: "New UITF investors",
+      tooltip: "First-time customers who invested in a Unit Investment Trust Fund via the product.",
       direction: "up",
     },
   ],
@@ -294,6 +299,7 @@ export const uitfInvestment: CaseStudy = {
         {
           value: "+142%",
           label: "New UITF investors",
+          tooltip: "First-time customers who invested in a Unit Investment Trust Fund via the product.",
           baseline: "vs. prior year",
           direction: "up",
           countTo: 142,
@@ -304,6 +310,7 @@ export const uitfInvestment: CaseStudy = {
         {
           value: "91%",
           label: "Task success rate",
+          tooltip: "Share of usability-test participants who completed the primary investment task.",
           countTo: 91,
           suffix: "%",
           icon: "check",
@@ -311,6 +318,7 @@ export const uitfInvestment: CaseStudy = {
         {
           value: "44%",
           label: "Fewer UITF support tickets",
+          tooltip: "Reduction in UITF-related help requests after the redesign.",
           direction: "down",
           countTo: 44,
           suffix: "%",
@@ -319,6 +327,7 @@ export const uitfInvestment: CaseStudy = {
         {
           value: "₱2.1B",
           label: "New AUM",
+          tooltip: "Assets Under Management — total customer money invested through the product.",
           baseline: "within 6 months",
           countTo: 2.1,
           prefix: "₱",
@@ -329,6 +338,7 @@ export const uitfInvestment: CaseStudy = {
         {
           value: "AA",
           label: "WCAG 2.1 compliance",
+          tooltip: "Web Content Accessibility Guidelines — accessibility standard for inclusive UI.",
           icon: "accessibility",
         },
       ],

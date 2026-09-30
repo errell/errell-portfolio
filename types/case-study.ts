@@ -16,6 +16,8 @@ export interface Metric {
   decimals?: number;
   /** Optional icon key (see MetricCard iconMap) */
   icon?: string;
+  /** Optional plain-language explanation for jargon in the label */
+  tooltip?: string;
 }
 
 export interface FlowState {

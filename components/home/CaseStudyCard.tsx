@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudy } from "@/types/case-study";
 import { Tag } from "@/components/ui/Tag";
+import { InfoTooltip } from "@/components/ui/InfoTooltip";
 import { useT } from "@/lib/i18n";
 import { caseImages } from "@/data/media";
 import { cn } from "@/lib/utils";
@@ -76,8 +77,11 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
                   {m.direction === "up" && <span aria-hidden className="mr-0.5">↑</span>}
                   {m.value}
                 </dd>
-                <dt className="mt-1 text-xs leading-snug text-primary/50">
-                  {m.label}
+                <dt className="mt-1 inline-flex items-start text-xs leading-snug text-primary/50">
+                  <span>{m.label}</span>
+                  {m.tooltip ? (
+                    <InfoTooltip text={m.tooltip} label={`What is ${m.label}?`} />
+                  ) : null}
                 </dt>
               </div>
             ),

@@ -132,12 +132,12 @@ export function PrototypeLightbox({ screen, onClose }: Props) {
           </svg>
         </button>
 
-        <div className="relative mx-auto aspect-[390/844] w-[min(100%,min(72vw,340px))] overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#F7F9FC] shadow-[0_24px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10">
+        <div className="relative mx-auto aspect-[360/800] w-[min(100%,min(72vw,340px))] overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#FFFBFE] shadow-[0_24px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10">
           <Image
             src={screen.src}
             alt={`${screen.title}: ${screen.caption}`}
-            width={780}
-            height={1688}
+            width={720}
+            height={1600}
             sizes="(max-width: 640px) 72vw, 340px"
             className="h-full w-full object-cover object-top"
             priority
