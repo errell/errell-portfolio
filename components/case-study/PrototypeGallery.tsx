@@ -19,8 +19,8 @@ export function PrototypeGallery({ screens }: Props) {
           delay={i * 0.05}
           className="flex h-full flex-col"
         >
-          <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/40">
-            <div className="relative mx-auto mt-5 aspect-[390/844] w-[min(100%,200px)] overflow-hidden rounded-[1.5rem] border border-border bg-canvas shadow-lg shadow-black/20">
+          <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+            <div className="relative mx-auto mt-5 aspect-[390/844] w-[min(100%,200px)] overflow-hidden rounded-[1.65rem] border border-black/10 bg-[#F7F9FC] shadow-[0_12px_40px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,255,255,0.06)] ring-1 ring-white/10">
               <Image
                 src={screen.src}
                 alt={`${screen.title}: ${screen.caption}`}

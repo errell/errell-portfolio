@@ -369,7 +369,7 @@ export const paymentsHub: CaseStudy = {
       src: "/images/case-studies/payments-hub/02-confirm-amount-in-words.jpg",
       title: "Confirm + Amount in Words",
       caption:
-        "₱12,500.00 spelled out as “Twelve Thousand Five Hundred Pesos Only” plus smart-rail badge.",
+        "Wise-style “You send / They get” clarity — ₱12,500.00 spelled out plus smart-rail badge.",
       decision: "Amount-in-words confirm",
     },
     {
