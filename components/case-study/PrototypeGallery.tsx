@@ -20,13 +20,13 @@ export function PrototypeGallery({ screens }: Props) {
           className="flex h-full flex-col"
         >
           <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/40">
-            <div className="relative mx-auto mt-5 aspect-[784/1168] w-[min(100%,220px)] overflow-hidden rounded-[1.5rem] border border-border bg-canvas shadow-lg shadow-black/20">
+            <div className="relative mx-auto mt-5 aspect-[390/844] w-[min(100%,200px)] overflow-hidden rounded-[1.5rem] border border-border bg-canvas shadow-lg shadow-black/20">
               <Image
                 src={screen.src}
                 alt={`${screen.title}: ${screen.caption}`}
-                width={784}
-                height={1168}
-                sizes="(max-width: 640px) 60vw, (max-width: 1024px) 30vw, 220px"
+                width={780}
+                height={1688}
+                sizes="(max-width: 640px) 60vw, (max-width: 1024px) 30vw, 200px"
                 className="h-full w-full object-cover object-top"
               />
             </div>
