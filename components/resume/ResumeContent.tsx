@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { experience } from "@/data/experience";
 import { certifications } from "@/data/certifications";
@@ -103,6 +104,20 @@ export function ResumeContent() {
                     <li key={p}>{p}</li>
                   ))}
                 </ul>
+                {e.caseStudies && e.caseStudies.length > 0 && (
+                  <ul className="mt-2 space-y-1 pl-5 text-sm">
+                    {e.caseStudies.map((cs) => (
+                      <li key={cs.slug} className="list-none">
+                        <Link
+                          href={`/work/${cs.slug}`}
+                          className="font-mono text-xs text-accent hover:underline print:text-gray-700 print:no-underline"
+                        >
+                          Case study → {cs.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

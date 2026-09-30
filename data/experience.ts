@@ -1,9 +1,16 @@
+export interface ExperienceCaseStudy {
+  slug: string;
+  label: string;
+}
+
 export interface ExperienceEntry {
   period: string;
   role: string;
   org: string;
   context?: string;
   points: string[];
+  /** Optional case-study links shown under this tenure (About + Resume). */
+  caseStudies?: ExperienceCaseStudy[];
 }
 
 // Employer names are described by type per confidentiality constraints.
@@ -12,11 +19,10 @@ export const experience: ExperienceEntry[] = [
     period: "2021 – Present",
     role: "UX Design Manager / Squad UX Lead",
     org: "Major Philippine Universal Bank (via Accenture)",
-    context: "Digital Banking · Payments · Wealth",
+    context: "Digital Banking · Payments",
     points: [
-      "Lead UX across 5+ Agile squads shipping digital onboarding, investments, and payments products.",
+      "Lead UX across 5+ Agile squads shipping digital onboarding and payments products.",
       "Owned the eKYC account-opening redesign that cut abandonment by 58% and shifted volume out of branches.",
-      "Drove the UITF platform that generated ₱2.1B in new AUM within six months.",
       "Directed the unified payments hub that reduced errors 71% and support costs by ₱12.2M/month.",
     ],
   },
@@ -35,11 +41,15 @@ export const experience: ExperienceEntry[] = [
     period: "2015 – 2018",
     role: "UX/UI Lead",
     org: "American Technology Company (IBM)",
-    context: "AI Platform Teams",
+    context: "AI Platform Teams · Wealth",
     points: [
       "Led UX for enterprise AI platform products using Enterprise Design Thinking.",
+      "Drove the UITF investment platform that generated ₱2.1B in new AUM within six months.",
       "Partnered with product and engineering to ship complex B2B experiences.",
       "Facilitated design workshops and playbacks with enterprise stakeholders.",
+    ],
+    caseStudies: [
+      { slug: "uitf-investment", label: "Mobile-First UITF Investment Platform" },
     ],
   },
   {

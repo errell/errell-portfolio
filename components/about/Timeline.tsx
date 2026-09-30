@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { experience } from "@/data/experience";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -43,6 +44,20 @@ export function Timeline() {
               </li>
             ))}
           </ul>
+          {e.caseStudies && e.caseStudies.length > 0 && (
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
+              {e.caseStudies.map((cs) => (
+                <li key={cs.slug}>
+                  <Link
+                    href={`/work/${cs.slug}`}
+                    className="font-mono text-xs text-accent transition-colors hover:underline"
+                  >
+                    Case study → {cs.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </Reveal>
       ))}
     </ol>
