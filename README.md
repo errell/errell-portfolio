@@ -159,10 +159,9 @@ update automatically.
 
 **Light / dark mode.** A toggle in the navbar switches themes; the choice is
 saved to `localStorage` and an inline no-flash script in `app/layout.tsx` applies
-it before first paint (light unless a saved theme is dark).
-All colors are CSS variables (`styles/globals.css`, `:root`/`.light` vs `.dark`)
+it before first paint (defaulting to the visitor's system preference, then dark).
+All colors are CSS variables (`styles/globals.css`, `:root`/`.dark` vs `.light`)
 mapped to Tailwind tokens, so one class flip re-themes the whole site.
-Navigation is a top bar; on small screens the links collapse into a menu.
 
 **English / Tagalog toggle.** The `EN / TL` switch (navbar) flips the language
 instantly, persisted to `localStorage`. All copy lives in one dictionary at
@@ -172,7 +171,8 @@ prose is intentionally English. To edit or extend translations, edit that file â
 the `en` object is the source of truth and `tl` must mirror its shape.
 
 **Stock imagery.** Curated Unsplash photos are configured in
-[`data/media.ts`](data/media.ts) and rendered via `next/image`. `images.unsplash.com` is allow-listed in
+[`data/media.ts`](data/media.ts) and rendered via `next/image` with a brand
+duotone overlay (`.img-overlay`). `images.unsplash.com` is allow-listed in
 `next.config.mjs`. Swap any photo by changing its Unsplash ID in `data/media.ts`.
 The profile avatar still falls back to a silhouette until you add
 `public/images/profile.jpg`.
@@ -185,7 +185,7 @@ components/     Reusable UI, layout, home, case-study, about, contact components
 data/           Content as typed TS files
 lib/            Utilities (cn helper, Resend client)
 types/          TypeScript interfaces
-styles/         Global CSS (Tailwind + custom tokens, print styles)
+styles/         Global CSS (Tailwind + custom tokens, dot-grid, print styles)
 public/         CV PDF, images
 ```
 
@@ -196,13 +196,13 @@ utility classes:
 
 | Token | Dark | Light | Use |
 |---|---|---|---|
-| `canvas` | `#0E1116` | `#F6F3EE` | Page background |
-| `surface` | `#161B22` | `#FFFFFF` | Cards |
-| `border` | `#2A303A` | `#E4E0D8` | Hairline borders |
-| `primary` | `#F4F1EA` | `#12151C` | Text |
-| `muted` | `#A7ADB8` | `#5C6370` | Captions |
-| `accent` | `#1463FF` | `#1463FF` | Actions, links, focus |
-| `onAccent` | `#FFFFFF` | `#FFFFFF` | Text on the blue button |
+| `canvas` | `#0A0A0F` | `#F6F7F9` | Page background |
+| `surface` | `#1A1A2E` | `#FFFFFF` | Cards |
+| `border` | `#2D2D44` | `#E2E5EC` | Borders / dividers |
+| `primary` | `#F0F0F0` | `#12151C` | Text |
+| `accent` | `#00D4FF` | `#0E7490` | Cyan accent (AA in both) |
+| `amber` | `#FFB347` | `#B45309` | Metrics / numbers only |
+| `onAccent` | `#080C14` | `#FFFFFF` | Text on accent buttons |
 
 Fonts: **Sora** (display), **Inter** (body), **JetBrains Mono** (data) â€” all via `next/font`.
 

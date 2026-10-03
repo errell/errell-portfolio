@@ -4,8 +4,6 @@ import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
   eyebrow?: string;
-  /** Mono index such as "01". */
-  index?: string;
   title: ReactNode;
   description?: ReactNode;
   align?: "left" | "center";
@@ -14,7 +12,6 @@ interface SectionHeadingProps {
 
 export function SectionHeading({
   eyebrow,
-  index,
   title,
   description,
   align = "left",
@@ -29,21 +26,15 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p className="eyebrow flex items-center gap-3">
-          {index && <span className="text-primary/70">{index}</span>}
-          {index && (
-            <span aria-hidden className="text-primary/30">
-              /
-            </span>
-          )}
-          <span>{eyebrow}</span>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          {eyebrow}
         </p>
       )}
-      <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] md:text-5xl md:leading-[1.05]">
+      <h2 className="mt-3 font-sora text-3xl font-bold tracking-tight md:text-4xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-muted">
+        <p className="mt-4 text-base leading-relaxed text-primary/60">
           {description}
         </p>
       )}

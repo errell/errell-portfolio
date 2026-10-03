@@ -7,7 +7,6 @@ export function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const { t } = useT();
   const isDark = theme === "dark";
-  const toneClass = "border-border text-primary hover:border-primary/30";
 
   return (
     <button
@@ -15,7 +14,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={t.nav.theme}
       title={t.nav.theme}
-      className={`grid h-9 w-9 place-items-center rounded-[10px] border bg-transparent transition-colors duration-150 ${toneClass}`}
+      className="grid h-9 w-9 place-items-center rounded-lg border border-border bg-surface/60 text-primary/80 transition-colors hover:border-accent/60 hover:text-accent"
     >
       {isDark ? (
         // Sun — switch to light

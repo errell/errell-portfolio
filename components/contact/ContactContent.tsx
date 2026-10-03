@@ -11,24 +11,24 @@ export function ContactContent() {
   const c = t.contact;
 
   return (
-    <div className="shell py-20 md:py-28">
+    <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
       <SectionHeading eyebrow={c.eyebrow} title={c.title} description={c.desc} />
 
       <div className="mt-12 max-w-2xl">
         <Reveal>
-          <div className="dt-card p-6 md:p-8">
-            <h2 className="font-sans text-xl font-medium tracking-tight">{c.sendTitle}</h2>
-            <p className="mt-1 text-sm text-muted">{c.sendDesc}</p>
+          <div className="rounded-3xl border border-border bg-surface/40 p-6 md:p-8">
+            <h2 className="font-sora text-xl font-semibold">{c.sendTitle}</h2>
+            <p className="mt-1 text-sm text-primary/55">{c.sendDesc}</p>
             <div className="mt-6">
               <ContactForm />
             </div>
 
-            <div className="mt-8 border-t border-border pt-6 text-sm text-muted">
+            <div className="mt-8 border-t border-border pt-6 text-sm text-primary/60">
               <p>
                 {c.preferEmail}{" "}
                 <a
                   href={`mailto:${site.email}`}
-                  className="font-mono text-link hover:underline"
+                  className="font-mono text-accent hover:underline"
                 >
                   {site.email}
                 </a>

@@ -25,14 +25,14 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Default matches the no-flash script: light unless a stored theme says otherwise.
-  const [theme, setThemeState] = useState<Theme>("light");
+  // Default matches the no-flash script in layout (dark brand default).
+  const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
     // Read whatever the inline script already resolved onto <html>.
-    const current = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
+    const current = document.documentElement.classList.contains("light")
+      ? "light"
+      : "dark";
     setThemeState(current);
   }, []);
 

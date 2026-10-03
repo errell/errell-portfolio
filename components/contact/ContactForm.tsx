@@ -8,7 +8,7 @@ import { TurnstileWidget } from "@/components/contact/TurnstileWidget";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-border bg-canvas px-4 py-3 text-sm text-primary placeholder:text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
+  "w-full rounded-xl border border-border bg-canvas/60 px-4 py-3 text-sm text-primary placeholder:text-primary/35 focus:border-accent/60 focus:outline-none focus:ring-1 focus:ring-accent/40";
 const labelClass = "block text-sm font-medium text-primary/80";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
@@ -68,9 +68,9 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="dt-card p-8 text-center"
+        className="rounded-2xl border border-accent/40 bg-accent/[0.06] p-8 text-center"
       >
-        <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-shipped/10 text-shipped">
+        <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-accent/15 text-accent">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -84,7 +84,7 @@ export function ContactForm() {
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="mt-4 font-sans text-lg font-medium">{c.successTitle}</h3>
+        <h3 className="mt-4 font-sora text-lg font-semibold">{c.successTitle}</h3>
         <p className="mt-2 text-sm text-primary/60">{c.successDesc}</p>
         <button
           type="button"
@@ -185,7 +185,7 @@ export function ContactForm() {
       ) : (
         <p
           role="alert"
-          className="rounded-xl border border-review/40 bg-review/10 px-4 py-3 text-sm text-review"
+          className="rounded-xl border border-amber/40 bg-amber/[0.06] px-4 py-3 text-sm text-amber"
         >
           {c.captchaNotConfigured}
         </p>
@@ -194,7 +194,7 @@ export function ContactForm() {
       {status === "error" && (
         <p
           role="alert"
-          className="rounded-xl border border-review/40 bg-review/10 px-4 py-3 text-sm text-review"
+          className="rounded-xl border border-amber/40 bg-amber/[0.06] px-4 py-3 text-sm text-amber"
         >
           {error}
         </p>
@@ -203,7 +203,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting" || !TURNSTILE_SITE_KEY}
-        className="btn btn-fill h-12 w-full px-6 text-sm disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-onAccent transition-all hover:bg-accent/90 hover:shadow-[0_0_24px_-4px_rgba(0,212,255,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-60"
       >
         {status === "submitting" ? c.sending : c.send}
       </button>

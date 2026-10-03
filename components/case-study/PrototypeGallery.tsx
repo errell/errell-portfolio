@@ -25,7 +25,7 @@ export function PrototypeGallery({ screens }: Props) {
             delay={i * 0.05}
             className="flex h-full flex-col"
           >
-            <figure className="dt-card flex h-full flex-col overflow-hidden">
+            <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
               <button
                 type="button"
                 onClick={() => setActive(screen)}

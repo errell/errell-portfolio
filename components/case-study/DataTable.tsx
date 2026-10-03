@@ -6,11 +6,11 @@ interface DataTableProps {
 
 export function DataTable({ headers, rows, caption }: DataTableProps) {
   return (
-    <div className="dt-card overflow-x-auto">
+    <div className="overflow-x-auto rounded-2xl border border-border">
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
-          <tr className="border-b border-border bg-surface">
+          <tr className="border-b border-border bg-surface/60">
             {headers.map((h) => (
               <th
                 key={h}

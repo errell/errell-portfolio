@@ -14,14 +14,15 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#00C2D1",
-          borderRadius: 8,
-          color: "#ffffff",
+          backgroundColor: "#00D4FF",
+          color: "#0A0A0F",
           fontSize: 18,
           fontWeight: 700,
+          borderRadius: 7,
+          fontFamily: "sans-serif",
         }}
       >
-        E
+        EN
       </div>
     ),
     { ...size },

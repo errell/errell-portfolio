@@ -14,12 +14,12 @@ export function Timeline() {
         >
           <span
             aria-hidden
-            className="absolute left-0 top-1.5 grid h-4 w-4 place-items-center rounded-full border border-border bg-canvas"
+            className="absolute left-0 top-1.5 grid h-4 w-4 place-items-center rounded-full border border-accent/60 bg-canvas"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
           </span>
 
-          <p className="font-mono text-xs uppercase tracking-wider text-muted">
+          <p className="font-mono text-xs uppercase tracking-wider text-accent">
             {e.period}
           </p>
           <h3 className="mt-2 font-sora text-lg font-semibold text-primary">
@@ -37,7 +37,7 @@ export function Timeline() {
                 key={p}
                 className="flex gap-2 text-sm leading-relaxed text-primary/65"
               >
-                <span aria-hidden className="text-muted">
+                <span aria-hidden className="text-accent/60">
                   ·
                 </span>
                 <span>{p}</span>

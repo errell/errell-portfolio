@@ -15,7 +15,7 @@ export function SectionDivider({
   return (
     <Reveal className="border-t border-border pt-10">
       <div className="flex items-baseline gap-4">
-        <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
+        <span className="font-mono text-sm font-medium text-accent">
           {number}
         </span>
         <span aria-hidden className="h-px flex-1 bg-border" />

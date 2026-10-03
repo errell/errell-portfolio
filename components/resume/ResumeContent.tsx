@@ -11,7 +11,7 @@ import { useT } from "@/lib/i18n";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-3 border-b border-border pb-1 font-sans text-sm font-semibold uppercase tracking-[0.16em] text-primary print:border-gray-300 print:text-black">
+    <h2 className="mb-3 border-b border-border pb-1 font-sora text-sm font-bold uppercase tracking-wider text-accent print:border-gray-300 print:text-black">
       {children}
     </h2>
   );
@@ -22,11 +22,11 @@ export function ResumeContent() {
   const r = t.resume;
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-[clamp(18px,4.5vw,56px)] py-12 md:py-16">
+    <div className="mx-auto max-w-4xl px-5 py-12 md:px-8 md:py-16">
       {/* Actions — hidden on print */}
       <div className="no-print mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <h1 className="font-sans text-2xl font-bold">{r.title}</h1>
+          <h1 className="font-sora text-2xl font-bold">{r.title}</h1>
           <p className="mt-1 text-sm text-primary/50">
             {r.note}{" "}
             <a href="/work" className="text-accent hover:underline">
@@ -43,9 +43,9 @@ export function ResumeContent() {
       </div>
 
       {/* Resume document */}
-      <article className="print-container dt-card p-8 print-surface md:p-12">
+      <article className="print-container rounded-2xl border border-border bg-surface/40 p-8 print-surface md:p-12">
         <header className="border-b border-border pb-6 print:border-gray-300">
-          <h1 className="font-sans text-3xl font-bold tracking-tight print:text-black">
+          <h1 className="font-sora text-3xl font-bold tracking-tight print:text-black">
             {site.name}
           </h1>
           <p className="mt-1 text-lg text-primary/80 print:text-black">
@@ -87,7 +87,7 @@ export function ResumeContent() {
             {experience.map((e) => (
               <div key={e.period + e.role}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <h3 className="font-sans text-base font-semibold text-primary print:text-black">
+                  <h3 className="font-sora text-base font-semibold text-primary print:text-black">
                     {e.role}
                   </h3>
                   <span className="font-mono text-xs text-primary/50 print:text-gray-600">

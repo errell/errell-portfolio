@@ -10,13 +10,12 @@ const options: { value: Lang; label: string }[] = [
 
 export function LangToggle() {
   const { lang, setLang, t } = useT();
-  const idle = "text-muted hover:text-primary";
 
   return (
     <div
       role="group"
       aria-label={t.nav.language}
-      className="inline-flex items-center rounded-full border border-border p-0.5"
+      className="inline-flex items-center rounded-lg border border-border bg-surface/60 p-0.5"
     >
       {options.map((o) => {
         const active = lang === o.value;
@@ -27,8 +26,10 @@ export function LangToggle() {
             onClick={() => setLang(o.value)}
             aria-pressed={active}
             className={cn(
-              "rounded-full px-2 py-1 text-[11px] font-semibold tracking-wide transition-colors duration-150",
-              active ? "bg-accent text-white" : idle,
+              "rounded-md px-2 py-1 text-xs font-semibold transition-colors",
+              active
+                ? "bg-accent text-onAccent"
+                : "text-primary/60 hover:text-primary",
             )}
           >
             {o.label}

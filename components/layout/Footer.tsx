@@ -17,53 +17,98 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-border">
-      <div className="shell py-12">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div>
-            <p className="font-display text-2xl font-semibold tracking-tight">
-              {site.name}
-            </p>
-            <p className="mt-2 max-w-sm text-sm text-muted">{t.footer.tagline}</p>
-            <p className="mt-2 text-sm text-muted">{site.location}</p>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-2 inline-block font-mono text-xs text-link hover:underline"
+    <footer className="border-t border-border bg-canvas">
+      <div className="mx-auto max-w-canvas px-5 py-14 md:px-8">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm">
+            <Link
+              href="/"
+              className="font-sora text-lg font-semibold tracking-tight"
             >
-              {site.email}
-            </a>
+              {site.name}
+            </Link>
+            <p className="mt-3 text-sm leading-relaxed text-primary/60">
+              {t.footer.tagline}
+            </p>
+            <p className="mt-4 font-mono text-xs text-primary/40">
+              {site.location}
+            </p>
           </div>
 
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-muted transition-colors duration-150 hover:text-link"
-              >
-                {labelFor(link.href)}
-              </Link>
-            ))}
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted transition-colors duration-150 hover:text-link"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={site.credly}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted transition-colors duration-150 hover:text-link"
-            >
-              Credly
-            </a>
-          </nav>
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+            <nav aria-label="Footer">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/40">
+                {t.footer.explore}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-primary/70 transition-colors hover:text-accent"
+                    >
+                      {labelFor(link.href)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/40">
+                {t.footer.connect}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <a
+                    href={site.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary/70 transition-colors hover:text-accent"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={site.credly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary/70 transition-colors hover:text-accent"
+                  >
+                    Credly
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="text-primary/70 transition-colors hover:text-accent"
+                  >
+                    {t.nav.contact}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/40">
+                {t.footer.getInTouch}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="font-mono text-xs text-primary/70 transition-colors hover:text-accent"
+                  >
+                    {site.email}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-primary/40 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. {t.footer.rights}
           </p>

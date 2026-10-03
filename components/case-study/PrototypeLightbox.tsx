@@ -144,7 +144,7 @@ export function PrototypeLightbox({ screen, onClose }: Props) {
           />
         </div>
 
-        <div className="w-full max-w-sm rounded border border-white/10 bg-black/60 px-4 py-3 text-center backdrop-blur-md">
+        <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-center backdrop-blur-md">
           <h3
             id={titleId}
             className="font-sora text-sm font-semibold text-primary"

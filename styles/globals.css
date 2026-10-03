@@ -3,50 +3,43 @@
 @tailwind utilities;
 
 /*
- * Marketing-site tokens. :root is light (the visual default).
- * .dark is a near-black canvas with the same cyan accent and radii.
+ * Theme tokens as space-separated RGB channels so Tailwind's <alpha-value>
+ * (e.g. bg-surface/60) works. Default (:root) is the dark brand theme; .light
+ * overrides for light mode. .dark is explicit for the toggle.
  */
 :root,
-.light {
-  --c-base: 255 255 255;
-  --c-surface: 255 255 255;
-  --c-elevated: 245 245 245; /* #F5F5F5 */
-  --c-primary: 17 17 17; /* #111 */
-  --c-accent: 0 194 209; /* #00C2D1 */
-  --c-accent-soft: 0 194 209;
-  --c-link: 0 194 209;
-  --c-on-accent: 255 255 255;
-  --c-accent-hover: 0 168 181; /* #00A8B5 */
-  --c-muted: 82 82 82;
-  --c-line: 229 229 229;
-  --c-line-a: 1;
-  --c-border: 229 229 229;
-  --shadow-color: 17 17 17;
-  --c-shipped: 22 163 74;
-  --c-review: 180 130 60;
-  --c-archived: 113 113 122;
-  color-scheme: light;
+.dark {
+  --c-base: 10 10 15; /* #0A0A0F */
+  --c-surface: 26 26 46; /* #1A1A2E */
+  --c-elevated: 32 32 54; /* #202036 */
+  --c-border: 45 45 68; /* #2D2D44 */
+  --c-primary: 240 240 240; /* #F0F0F0 */
+  --c-accent: 0 212 255; /* #00D4FF */
+  --c-amber: 255 179 71; /* #FFB347 */
+  --c-on-accent: 8 12 20; /* dark text on bright accent */
+
+  --grid-dot: 45 45 68;
+  --grad-from: 240 240 240;
+  --grad-to: 0 212 255;
+  --shadow-color: 0 0 0;
+  color-scheme: dark;
 }
 
-.dark {
-  --c-base: 10 10 10;
-  --c-surface: 18 18 18;
-  --c-elevated: 24 24 24;
-  --c-primary: 255 255 255;
-  --c-accent: 0 194 209; /* #00C2D1 */
-  --c-accent-soft: 0 194 209;
-  --c-link: 0 194 209;
-  --c-on-accent: 255 255 255;
-  --c-accent-hover: 0 168 181; /* #00A8B5 */
-  --c-muted: 176 176 176;
-  --c-line: 42 42 42;
-  --c-line-a: 1;
-  --c-border: 42 42 42;
-  --shadow-color: 0 0 0;
-  --c-shipped: 74 222 128;
-  --c-review: 214 168 92;
-  --c-archived: 161 161 170;
-  color-scheme: dark;
+.light {
+  --c-base: 246 247 249; /* #F6F7F9 */
+  --c-surface: 255 255 255; /* #FFFFFF */
+  --c-elevated: 255 255 255;
+  --c-border: 226 229 236; /* #E2E5EC */
+  --c-primary: 18 21 28; /* #12151C */
+  --c-accent: 14 116 144; /* #0E7490 cyan-700 (AA on white) */
+  --c-amber: 180 83 9; /* #B45309 amber-700 (AA on white) */
+  --c-on-accent: 255 255 255; /* white text on deep accent */
+
+  --grid-dot: 190 198 210;
+  --grad-from: 18 21 28;
+  --grad-to: 14 116 144;
+  --shadow-color: 30 41 59;
+  color-scheme: light;
 }
 
 @layer base {
@@ -58,14 +51,15 @@
     background-color: rgb(var(--c-base));
     color: rgb(var(--c-primary));
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   ::selection {
-    background-color: rgb(var(--c-accent) / 0.18);
+    background-color: rgb(var(--c-accent) / 0.25);
     color: rgb(var(--c-primary));
   }
 
@@ -73,144 +67,87 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
+    font-family: var(--font-sora), system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
 
   :focus-visible {
     outline: 2px solid rgb(var(--c-accent));
     outline-offset: 2px;
-    border-radius: 10px;
+    border-radius: 2px;
   }
 }
 
 @layer components {
-  .eyebrow {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: rgb(var(--c-muted));
+  /* Figma-canvas style dot grid used on the hero */
+  .dot-grid {
+    background-image: radial-gradient(
+      rgb(var(--grid-dot) / 0.55) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+    background-position: -14px -14px;
   }
 
-  .shell {
-    width: 100%;
-    max-width: 1120px;
-    margin-inline: auto;
-    padding-inline: clamp(20px, 4vw, 40px);
+  .line-grid {
+    background-image: linear-gradient(
+        to right,
+        rgb(var(--grid-dot) / 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(var(--grid-dot) / 0.35) 1px, transparent 1px);
+    background-size: 56px 56px;
   }
 
-  .hero-title {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-weight: 650;
-    font-size: clamp(2.5rem, 5vw, 4.25rem);
-    line-height: 1.02;
-    letter-spacing: -0.045em;
+  .grid-fade {
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #000 40%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #000 40%,
+      transparent 100%
+    );
   }
 
-  .home-hero .hero-title {
-    font-size: clamp(3.25rem, 7.2vw, 5.75rem);
-    line-height: 0.96;
-    letter-spacing: -0.05em;
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--grad-from)) 0%,
+      rgb(var(--grad-to)) 120%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .site-shell {
-    position: relative;
-    min-height: 100vh;
+  /* Frosted-glass surface — a calm, modern depth cue used on floating UI */
+  .glass {
+    background-color: rgb(var(--c-surface) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    font-weight: 600;
-    line-height: 1;
-    transition:
-      background-color 150ms ease,
-      border-color 150ms ease,
-      color 150ms ease;
-  }
-
-  .btn-fill {
-    color: #ffffff;
-    background: rgb(var(--c-accent));
-  }
-
-  .btn-fill:hover,
-  .btn-fill:active {
-    background: rgb(var(--c-accent-hover));
-  }
-
-  .btn-line {
-    color: rgb(var(--c-primary));
-    background: transparent;
-    border-color: rgb(var(--c-primary));
-  }
-
-  .btn-line:hover {
-    background: rgb(var(--c-primary) / 0.05);
-  }
-
-  .btn-ghost {
-    color: rgb(var(--c-primary));
-    background: transparent;
-    border-color: transparent;
-  }
-
-  .btn-ghost:hover {
-    background: rgb(var(--c-primary) / 0.05);
-  }
-
-  .btn:disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  .dt-card,
-  .dt-panel {
-    border-radius: 20px;
-    border: 1px solid rgb(var(--c-line) / var(--c-line-a));
-    background: rgb(var(--c-surface));
-    box-shadow: 0 16px 40px rgb(var(--shadow-color) / 0.06);
-    transition:
-      border-color 180ms ease,
-      box-shadow 180ms ease,
-      transform 180ms ease;
-  }
-
-  .dt-card:hover {
-    border-color: rgb(var(--c-accent) / 0.35);
-    box-shadow: 0 22px 50px rgb(var(--shadow-color) / 0.1);
+  /* Duotone brand overlay for stock imagery so photos stay on-brand */
+  .img-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgb(var(--c-accent) / 0.28) 0%,
+      rgb(var(--c-base) / 0.55) 100%
+    );
+    mix-blend-mode: multiply;
   }
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-rise {
-  animation: rise 0.55s ease both;
-}
-
+/* Print styles for the resume page */
 @media print {
   .no-print {
     display: none !important;
-  }
-  .site-shell {
-    padding-left: 0 !important;
   }
   body {
     background: #ffffff !important;
@@ -222,26 +159,16 @@
   }
   .print-surface {
     background: #ffffff !important;
-    background-image: none !important;
-    box-shadow: none !important;
     border: 1px solid #dddddd !important;
     color: #111111 !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  * {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .animate-rise {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
   }
 }

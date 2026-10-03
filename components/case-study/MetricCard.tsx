@@ -94,17 +94,17 @@ export function MetricCard({ metric, className }: MetricCardProps) {
   return (
     <div
       className={cn(
-        "flex h-full flex-col dt-card p-6",
+        "flex h-full flex-col rounded-2xl border border-border bg-surface/60 p-6 transition-colors hover:border-accent/40",
         className,
       )}
     >
-      <div className="flex items-center justify-between text-muted">
+      <div className="flex items-center justify-between text-accent">
         <Icon name={icon} />
         {direction && (
           <span
             className={cn(
               "font-mono text-sm",
-              direction === "down" ? "text-shipped" : "text-muted",
+              direction === "down" ? "text-green-400" : "text-amber",
             )}
             aria-hidden
           >
@@ -113,7 +113,7 @@ export function MetricCard({ metric, className }: MetricCardProps) {
         )}
       </div>
 
-      <div className="mt-4 font-sora text-4xl font-semibold tracking-tight text-primary md:text-5xl">
+      <div className="mt-4 font-mono text-3xl font-bold text-amber md:text-4xl">
         {typeof countTo === "number" ? (
           <AnimatedNumber
             value={countTo}

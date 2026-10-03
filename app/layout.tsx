@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { Sora, Inter, JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/Providers";
 import { site } from "@/data/site";
 
-// Runs before paint. No stored theme means light.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='light';}document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);var l=localStorage.getItem('lang');if(l==='tl'){document.documentElement.lang='fil';}}catch(e){document.documentElement.classList.add('light');}})();`;
+// Runs before paint to set the theme class and avoid a flash of the wrong theme.
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);var l=localStorage.getItem('lang');if(l==='tl'){document.documentElement.lang='fil';}}catch(e){document.documentElement.classList.add('dark');}})();`;
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,10 +21,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const plex = IBM_Plex_Mono({
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-plex",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -71,25 +76,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plex.variable}`}
+      className={`${sora.variable} ${inter.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-screen bg-canvas font-sans text-primary antialiased">
+      <body className="min-h-screen bg-canvas font-inter text-primary antialiased">
         <Providers>
-          <div className="site-shell">
-            <a
-              href="#main"
-              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-onAccent"
-            >
-              Skip to main content
-            </a>
-            <Navbar />
-            <main id="main">{children}</main>
-            <Footer />
-          </div>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-onAccent"
+          >
+            Skip to main content
+          </a>
+          <Navbar />
+          <main id="main">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>

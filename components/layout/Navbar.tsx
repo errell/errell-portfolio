@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks, site } from "@/data/site";
+import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LangToggle } from "@/components/ui/LangToggle";
 import { useT } from "@/lib/i18n";
@@ -13,6 +14,14 @@ export function Navbar() {
   const pathname = usePathname();
   const { t } = useT();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -30,109 +39,107 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="no-print sticky top-0 z-50 border-b border-border bg-canvas/85 backdrop-blur-md">
-      <div className="shell flex h-16 items-center gap-6">
-        <Link href="/" className="shrink-0 text-[15px] font-semibold tracking-tight text-primary">
-          {site.name}
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border glass"
+          : "border-transparent bg-transparent",
+      )}
+    >
+      <nav
+        aria-label="Primary"
+        className="mx-auto flex h-16 max-w-canvas items-center justify-between px-5 md:px-8"
+      >
+        <Link
+          href="/"
+          className="group flex items-center gap-2 font-sora text-lg font-semibold tracking-tight"
+        >
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent/15 text-accent">
+            EN
+          </span>
+          <span className="hidden sm:inline">{site.name}</span>
         </Link>
 
-        <nav aria-label="Primary" className="ml-2 hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => {
-            const active = isActive(link.href);
-            if (link.href === "/contact") {
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  className="btn btn-fill ml-2 h-9 rounded-full px-4 text-sm"
-                >
-                  {labelFor(link.href)}
-                </Link>
-              );
-            }
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                  active ? "text-primary" : "text-muted hover:text-primary",
-                )}
-              >
-                {labelFor(link.href)}
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="hidden items-center gap-1 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                isActive(link.href)
+                  ? "text-accent"
+                  : "text-primary/70 hover:text-primary",
+              )}
+            >
+              {labelFor(link.href)}
+            </Link>
+          ))}
+          <div className="mx-2 flex items-center gap-2">
+            <LangToggle />
+            <ThemeToggle />
+          </div>
+          <Button href="/contact" size="md">
+            {t.nav.hireMe}
+          </Button>
+        </div>
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="flex items-center gap-2 md:hidden">
           <LangToggle />
           <ThemeToggle />
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center rounded-[10px] text-primary md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-border text-primary"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            <span className="relative block h-3.5 w-4">
+            <span className="relative block h-4 w-5">
               <span
                 className={cn(
-                  "absolute left-0 top-0 h-px w-4 bg-current transition-transform duration-150",
-                  open && "translate-y-[6px] rotate-45",
+                  "absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform",
+                  open && "translate-y-[7px] rotate-45",
                 )}
               />
               <span
                 className={cn(
-                  "absolute left-0 top-[6px] h-px w-4 bg-current transition-opacity duration-150",
+                  "absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity",
                   open && "opacity-0",
                 )}
               />
               <span
                 className={cn(
-                  "absolute bottom-0 left-0 h-px w-4 bg-current transition-transform duration-150",
-                  open && "-translate-y-[6px] -rotate-45",
+                  "absolute bottom-0 left-0 h-0.5 w-5 bg-current transition-transform",
+                  open && "-translate-y-[7px] -rotate-45",
                 )}
               />
             </span>
           </button>
         </div>
-      </div>
+      </nav>
 
       {open && (
-        <div className="border-t border-border bg-canvas px-5 py-4 md:hidden">
-          <nav aria-label="Mobile" className="flex flex-col gap-1">
-            {navLinks.map((link) => {
-              const active = isActive(link.href);
-              if (link.href === "/contact") {
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    aria-current={active ? "page" : undefined}
-                    className="btn btn-fill mt-2 h-11 rounded-full px-4 text-sm"
-                  >
-                    {labelFor(link.href)}
-                  </Link>
-                );
-              }
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "rounded-lg px-2 py-2.5 text-base font-medium",
-                    active ? "text-primary" : "text-muted",
-                  )}
-                >
-                  {labelFor(link.href)}
-                </Link>
-              );
-            })}
-          </nav>
+        <div className="border-t border-border glass md:hidden">
+          <div className="mx-auto flex max-w-canvas flex-col gap-1 px-5 py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "rounded-lg px-4 py-3 text-base font-medium",
+                  isActive(link.href)
+                    ? "bg-surface text-accent"
+                    : "text-primary/80 hover:bg-surface",
+                )}
+              >
+                {labelFor(link.href)}
+              </Link>
+            ))}
+            <Button href="/contact" className="mt-2 w-full">
+              {t.nav.hireMe}
+            </Button>
+          </div>
         </div>
       )}
     </header>
