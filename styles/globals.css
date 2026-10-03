@@ -4,7 +4,7 @@
 
 /*
  * Marketing-site tokens. :root is light (the visual default).
- * .dark is a near-black canvas with the same blue accent and radii.
+ * .dark is a near-black canvas with the same cyan accent and radii.
  */
 :root,
 .light {
@@ -12,10 +12,11 @@
   --c-surface: 255 255 255;
   --c-elevated: 245 245 245; /* #F5F5F5 */
   --c-primary: 17 17 17; /* #111 */
-  --c-accent: 67 83 255; /* #4353FF */
-  --c-accent-soft: 67 83 255;
-  --c-link: 67 83 255;
+  --c-accent: 0 194 209; /* #00C2D1 */
+  --c-accent-soft: 0 194 209;
+  --c-link: 0 194 209;
   --c-on-accent: 255 255 255;
+  --c-accent-hover: 0 168 181; /* #00A8B5 */
   --c-muted: 82 82 82;
   --c-line: 229 229 229;
   --c-line-a: 1;
@@ -32,10 +33,11 @@
   --c-surface: 18 18 18;
   --c-elevated: 24 24 24;
   --c-primary: 255 255 255;
-  --c-accent: 67 83 255;
-  --c-accent-soft: 67 83 255;
-  --c-link: 67 83 255;
+  --c-accent: 0 194 209; /* #00C2D1 */
+  --c-accent-soft: 0 194 209;
+  --c-link: 0 194 209;
   --c-on-accent: 255 255 255;
+  --c-accent-hover: 0 168 181; /* #00A8B5 */
   --c-muted: 176 176 176;
   --c-line: 42 42 42;
   --c-line-a: 1;
@@ -140,8 +142,9 @@
     background: rgb(var(--c-accent));
   }
 
-  .btn-fill:hover {
-    background: #3142f0;
+  .btn-fill:hover,
+  .btn-fill:active {
+    background: rgb(var(--c-accent-hover));
   }
 
   .btn-line {

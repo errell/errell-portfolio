@@ -29,7 +29,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 84, fontWeight: 650, letterSpacing: -2, lineHeight: 1 }}>
             Errell Niño
           </div>
-          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600, color: "#4353FF" }}>
+          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600, color: "#00C2D1" }}>
             UX Design Manager
           </div>
           <div style={{ fontSize: 28, color: "#6B7280", marginTop: 12 }}>
