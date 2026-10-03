@@ -159,10 +159,10 @@ update automatically.
 
 **Light / dark mode.** A toggle in the navbar switches themes; the choice is
 saved to `localStorage` and an inline no-flash script in `app/layout.tsx` applies
-it before first paint (light unless the visitor prefers or saved dark).
+it before first paint (light unless a saved theme is dark).
 All colors are CSS variables (`styles/globals.css`, `:root`/`.light` vs `.dark`)
 mapped to Tailwind tokens, so one class flip re-themes the whole site.
-Desktop navigation is a persistent left rail; on small screens it collapses into the menu.
+Navigation is a top bar; on small screens the links collapse into a menu.
 
 **English / Tagalog toggle.** The `EN / TL` switch (navbar) flips the language
 instantly, persisted to `localStorage`. All copy lives in one dictionary at

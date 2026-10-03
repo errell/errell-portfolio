@@ -27,10 +27,6 @@ const config: Config = {
         link: withVar("--c-link"),
         muted: withVar("--c-muted"),
         onAccent: withVar("--c-on-accent"),
-        rail: withVar("--c-rail"),
-        railText: withVar("--c-rail-text"),
-        railMuted: withVar("--c-rail-muted"),
-        railBorder: withVar("--c-rail-border"),
         shipped: withVar("--c-shipped"),
         review: withVar("--c-review"),
         archived: withVar("--c-archived"),
@@ -44,7 +40,7 @@ const config: Config = {
         mono: ["var(--font-plex)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        canvas: "1180px",
+        canvas: "1120px",
         prose: "72ch",
       },
       borderRadius: {
@@ -64,7 +60,7 @@ const config: Config = {
         reveal: "450ms",
       },
       boxShadow: {
-        card: "0 1px 2px rgb(15 23 42 / 0.05)",
+        card: "0 16px 40px rgb(17 17 17 / 0.06)",
       },
       keyframes: {
         rise: {

@@ -3,14 +3,11 @@
 import { useTheme } from "@/lib/theme";
 import { useT } from "@/lib/i18n";
 
-export function ThemeToggle({ tone = "canvas" }: { tone?: "canvas" | "rail" }) {
+export function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const { t } = useT();
   const isDark = theme === "dark";
-  const toneClass =
-    tone === "rail"
-      ? "border-railBorder text-railText hover:border-railText/40"
-      : "border-border text-primary hover:border-primary/30";
+  const toneClass = "border-border text-primary hover:border-primary/30";
 
   return (
     <button
@@ -18,7 +15,7 @@ export function ThemeToggle({ tone = "canvas" }: { tone?: "canvas" | "rail" }) {
       onClick={toggle}
       aria-label={t.nav.theme}
       title={t.nav.theme}
-      className={`grid h-9 w-9 place-items-center rounded-full border bg-transparent transition-colors duration-150 ${toneClass}`}
+      className={`grid h-9 w-9 place-items-center rounded-[10px] border bg-transparent transition-colors duration-150 ${toneClass}`}
     >
       {isDark ? (
         // Sun — switch to light

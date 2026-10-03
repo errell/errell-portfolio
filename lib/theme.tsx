@@ -30,9 +30,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Read whatever the inline script already resolved onto <html>.
-    const current = document.documentElement.classList.contains("light")
-      ? "light"
-      : "dark";
+    const current = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
     setThemeState(current);
   }, []);
 

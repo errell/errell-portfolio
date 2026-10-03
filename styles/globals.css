@@ -3,28 +3,24 @@
 @tailwind utilities;
 
 /*
- * ClickUp-like product tokens. :root is light (the visual default).
- * .dark overrides the workspace canvas. The rail stays near-black in both.
+ * Marketing-site tokens. :root is light (the visual default).
+ * .dark is a near-black canvas with the same blue accent and radii.
  */
 :root,
 .light {
-  --c-base: 247 248 250; /* #F7F8FA */
+  --c-base: 255 255 255;
   --c-surface: 255 255 255;
-  --c-elevated: 255 255 255;
-  --c-primary: 32 34 39;
-  --c-accent: 123 104 238; /* #7B68EE */
-  --c-accent-soft: 123 104 238;
-  --c-link: 108 92 231; /* #6C5CE7 */
+  --c-elevated: 245 245 245; /* #F5F5F5 */
+  --c-primary: 17 17 17; /* #111 */
+  --c-accent: 67 83 255; /* #4353FF */
+  --c-accent-soft: 67 83 255;
+  --c-link: 67 83 255;
   --c-on-accent: 255 255 255;
-  --c-muted: 107 114 128;
-  --c-line: 230 232 236; /* #E6E8EC */
+  --c-muted: 82 82 82;
+  --c-line: 229 229 229;
   --c-line-a: 1;
-  --c-border: 230 232 236;
-  --shadow-color: 15 23 42;
-  --c-rail: 26 26 26; /* #1A1A1A */
-  --c-rail-text: 244 244 245;
-  --c-rail-muted: 161 161 170;
-  --c-rail-border: 42 42 42;
+  --c-border: 229 229 229;
+  --shadow-color: 17 17 17;
   --c-shipped: 22 163 74;
   --c-review: 180 130 60;
   --c-archived: 113 113 122;
@@ -32,23 +28,19 @@
 }
 
 .dark {
-  --c-base: 17 18 20; /* #111214 */
-  --c-surface: 28 30 34; /* #1C1E22 */
-  --c-elevated: 28 30 34;
-  --c-primary: 237 238 240;
-  --c-accent: 123 104 238;
-  --c-accent-soft: 123 104 238;
-  --c-link: 167 155 245;
+  --c-base: 10 10 10;
+  --c-surface: 18 18 18;
+  --c-elevated: 24 24 24;
+  --c-primary: 255 255 255;
+  --c-accent: 67 83 255;
+  --c-accent-soft: 67 83 255;
+  --c-link: 67 83 255;
   --c-on-accent: 255 255 255;
-  --c-muted: 161 167 176;
-  --c-line: 46 48 54;
+  --c-muted: 176 176 176;
+  --c-line: 42 42 42;
   --c-line-a: 1;
-  --c-border: 46 48 54;
+  --c-border: 42 42 42;
   --shadow-color: 0 0 0;
-  --c-rail: 36 36 36; /* #242424 */
-  --c-rail-text: 244 244 245;
-  --c-rail-muted: 161 161 170;
-  --c-rail-border: 58 58 58;
   --c-shipped: 74 222 128;
   --c-review: 214 168 92;
   --c-archived: 161 161 170;
@@ -64,14 +56,14 @@
     background-color: rgb(var(--c-base));
     color: rgb(var(--c-primary));
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background-color: rgb(var(--c-accent) / 0.22);
+    background-color: rgb(var(--c-accent) / 0.18);
     color: rgb(var(--c-primary));
   }
 
@@ -81,21 +73,21 @@
   h4 {
     font-family: var(--font-inter), system-ui, sans-serif;
     font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
   }
 
   :focus-visible {
     outline: 2px solid rgb(var(--c-accent));
     outline-offset: 2px;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 }
 
 @layer components {
   .eyebrow {
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -104,22 +96,23 @@
 
   .shell {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1120px;
     margin-inline: auto;
-    padding-inline: clamp(16px, 3vw, 32px);
+    padding-inline: clamp(20px, 4vw, 40px);
   }
 
   .hero-title {
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-weight: 600;
-    font-size: clamp(1.75rem, 2.6vw, 2.25rem);
-    line-height: 1.2;
-    letter-spacing: -0.025em;
+    font-weight: 650;
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
   }
 
   .home-hero .hero-title {
-    font-size: clamp(2rem, 3.2vw, 2.75rem);
-    line-height: 1.15;
+    font-size: clamp(3.25rem, 7.2vw, 5.75rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
   }
 
   .site-shell {
@@ -127,18 +120,12 @@
     min-height: 100vh;
   }
 
-  @media (min-width: 768px) {
-    .site-shell {
-      padding-left: 15rem;
-    }
-  }
-
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     border: 1px solid transparent;
     font-weight: 600;
     line-height: 1;
@@ -154,32 +141,23 @@
   }
 
   .btn-fill:hover {
-    background: #6c5ce7;
+    background: #3142f0;
   }
 
   .btn-line {
     color: rgb(var(--c-primary));
-    background: #f0f1f3;
-    border-color: transparent;
+    background: transparent;
+    border-color: rgb(var(--c-primary));
   }
 
   .btn-line:hover {
-    background: #e6e8ec;
-  }
-
-  .dark .btn-line {
-    background: #2a2d33;
-    color: rgb(var(--c-primary));
-  }
-
-  .dark .btn-line:hover {
-    background: #34383f;
+    background: rgb(var(--c-primary) / 0.05);
   }
 
   .btn-ghost {
     color: rgb(var(--c-primary));
     background: transparent;
-    border-color: rgb(var(--c-line) / var(--c-line-a));
+    border-color: transparent;
   }
 
   .btn-ghost:hover {
@@ -193,25 +171,26 @@
 
   .dt-card,
   .dt-panel {
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid rgb(var(--c-line) / var(--c-line-a));
     background: rgb(var(--c-surface));
-    box-shadow: 0 1px 2px rgb(var(--shadow-color) / 0.05);
+    box-shadow: 0 16px 40px rgb(var(--shadow-color) / 0.06);
     transition:
-      border-color 150ms ease,
-      box-shadow 150ms ease;
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
   }
 
   .dt-card:hover {
-    border-color: rgb(var(--c-accent) / 0.45);
-    box-shadow: 0 4px 14px rgb(var(--shadow-color) / 0.06);
+    border-color: rgb(var(--c-accent) / 0.35);
+    box-shadow: 0 22px 50px rgb(var(--shadow-color) / 0.1);
   }
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -220,7 +199,7 @@
 }
 
 .animate-rise {
-  animation: rise 0.45s ease both;
+  animation: rise 0.55s ease both;
 }
 
 @media print {

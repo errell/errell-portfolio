@@ -23,7 +23,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
   return (
     <Link
       href={`/work/${study.slug}`}
-      className="dt-card group flex h-full flex-col p-6 md:p-7"
+      className="dt-card group flex h-full flex-col p-7 md:p-8"
     >
       <div className="flex items-center justify-between gap-3">
         <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
@@ -34,7 +34,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         </span>
       </div>
 
-      <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] text-primary">
+      <h3 className="mt-4 text-xl font-semibold tracking-[-0.03em] text-primary">
         {localized.title}
       </h3>
       <p

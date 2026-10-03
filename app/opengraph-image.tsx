@@ -15,9 +15,9 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#F7F8FA",
+          backgroundColor: "#FFFFFF",
           padding: "80px",
-          color: "#202227",
+          color: "#111111",
           fontFamily: "sans-serif",
         }}
       >
@@ -29,7 +29,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 84, fontWeight: 650, letterSpacing: -2, lineHeight: 1 }}>
             Errell Niño
           </div>
-          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600, color: "#7B68EE" }}>
+          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600, color: "#4353FF" }}>
             UX Design Manager
           </div>
           <div style={{ fontSize: 28, color: "#6B7280", marginTop: 12 }}>
@@ -37,7 +37,7 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 36, fontSize: 26, color: "#202227" }}>
+        <div style={{ display: "flex", gap: 36, fontSize: 26, color: "#111111" }}>
           <span>₱2.1B AUM</span>
           <span>71% fewer errors</span>
           <span>58% less drop-off</span>

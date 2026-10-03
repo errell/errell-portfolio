@@ -11,7 +11,7 @@ export function ImpactBar() {
 
   return (
     <section aria-label={t.impact.eyebrow} className="border-b border-border">
-      <div className="shell py-10 md:py-12">
+      <div className="shell py-16 md:py-24">
         <Reveal>
           <p className="eyebrow">{t.impact.eyebrow}</p>
         </Reveal>

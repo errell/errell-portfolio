@@ -11,7 +11,7 @@ export function ContactContent() {
   const c = t.contact;
 
   return (
-    <div className="shell py-10 md:py-14">
+    <div className="shell py-20 md:py-28">
       <SectionHeading eyebrow={c.eyebrow} title={c.title} description={c.desc} />
 
       <div className="mt-12 max-w-2xl">

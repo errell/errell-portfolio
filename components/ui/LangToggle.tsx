@@ -8,21 +8,15 @@ const options: { value: Lang; label: string }[] = [
   { value: "tl", label: "TL" },
 ];
 
-export function LangToggle({ tone = "canvas" }: { tone?: "canvas" | "rail" }) {
+export function LangToggle() {
   const { lang, setLang, t } = useT();
-  const idle =
-    tone === "rail"
-      ? "text-railMuted hover:text-railText"
-      : "text-muted hover:text-primary";
+  const idle = "text-muted hover:text-primary";
 
   return (
     <div
       role="group"
       aria-label={t.nav.language}
-      className={cn(
-        "inline-flex items-center rounded-full border p-0.5",
-        tone === "rail" ? "border-railBorder" : "border-border",
-      )}
+      className="inline-flex items-center rounded-full border border-border p-0.5"
     >
       {options.map((o) => {
         const active = lang === o.value;

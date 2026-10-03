@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/Providers";
 import { site } from "@/data/site";
 
-// Runs before paint. No stored theme means light, matching the product default.
+// Runs before paint. No stored theme means light.
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='light';}document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);var l=localStorage.getItem('lang');if(l==='tl'){document.documentElement.lang='fil';}}catch(e){document.documentElement.classList.add('light');}})();`;
 
 const inter = Inter({
