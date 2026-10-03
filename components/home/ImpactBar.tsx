@@ -21,7 +21,7 @@ export function ImpactBar() {
             return (
               <Reveal key={i} delay={i * 0.04}>
                 <dt className="sr-only">{label}</dt>
-                <dd className="font-sans text-5xl font-medium tracking-[-0.04em] text-primary md:text-6xl">
+                <dd className="font-display text-5xl font-semibold tracking-[-0.02em] text-primary md:text-6xl">
                   <AnimatedNumber
                     value={m.countTo ?? 0}
                     prefix={m.prefix}

@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="shell py-24 md:py-28">
           <Reveal>
             <p className="eyebrow">04</p>
-            <h2 className="mt-3 max-w-2xl font-sans text-3xl font-medium tracking-[-0.035em] md:text-5xl">
+            <h2 className="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-[-0.02em] md:text-6xl">
               {t.home.ctaTitle}
             </h2>
             <p className="mt-5 max-w-xl text-base text-muted">

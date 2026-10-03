@@ -30,7 +30,7 @@ export function SectionHeading({
     >
       {eyebrow && (
         <p className="eyebrow flex items-center gap-3">
-          {index && <span className="text-accentSoft">{index}</span>}
+          {index && <span className="text-primary/70">{index}</span>}
           {index && (
             <span aria-hidden className="text-primary/30">
               /
@@ -39,7 +39,7 @@ export function SectionHeading({
           <span>{eyebrow}</span>
         </p>
       )}
-      <h2 className="mt-3 font-sans text-3xl font-medium tracking-[-0.035em] md:text-4xl">
+      <h2 className="mt-3 font-display text-4xl font-semibold tracking-[-0.02em] md:text-5xl">
         {title}
       </h2>
       {description && (

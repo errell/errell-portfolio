@@ -5,15 +5,12 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "secondary" | "ghost";
 type Size = "md" | "lg";
 
-const base =
-  "inline-flex items-center justify-center gap-2 rounded font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-50 disabled:pointer-events-none";
+const base = "btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-accent text-onAccent hover:bg-accent/90",
-  secondary:
-    "border border-border bg-transparent text-primary hover:bg-primary/5",
-  ghost:
-    "border border-border bg-transparent text-primary hover:border-primary/30",
+  primary: "btn-fill",
+  secondary: "btn-line",
+  ghost: "btn-line",
 };
 
 const sizes: Record<Size, string> = {

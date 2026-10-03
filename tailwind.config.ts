@@ -20,7 +20,7 @@ const config: Config = {
         canvas: withVar("--c-base"),
         surface: withVar("--c-surface"),
         elevated: withVar("--c-elevated"),
-        border: withVar("--c-border"),
+        border: "rgb(var(--c-line) / var(--c-line-a))",
         primary: withVar("--c-primary"),
         accent: withVar("--c-accent"),
         accentSoft: withVar("--c-accent-soft"),
@@ -36,11 +36,11 @@ const config: Config = {
         archived: withVar("--c-archived"),
       },
       fontFamily: {
-        sans: ["var(--font-grotesk)", "system-ui", "sans-serif"],
-        display: ["var(--font-grotesk)", "system-ui", "sans-serif"],
-        // Legacy class names now resolve to Space Grotesk.
-        sora: ["var(--font-grotesk)", "system-ui", "sans-serif"],
-        inter: ["var(--font-grotesk)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        // Legacy class names: condensed display, body, tiny meta.
+        sora: ["var(--font-display)", "system-ui", "sans-serif"],
+        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-plex)", "ui-monospace", "monospace"],
       },
       maxWidth: {
@@ -49,25 +49,32 @@ const config: Config = {
       },
       borderRadius: {
         none: "0px",
-        sm: "2px",
-        DEFAULT: "4px",
-        md: "4px",
-        lg: "4px",
-        xl: "4px",
-        "2xl": "6px",
-        "3xl": "6px",
+        sm: "6px",
+        DEFAULT: "1rem",
+        md: "1rem",
+        lg: "1rem",
+        xl: "1rem",
+        "2xl": "1.25rem",
+        "3xl": "1.5rem",
+      },
+      transitionTimingFunction: {
+        expo: "cubic-bezier(.19, 1, .22, 1)",
+      },
+      transitionDuration: {
+        reveal: "650ms",
+        wipe: "500ms",
       },
       boxShadow: {
         card: "none",
       },
       keyframes: {
         rise: {
-          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        rise: "rise 0.2s ease-out both",
+        rise: "rise 0.65s cubic-bezier(.19, 1, .22, 1) both",
       },
     },
   },

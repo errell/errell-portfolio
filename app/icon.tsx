@@ -12,8 +12,9 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          backgroundColor: "#4d5bff",
-          borderRadius: 2,
+          backgroundColor: "#000000",
+          borderRadius: 8,
+          border: "2px solid #f2f2f2",
         }}
       />
     ),

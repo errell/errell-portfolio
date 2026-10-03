@@ -203,7 +203,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting" || !TURNSTILE_SITE_KEY}
-        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-accent px-6 text-sm font-medium text-onAccent transition-colors duration-150 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-60"
+        className="btn btn-fill h-12 w-full px-6 text-sm disabled:opacity-60"
       >
         {status === "submitting" ? c.sending : c.send}
       </button>

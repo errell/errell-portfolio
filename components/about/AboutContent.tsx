@@ -24,7 +24,7 @@ export function AboutContent() {
           {/* Drop a real photo at /public/images/profile.jpg then pass src="/images/profile.jpg" */}
           <Avatar alt={site.name} size={140} className="shrink-0" />
           <div>
-            <h1 className="hero-title font-medium">
+            <h1 className="hero-title">
               {site.name}
             </h1>
             <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">

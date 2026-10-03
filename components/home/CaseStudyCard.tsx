@@ -34,7 +34,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         </span>
       </div>
 
-      <h3 className="mt-4 font-sans text-xl font-medium leading-snug tracking-[-0.03em] text-primary md:text-2xl">
+      <h3 className="mt-4 font-display text-3xl font-semibold leading-[0.95] tracking-[-0.02em] text-primary">
         {localized.title}
       </h3>
       <p
@@ -56,7 +56,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         {(expanded ? study.heroMetrics.slice(0, 4) : study.previewMetrics).map(
           (m) => (
             <div key={m.label}>
-              <dd className="font-sans text-2xl font-medium tracking-[-0.03em] text-primary">
+              <dd className="font-display text-3xl font-semibold tracking-[-0.02em] text-primary">
                 {m.value}
               </dd>
               <dt className="mt-1 inline-flex items-start font-mono text-[11px] leading-snug text-muted">
@@ -70,7 +70,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         )}
       </dl>
 
-      <div className="mt-6 text-sm font-medium text-link">
+      <div className="mt-6 text-sm font-medium text-primary">
         {t.work.readCase}
         <span
           aria-hidden

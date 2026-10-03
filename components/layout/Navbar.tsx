@@ -31,10 +31,10 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="no-print sticky top-0 z-50 border-b border-border bg-canvas/90 backdrop-blur-md">
+    <header className="no-print sticky top-0 z-50 border-b border-border bg-canvas/55 backdrop-blur-md">
       <nav aria-label="Primary" className="shell flex h-16 items-center gap-4">
         <Link href="/" className="flex min-w-0 items-baseline gap-2">
-          <span className="truncate text-[15px] font-medium tracking-tight">
+          <span className="truncate font-display text-xl font-semibold tracking-tight">
             {site.name}
           </span>
           <span className="hidden font-mono text-[11px] uppercase tracking-[0.16em] text-muted sm:inline">
@@ -52,7 +52,9 @@ export function Navbar() {
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "text-sm transition-colors duration-150",
-                  active ? "text-link" : "text-primary/75 hover:text-link",
+                  active
+                    ? "text-primary underline decoration-1 underline-offset-[6px]"
+                    : "text-primary/65 hover:text-primary",
                 )}
               >
                 {labelFor(link.href)}
@@ -69,7 +71,7 @@ export function Navbar() {
           </Button>
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center rounded border border-border text-primary md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-2xl border border-border text-primary md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -110,7 +112,7 @@ export function Navbar() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "px-1 py-2.5 text-sm",
-                    active ? "text-link" : "text-primary/80",
+                    active ? "text-primary" : "text-primary/70",
                   )}
                 >
                   {labelFor(link.href)}

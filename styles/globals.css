@@ -3,50 +3,49 @@
 @tailwind utilities;
 
 /*
- * Theme tokens as space-separated RGB channels so Tailwind's <alpha-value>
- * works. :root matches dark (the visual default). .light overrides.
- * Accent is #4d5bff in both themes.
+ * Fantasy-like tokens. :root matches dark (the visual default). .light overrides.
+ * Hairlines use --c-line / --c-line-a so borders stay ~15% instead of solid.
  */
 :root,
 .dark {
-  --c-base: 12 13 16; /* #0c0d10 */
-  --c-surface: 18 19 24;
-  --c-elevated: 24 26 32;
-  --c-border: 39 40 44; /* ~ white at 0x17 on #0c0d10 */
-  --c-primary: 233 237 244; /* #e9edf4 */
-  --c-accent: 77 91 255; /* #4d5bff */
-  --c-accent-soft: 166 174 255; /* #a6aeff */
-  --c-link: 201 206 255; /* #c9ceff */
-  --c-on-accent: 255 255 255;
-  --c-muted: 154 162 176;
+  --c-base: 0 0 0; /* #000 */
+  --c-surface: 21 21 21; /* #151515 */
+  --c-elevated: 21 21 21;
+  --c-primary: 242 242 242; /* #f2f2f2 */
+  --c-accent: 242 242 242;
+  --c-accent-soft: 242 242 242;
+  --c-link: 242 242 242;
+  --c-on-accent: 0 0 0;
+  --c-muted: 138 138 138; /* #8a8a8a */
+  --c-line: 255 255 255;
+  --c-line-a: 0.15;
+  --c-border: 255 255 255;
   --shadow-color: 0 0 0;
+  --c-rail: 0 0 0;
+  --c-rail-text: 242 242 242;
+  --c-rail-muted: 138 138 138;
+  --c-rail-border: 38 38 38;
+  --c-shipped: 62 122 87;
+  --c-review: 180 130 60;
+  --c-archived: 138 138 138;
   color-scheme: dark;
 }
 
 .light {
-  --c-base: 246 243 238; /* warm off-white */
-  --c-surface: 255 252 247;
+  --c-base: 255 255 255;
+  --c-surface: 255 255 255;
   --c-elevated: 255 255 255;
-  --c-border: 214 208 198; /* hairline on warm paper */
-  --c-primary: 12 13 16; /* near-black */
-  --c-accent: 77 91 255;
-  --c-accent-soft: 61 74 214;
-  --c-link: 61 74 214;
+  --c-primary: 0 0 0;
+  --c-accent: 0 0 0;
+  --c-accent-soft: 0 0 0;
+  --c-link: 0 0 0;
   --c-on-accent: 255 255 255;
-  --c-muted: 82 86 96;
-  --shadow-color: 12 13 16;
+  --c-muted: 90 90 90;
+  --c-line: 0 0 0;
+  --c-line-a: 0.12;
+  --c-border: 0 0 0;
+  --shadow-color: 0 0 0;
   color-scheme: light;
-}
-
-/* Wireframe chrome stays on the dark canvas in both themes. */
-:root {
-  --c-rail: 12 13 16;
-  --c-rail-text: 233 237 244;
-  --c-rail-muted: 154 162 176;
-  --c-rail-border: 39 40 44;
-  --c-shipped: 62 122 87;
-  --c-review: 138 106 47;
-  --c-archived: 107 114 128;
 }
 
 @layer base {
@@ -57,18 +56,15 @@
   body {
     background-color: rgb(var(--c-base));
     color: rgb(var(--c-primary));
-    font-family: var(--font-grotesk), system-ui, sans-serif;
+    font-family: var(--font-inter), system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
   }
 
   ::selection {
-    background-color: rgb(var(--c-accent) / 0.28);
+    background-color: rgb(var(--c-primary) / 0.16);
     color: rgb(var(--c-primary));
   }
 
@@ -76,22 +72,25 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-grotesk), system-ui, sans-serif;
-    letter-spacing: -0.035em;
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--c-accent));
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: 2px solid rgb(var(--c-primary));
+    outline-offset: 3px;
+    border-radius: 1rem;
   }
 }
 
 @layer components {
   .eyebrow {
-    font-family: var(--font-plex), ui-monospace, monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgb(var(--c-muted));
   }
@@ -104,53 +103,313 @@
   }
 
   .hero-title {
-    font-size: clamp(27px, 4.6vw, 50px);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
-    font-weight: 500;
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.75rem, 5.4vw, 5.25rem);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
   }
 
-  /* Dark gradient panels. Light theme uses a warm hairline panel. */
-  .dt-card {
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background-image: linear-gradient(160deg, #ffffff0d, #ffffff03);
-    box-shadow: inset 0 1px 0 #ffffff24;
-    transition: border-color 0.15s ease;
+  .home-hero .hero-title {
+    font-size: clamp(4.25rem, 9vw, 7.75rem);
+    line-height: 0.84;
+  }
+
+  .site-shell {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Frosted fill + outline, with a scaleX wipe on hover. */
+  .btn {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    line-height: 1;
+    isolation: isolate;
+    transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .btn::before,
+  .btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .btn-fill {
+    color: #0a0a0a;
+    background: transparent;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .btn-fill::before {
+    z-index: -2;
+    background: rgb(242 242 242 / 0.78);
+  }
+
+  .btn-fill::after {
+    z-index: -1;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .btn-fill:hover::after {
+    transform: scaleX(1);
+  }
+
+  .btn-line {
+    color: rgb(var(--c-primary));
+    background: transparent;
+    border-color: currentColor;
+  }
+
+  .btn-line::before {
+    z-index: -2;
+    background: transparent;
+  }
+
+  .btn-line::after {
+    z-index: -1;
+    background: rgb(255 255 255 / 0.14);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .btn-line:hover::after {
+    transform: scaleX(1);
+  }
+
+  .light .btn-fill::before {
+    background: rgb(255 255 255 / 0.46);
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
+  }
+
+  .light .btn-fill::after {
+    background: rgb(255 255 255 / 0.92);
+  }
+
+  .light .btn-line::after {
+    background: rgb(0 0 0 / 0.06);
+  }
+
+  .btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .dt-card,
+  .dt-panel {
+    border-radius: 1rem;
+    border: 1px solid rgb(var(--c-line) / var(--c-line-a));
+    background: #151515;
+    transition:
+      border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+      box-shadow 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .dt-card:hover {
-    border-color: rgba(255, 255, 255, 0.26);
+    border-color: rgb(255 255 255 / 0.28);
+    box-shadow:
+      36px -28px 90px rgb(69 24 197 / 0.38),
+      -28px 36px 80px rgb(1 153 241 / 0.2);
   }
 
-  .dt-panel {
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    background-image: linear-gradient(155deg, #ffffff1a, #ffffff05);
-    box-shadow: inset 0 1px 0 #ffffff24;
+  .light .dt-card,
+  .light .dt-panel {
+    background: #ffffff;
+    border-color: rgb(0 0 0 / 0.12);
   }
 
-  html.light .dt-card,
-  html.light .dt-panel {
-    border-color: rgba(12, 13, 16, 0.12);
-    box-shadow: inset 0 1px 0 #ffffff;
+  .light .dt-card:hover {
+    border-color: rgb(0 0 0 / 0.22);
+    box-shadow:
+      28px -20px 70px rgb(69 24 197 / 0.16),
+      -18px 24px 60px rgb(1 153 241 / 0.12);
   }
 
-  html.light .dt-card {
-    background-image: linear-gradient(160deg, rgba(12, 13, 16, 0.045), rgba(12, 13, 16, 0.015));
+  /* Decorative bokeh. Sits under the shell; orbs never catch clicks. */
+  .bokeh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
   }
 
-  html.light .dt-card:hover {
-    border-color: rgba(12, 13, 16, 0.28);
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    opacity: var(--orb-o);
+    filter: blur(var(--blur));
+    animation: bokeh-drift var(--dur) ease-in-out infinite alternate;
+    animation-delay: var(--delay);
+    will-change: transform;
   }
 
-  html.light .dt-panel {
-    background-image: linear-gradient(155deg, rgba(12, 13, 16, 0.07), rgba(12, 13, 16, 0.02));
+  .bokeh-quiet .orb {
+    opacity: calc(var(--orb-o) * 0.5);
+  }
+
+  .light .orb {
+    opacity: calc(var(--orb-o) * 0.38);
+  }
+
+  .light .bokeh-quiet .orb {
+    opacity: calc(var(--orb-o) * 0.22);
+  }
+
+  .orb-1 {
+    --orb-o: 0.5;
+    --blur: 100px;
+    --dur: 24s;
+    --delay: -2s;
+    width: 480px;
+    height: 480px;
+    left: -8%;
+    top: 6%;
+    background: #0203a5;
+    --dx: 48px;
+    --dy: 36px;
+  }
+
+  .orb-2 {
+    --orb-o: 0.42;
+    --blur: 90px;
+    --dur: 26s;
+    --delay: -8s;
+    width: 380px;
+    height: 380px;
+    right: -4%;
+    top: -6%;
+    background: #4518c5;
+    --dx: -40px;
+    --dy: 44px;
+  }
+
+  .orb-3 {
+    --orb-o: 0.34;
+    --blur: 80px;
+    --dur: 18s;
+    --delay: -4s;
+    width: 260px;
+    height: 260px;
+    left: 42%;
+    top: 28%;
+    background: #0199f1;
+    --dx: 28px;
+    --dy: -36px;
+  }
+
+  .orb-4 {
+    --orb-o: 0.28;
+    --blur: 110px;
+    --dur: 28s;
+    --delay: -12s;
+    width: 300px;
+    height: 300px;
+    right: 12%;
+    top: 48%;
+    background: #afff00;
+    --dx: -36px;
+    --dy: 24px;
+  }
+
+  .orb-5 {
+    --orb-o: 0.36;
+    --blur: 100px;
+    --dur: 22s;
+    --delay: -16s;
+    width: 440px;
+    height: 440px;
+    left: -10%;
+    bottom: -8%;
+    background: #e39331;
+    --dx: 52px;
+    --dy: -28px;
+  }
+
+  .orb-6 {
+    --orb-o: 0.4;
+    --blur: 85px;
+    --dur: 20s;
+    --delay: -6s;
+    width: 320px;
+    height: 320px;
+    right: -6%;
+    bottom: 8%;
+    background: #4518c5;
+    --dx: -30px;
+    --dy: -40px;
+  }
+
+  .orb-7 {
+    --orb-o: 0.3;
+    --blur: 70px;
+    --dur: 16s;
+    --delay: -10s;
+    width: 220px;
+    height: 220px;
+    left: 18%;
+    top: 62%;
+    background: #0199f1;
+    --dx: 24px;
+    --dy: 32px;
+  }
+
+  .bokeh-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 75% 60% at 38% 28%, rgb(0 0 0 / 0.35), transparent 62%),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.15), transparent 30%, rgb(0 0 0 / 0.45));
+  }
+
+  .light .bokeh-scrim {
+    background:
+      radial-gradient(ellipse 80% 65% at 50% 22%, rgb(255 255 255 / 0.78), rgb(255 255 255 / 0.4) 68%);
   }
 }
 
+@keyframes bokeh-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--dx), var(--dy), 0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.65s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
 @media print {
-  .no-print {
+  .no-print,
+  .bokeh {
     display: none !important;
   }
   .site-shell {
@@ -174,10 +433,23 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .orb {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .animate-rise {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

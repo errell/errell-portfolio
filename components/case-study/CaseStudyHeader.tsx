@@ -33,7 +33,7 @@ export function CaseStudyHeader({ study }: { study: CaseStudy }) {
               ))}
             </div>
 
-            <h1 className="hero-title mt-5 font-medium">
+            <h1 className="hero-title mt-5">
               {localized.title}
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted md:text-lg">

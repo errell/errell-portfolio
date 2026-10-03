@@ -15,7 +15,7 @@ export function SkillsGrid() {
           delay={i * 0.04}
           className="dt-card p-6"
         >
-          <h3 className="font-sans text-base font-medium tracking-tight text-primary">
+          <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-primary">
             {t.home.skillTitles[i] ?? cat.title}
           </h3>
           <ul className="mt-4 flex flex-wrap gap-2">

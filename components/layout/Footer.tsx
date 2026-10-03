@@ -21,7 +21,7 @@ export function Footer() {
       <div className="shell py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-base font-medium tracking-tight">
+            <p className="font-display text-2xl font-semibold tracking-tight">
               {site.name}
             </p>
             <p className="mt-2 max-w-sm text-sm text-muted">{t.footer.tagline}</p>

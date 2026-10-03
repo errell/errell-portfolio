@@ -20,7 +20,7 @@ export function LangToggle({ tone = "canvas" }: { tone?: "canvas" | "rail" }) {
       role="group"
       aria-label={t.nav.language}
       className={cn(
-        "inline-flex items-center rounded-sm border p-0.5",
+        "inline-flex items-center rounded-2xl border p-0.5",
         tone === "rail" ? "border-railBorder" : "border-border",
       )}
     >
@@ -33,8 +33,8 @@ export function LangToggle({ tone = "canvas" }: { tone?: "canvas" | "rail" }) {
             onClick={() => setLang(o.value)}
             aria-pressed={active}
             className={cn(
-              "rounded-sm px-2 py-1 font-mono text-[11px] font-medium tracking-[0.12em] transition-colors duration-150",
-              active ? "bg-accent text-onAccent" : idle,
+              "rounded-xl px-2 py-1 font-mono text-[11px] font-medium tracking-[0.12em] transition-colors duration-150",
+              active ? "bg-primary text-canvas" : idle,
             )}
           >
             {o.label}
