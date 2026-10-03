@@ -187,7 +187,7 @@ const en = {
     connect: "Connect",
     getInTouch: "Get in touch",
     rights: "All rights reserved.",
-    built: "Designed & built in Manila.",
+    built: "Designed & built with ♥️",
   },
   notFound: {
     title: "This page took an unexpected path",
@@ -387,7 +387,7 @@ const tl: Dict = {
     connect: "Kumonekta",
     getInTouch: "Makipag-ugnayan",
     rights: "Lahat ng karapatan ay nakalaan.",
-    built: "Idinisenyo & ginawa sa Maynila.",
+    built: "Designed & built with ♥️",
   },
   notFound: {
     title: "Hindi inaasahang landas ang narating ng page na ito",
