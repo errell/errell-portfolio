@@ -8,12 +8,12 @@ import { useT } from "@/lib/i18n";
 export function SkillsGrid() {
   const { t } = useT();
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {skillCategories.map((cat, i) => (
         <Reveal
           key={cat.title}
-          delay={i * 0.08}
-          className="rounded-2xl border border-border bg-surface/40 p-6"
+          delay={i * 0.04}
+          className="rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none"
         >
           <h3 className="font-sora text-base font-semibold text-primary">
             {t.home.skillTitles[i] ?? cat.title}

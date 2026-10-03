@@ -15,53 +15,29 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0A0A0F",
-          backgroundImage:
-            "radial-gradient(circle at 25% 20%, rgba(0,212,255,0.14), transparent 55%)",
+          backgroundColor: "#F6F3EE",
           padding: "80px",
-          color: "#F0F0F0",
+          color: "#12151C",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              backgroundColor: "rgba(0,212,255,0.15)",
-              color: "#00D4FF",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 30,
-              fontWeight: 700,
-            }}
-          >
-            EN
-          </div>
-          <div style={{ fontSize: 28, color: "#00D4FF", letterSpacing: 2 }}>
-            UX DESIGN MANAGER
-          </div>
+        <div style={{ display: "flex", fontSize: 22, letterSpacing: 4, color: "#5C6370" }}>
+          MANILA
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              fontSize: 68,
-              fontWeight: 800,
-              lineHeight: 1.05,
-              maxWidth: 960,
-            }}
-          >
-            Designing Banking Experiences Filipinos Actually Trust
+          <div style={{ fontSize: 84, fontWeight: 650, letterSpacing: -2, lineHeight: 1 }}>
+            Errell Niño
           </div>
-          <div style={{ fontSize: 30, color: "#9a9aae", marginTop: 28 }}>
-            Errell Niño · 15 Years · Banking &amp; Fintech · Manila
+          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600 }}>
+            UX Design Manager
+          </div>
+          <div style={{ fontSize: 28, color: "#5C6370", marginTop: 12 }}>
+            Banking and fintech
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 40, fontSize: 26, color: "#FFB347" }}>
+        <div style={{ display: "flex", gap: 36, fontSize: 26, color: "#12151C" }}>
           <span>₱2.1B AUM</span>
           <span>71% fewer errors</span>
           <span>58% less drop-off</span>

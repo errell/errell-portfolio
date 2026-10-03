@@ -16,14 +16,14 @@ export function ContactContent() {
 
       <div className="mt-12 max-w-2xl">
         <Reveal>
-          <div className="rounded-3xl border border-border bg-surface/40 p-6 md:p-8">
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none md:p-8">
             <h2 className="font-sora text-xl font-semibold">{c.sendTitle}</h2>
-            <p className="mt-1 text-sm text-primary/55">{c.sendDesc}</p>
+            <p className="mt-1 text-sm text-muted">{c.sendDesc}</p>
             <div className="mt-6">
               <ContactForm />
             </div>
 
-            <div className="mt-8 border-t border-border pt-6 text-sm text-primary/60">
+            <div className="mt-8 border-t border-border pt-6 text-sm text-muted">
               <p>
                 {c.preferEmail}{" "}
                 <a

@@ -22,11 +22,7 @@ export function Avatar({ src, alt, size = 200, className }: AvatarProps) {
       )}
       style={{ width: size, height: size }}
     >
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent"
-      />
-      {src ? (
+{src ? (
         <Image
           src={src}
           alt={alt}

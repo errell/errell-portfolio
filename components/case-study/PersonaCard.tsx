@@ -11,11 +11,11 @@ function initials(name: string) {
 
 export function PersonaCard({ persona }: { persona: Persona }) {
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-border bg-surface/60 p-6">
+    <article className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none">
       <div className="flex items-center gap-4">
         <div
           aria-hidden
-          className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-accent/15 font-sora text-lg font-semibold text-accent"
+          className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-border font-sora text-lg font-semibold text-primary"
         >
           {initials(persona.name)}
         </div>
@@ -30,7 +30,7 @@ export function PersonaCard({ persona }: { persona: Persona }) {
         </div>
       </div>
 
-      <blockquote className="mt-5 border-l-2 border-accent/50 pl-4 text-sm italic leading-relaxed text-primary/80">
+      <blockquote className="mt-5 border-l-2 border-border pl-4 text-sm italic leading-relaxed text-primary/80">
         &ldquo;{persona.quote}&rdquo;
       </blockquote>
 
@@ -57,7 +57,7 @@ export function PersonaCard({ persona }: { persona: Persona }) {
           <ul className="mt-2 space-y-1.5 text-sm text-primary/70">
             {persona.frustrations.map((f) => (
               <li key={f} className="flex gap-2">
-                <span aria-hidden className="text-amber">
+                <span aria-hidden className="text-review">
                   −
                 </span>
                 <span>{f}</span>

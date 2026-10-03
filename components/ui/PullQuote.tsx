@@ -11,13 +11,13 @@ export function PullQuote({ children, cite, className }: PullQuoteProps) {
   return (
     <blockquote
       className={cn(
-        "relative rounded-2xl border border-border bg-surface/60 p-6 md:p-8",
+        "relative rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none md:p-8",
         className,
       )}
     >
       <span
         aria-hidden
-        className="absolute -top-4 left-6 font-sora text-6xl leading-none text-accent/40"
+        className="absolute -top-4 left-6 font-sora text-6xl leading-none text-muted"
       >
         &ldquo;
       </span>

@@ -11,7 +11,7 @@ import { useT } from "@/lib/i18n";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-3 border-b border-border pb-1 font-sora text-sm font-bold uppercase tracking-wider text-accent print:border-gray-300 print:text-black">
+    <h2 className="mb-3 border-b border-border pb-1 font-sora text-sm font-semibold uppercase tracking-[0.16em] text-primary print:border-gray-300 print:text-black">
       {children}
     </h2>
   );
@@ -43,7 +43,7 @@ export function ResumeContent() {
       </div>
 
       {/* Resume document */}
-      <article className="print-container rounded-2xl border border-border bg-surface/40 p-8 print-surface md:p-12">
+      <article className="print-container rounded-2xl border border-border bg-surface p-8 print-surface md:p-12">
         <header className="border-b border-border pb-6 print:border-gray-300">
           <h1 className="font-sora text-3xl font-bold tracking-tight print:text-black">
             {site.name}

@@ -23,8 +23,15 @@ const config: Config = {
         border: withVar("--c-border"),
         primary: withVar("--c-primary"),
         accent: withVar("--c-accent"),
-        amber: withVar("--c-amber"),
+        muted: withVar("--c-muted"),
         onAccent: withVar("--c-on-accent"),
+        rail: withVar("--c-rail"),
+        railText: withVar("--c-rail-text"),
+        railMuted: withVar("--c-rail-muted"),
+        railBorder: withVar("--c-rail-border"),
+        shipped: withVar("--c-shipped"),
+        review: withVar("--c-review"),
+        archived: withVar("--c-archived"),
       },
       fontFamily: {
         sora: ["var(--font-sora)", "system-ui", "sans-serif"],
@@ -35,19 +42,17 @@ const config: Config = {
         canvas: "1200px",
         prose: "72ch",
       },
+      boxShadow: {
+        card: "0 8px 24px rgba(18, 21, 28, 0.06)",
+      },
       keyframes: {
-        pulseDot: {
-          "0%, 100%": { opacity: "1", transform: "scale(1)" },
-          "50%": { opacity: "0.4", transform: "scale(0.85)" },
-        },
         rise: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        pulseDot: "pulseDot 2s ease-in-out infinite",
-        rise: "rise 0.6s cubic-bezier(0.22,1,0.36,1) both",
+        rise: "rise 0.2s ease-out both",
       },
     },
   },

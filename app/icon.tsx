@@ -12,18 +12,10 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#00D4FF",
-          color: "#0A0A0F",
-          fontSize: 18,
-          fontWeight: 700,
-          borderRadius: 7,
-          fontFamily: "sans-serif",
+          backgroundColor: "#1463FF",
+          borderRadius: 8,
         }}
-      >
-        EN
-      </div>
+      />
     ),
     { ...size },
   );

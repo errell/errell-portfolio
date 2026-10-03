@@ -10,23 +10,18 @@ export function ImpactBar() {
   const { t } = useT();
 
   return (
-    <section
-      aria-label={t.impact.eyebrow}
-      className="border-y border-border bg-surface/40"
-    >
-      <div className="mx-auto max-w-canvas px-5 py-14 md:px-8 md:py-16">
+    <section aria-label={t.impact.eyebrow} className="border-b border-border">
+      <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
         <Reveal>
-          <p className="mb-10 text-center font-mono text-xs uppercase tracking-[0.2em] text-primary/40">
-            {t.impact.eyebrow}
-          </p>
+          <p className="eyebrow">{t.impact.eyebrow}</p>
         </Reveal>
-        <dl className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+        <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
           {impactMetrics.map((m, i) => {
             const label = t.impact.labels[i];
             return (
-              <Reveal key={i} delay={i * 0.08} className="text-center">
+              <Reveal key={i} delay={i * 0.04}>
                 <dt className="sr-only">{label}</dt>
-                <dd className="font-mono text-3xl font-bold text-amber md:text-4xl">
+                <dd className="font-sora text-5xl font-semibold tracking-tight text-primary md:text-6xl">
                   <AnimatedNumber
                     value={m.countTo ?? 0}
                     prefix={m.prefix}
@@ -34,7 +29,7 @@ export function ImpactBar() {
                     decimals={m.decimals ?? 0}
                   />
                 </dd>
-                <p className="mt-2 inline-flex items-start justify-center gap-0 text-xs leading-snug text-primary/60 md:text-sm">
+                <p className="mt-3 inline-flex items-start font-mono text-xs leading-snug text-muted">
                   <span>{label}</span>
                   {m.tooltip ? (
                     <InfoTooltip text={m.tooltip} label={`What is ${label}?`} />

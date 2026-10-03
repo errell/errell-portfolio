@@ -2,10 +2,10 @@ import type { Certification } from "@/data/certifications";
 
 export function CertBadge({ cert }: { cert: Certification }) {
   return (
-    <div className="flex h-full items-start gap-3 rounded-2xl border border-border bg-surface/40 p-5">
+    <div className="flex h-full items-start gap-3 rounded-2xl border border-border bg-surface p-5 shadow-card dark:shadow-none">
       <span
         aria-hidden
-        className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent"
+        className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border text-primary"
       >
         <svg
           viewBox="0 0 24 24"

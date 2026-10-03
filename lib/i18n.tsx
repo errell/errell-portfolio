@@ -27,12 +27,12 @@ const en = {
     language: "Language",
   },
   hero: {
-    badge: "Currently open to new opportunities",
-    titleA: "Designing Banking Experiences",
-    titleAccent: "Filipinos Actually Trust",
-    subtitle:
-      "Senior UX Design Manager · 15 Years · Manila, Philippines · Banking & Fintech",
-    viewWork: "View My Work",
+    badge: "Manila",
+    titleA: "Errell Niño",
+    titleAccent: "UX Design Manager",
+    subtitle: "Banking and fintech",
+    viewWork: "View work",
+    contact: "Contact",
     downloadCV: "Download CV",
   },
   impact: {
@@ -231,12 +231,12 @@ const tl: Dict = {
     language: "Wika",
   },
   hero: {
-    badge: "Bukas sa mga bagong oportunidad",
-    titleA: "Nagdidisenyo ng Banking Experiences na",
-    titleAccent: "Talagang Pinagkakatiwalaan ng mga Pinoy",
-    subtitle:
-      "Senior UX Design Manager · 15 Taon · Maynila, Pilipinas · Banking & Fintech",
-    viewWork: "Tingnan ang Trabaho",
+    badge: "Maynila",
+    titleA: "Errell Niño",
+    titleAccent: "UX Design Manager",
+    subtitle: "Banking at fintech",
+    viewWork: "Tingnan ang trabaho",
+    contact: "Makipag-ugnayan",
     downloadCV: "I-download ang CV",
   },
   impact: {

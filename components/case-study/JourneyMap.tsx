@@ -5,14 +5,14 @@ const emotionStyles: Record<
   JourneyStage["emotion"],
   { dot: string; label: string; face: string }
 > = {
-  positive: { dot: "bg-green-400", label: "text-green-400", face: "◕" },
-  neutral: { dot: "bg-primary/40", label: "text-primary/50", face: "◐" },
-  negative: { dot: "bg-amber", label: "text-amber", face: "◔" },
+  positive: { dot: "bg-shipped", label: "text-shipped", face: "◕" },
+  neutral: { dot: "bg-muted", label: "text-muted", face: "◐" },
+  negative: { dot: "bg-review", label: "text-review", face: "◔" },
 };
 
 export function JourneyMap({ stages }: { stages: JourneyStage[] }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-border bg-surface/40 p-4 md:p-6">
+    <div className="overflow-x-auto rounded-2xl border border-border bg-surface p-4 shadow-card dark:shadow-none md:p-6">
       <div
         className="grid min-w-[640px] gap-3"
         style={{ gridTemplateColumns: `repeat(${stages.length}, minmax(0, 1fr))` }}

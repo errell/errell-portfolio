@@ -8,16 +8,16 @@ interface TagProps {
 }
 
 const variants = {
-  default: "bg-surface text-primary/80 border border-border",
-  accent: "bg-accent/10 text-accent border border-accent/30",
-  outline: "bg-transparent text-primary/70 border border-border",
+  default: "bg-surface text-primary border border-border",
+  accent: "bg-accent/10 text-accent border border-transparent",
+  outline: "bg-transparent text-muted border border-border",
 };
 
 export function Tag({ children, variant = "default", className }: TagProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium tracking-wide",
+        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
         variants[variant],
         className,
       )}

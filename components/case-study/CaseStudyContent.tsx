@@ -83,7 +83,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                     as="li"
                     key={o}
                     delay={i * 0.05}
-                    className="flex gap-3 rounded-xl border border-border bg-surface/40 p-4 text-sm text-primary/75"
+                    className="flex gap-3 rounded-xl border border-border bg-surface p-4 text-sm text-primary/75"
                   >
                     <span aria-hidden className="text-accent">
                       ◆
@@ -149,7 +149,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                     as="li"
                     key={h}
                     delay={i * 0.05}
-                    className="rounded-xl border-l-2 border-accent/60 bg-surface/40 px-5 py-3 text-sm font-medium text-primary/85"
+                    className="rounded-xl border-l-2 border-border bg-surface px-5 py-3 text-sm font-medium text-primary/85"
                   >
                     {h}
                   </Reveal>
@@ -172,7 +172,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                     as="li"
                     key={a}
                     delay={i * 0.05}
-                    className="flex gap-3 rounded-xl border border-border bg-surface/40 p-4 text-sm text-primary/75"
+                    className="flex gap-3 rounded-xl border border-border bg-surface p-4 text-sm text-primary/75"
                   >
                     <span aria-hidden className="text-accent">
                       ▹
@@ -248,7 +248,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
           {prev ? (
             <Link
               href={`/work/${prev.slug}`}
-              className="group rounded-2xl border border-border bg-surface/40 p-6 transition-colors hover:border-accent/40"
+              className="group rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/20"
             >
               <span className="font-mono text-xs text-primary/40">
                 ← {cs.prev} · {prev.number}
@@ -263,7 +263,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
           {next ? (
             <Link
               href={`/work/${next.slug}`}
-              className="group rounded-2xl border border-border bg-surface/40 p-6 text-right transition-colors hover:border-accent/40"
+              className="group rounded-2xl border border-border bg-surface p-6 text-right transition-colors hover:border-primary/20"
             >
               <span className="font-mono text-xs text-primary/40">
                 {cs.next} · {next.number} →
@@ -275,7 +275,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
           ) : (
             <Link
               href="/work"
-              className="group rounded-2xl border border-border bg-surface/40 p-6 text-right transition-colors hover:border-accent/40"
+              className="group rounded-2xl border border-border bg-surface p-6 text-right transition-colors hover:border-primary/20"
             >
               <span className="font-mono text-xs text-primary/40">
                 {cs.allWork} →

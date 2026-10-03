@@ -63,8 +63,8 @@ export function Reveal({
       // @ts-expect-error - polymorphic ref across allowed tags
       ref={ref}
       className={cn(
-        enhanced && "transition-all duration-700 ease-out will-change-transform",
-        enhanced && !shown && "translate-y-6 opacity-0",
+        enhanced && "transition-all duration-200 ease-out will-change-transform",
+        enhanced && !shown && "translate-y-2 opacity-0",
         className,
       )}
       style={enhanced ? { transitionDelay: `${delay}s` } : undefined}

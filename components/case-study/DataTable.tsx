@@ -10,7 +10,7 @@ export function DataTable({ headers, rows, caption }: DataTableProps) {
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
-          <tr className="border-b border-border bg-surface/60">
+          <tr className="border-b border-border bg-surface">
             {headers.map((h) => (
               <th
                 key={h}

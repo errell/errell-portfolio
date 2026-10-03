@@ -27,14 +27,14 @@ export function AboutContent() {
             <h1 className="font-sora text-3xl font-bold tracking-tight md:text-5xl">
               {site.name}
             </h1>
-            <p className="mt-2 font-mono text-sm text-accent">
+            <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">
               {t.about.role} · {site.location}
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="img-overlay relative aspect-[16/10] w-full overflow-hidden rounded-3xl border border-border shadow-xl">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-border shadow-card dark:shadow-none">
             <Image
               src={media.about.src}
               alt={media.about.alt}
@@ -48,7 +48,7 @@ export function AboutContent() {
       </section>
 
       <Reveal delay={0.15}>
-        <p className="mt-8 max-w-2xl text-base leading-relaxed text-primary/65">
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted">
           {t.about.bio}
         </p>
       </Reveal>
@@ -92,12 +92,12 @@ export function AboutContent() {
       </section>
 
       {/* CTA */}
-      <section className="mt-24 rounded-3xl border border-border bg-surface/40 p-10 text-center md:p-14">
+      <section className="mt-24 rounded-2xl border border-border bg-surface p-10 shadow-card dark:shadow-none md:p-14">
         <Reveal>
           <h2 className="font-sora text-2xl font-bold md:text-3xl">
             {t.about.ctaTitle}
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-primary/60">
+          <p className="mx-auto mt-3 max-w-lg text-muted">
             {t.about.ctaDesc}
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

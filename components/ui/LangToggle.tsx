@@ -8,14 +8,21 @@ const options: { value: Lang; label: string }[] = [
   { value: "tl", label: "TL" },
 ];
 
-export function LangToggle() {
+export function LangToggle({ tone = "canvas" }: { tone?: "canvas" | "rail" }) {
   const { lang, setLang, t } = useT();
+  const idle =
+    tone === "rail"
+      ? "text-railMuted hover:text-railText"
+      : "text-muted hover:text-primary";
 
   return (
     <div
       role="group"
       aria-label={t.nav.language}
-      className="inline-flex items-center rounded-lg border border-border bg-surface/60 p-0.5"
+      className={cn(
+        "inline-flex items-center rounded-full border p-0.5",
+        tone === "rail" ? "border-railBorder" : "border-border",
+      )}
     >
       {options.map((o) => {
         const active = lang === o.value;
@@ -26,10 +33,8 @@ export function LangToggle() {
             onClick={() => setLang(o.value)}
             aria-pressed={active}
             className={cn(
-              "rounded-md px-2 py-1 text-xs font-semibold transition-colors",
-              active
-                ? "bg-accent text-onAccent"
-                : "text-primary/60 hover:text-primary",
+              "rounded-full px-2.5 py-1 font-mono text-[11px] font-medium tracking-wide transition-colors duration-150",
+              active ? "bg-accent text-onAccent" : idle,
             )}
           >
             {o.label}

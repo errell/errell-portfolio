@@ -7,7 +7,7 @@ import { Providers } from "@/components/Providers";
 import { site } from "@/data/site";
 
 // Runs before paint to set the theme class and avoid a flash of the wrong theme.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);var l=localStorage.getItem('lang');if(l==='tl'){document.documentElement.lang='fil';}}catch(e){document.documentElement.classList.add('dark');}})();`;
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);var l=localStorage.getItem('lang');if(l==='tl'){document.documentElement.lang='fil';}}catch(e){document.documentElement.classList.add('light');}})();`;
 
 const sora = Sora({
   subsets: ["latin"],
@@ -84,15 +84,17 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-canvas font-inter text-primary antialiased">
         <Providers>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-onAccent"
-          >
-            Skip to main content
-          </a>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
+          <div className="site-shell md:pl-60 print:pl-0">
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-onAccent md:focus:left-[16.5rem]"
+            >
+              Skip to main content
+            </a>
+            <Navbar />
+            <main id="main">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

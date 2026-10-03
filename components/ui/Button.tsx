@@ -6,19 +6,18 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-50 disabled:pointer-events-none";
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-50 disabled:pointer-events-none";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-accent text-onAccent hover:bg-accent/90 hover:shadow-[0_0_24px_-4px_rgba(0,212,255,0.5)]",
+  primary: "bg-accent text-onAccent hover:bg-accent/90",
   secondary:
-    "border border-border bg-surface text-primary hover:border-accent/60 hover:text-accent",
-  ghost: "text-primary/80 hover:text-accent hover:bg-surface/60",
+    "border border-border bg-transparent text-primary hover:bg-primary/5",
+  ghost: "text-primary/80 hover:text-primary hover:bg-primary/5",
 };
 
 const sizes: Record<Size, string> = {
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-7 py-3.5 text-base",
+  md: "h-11 px-5 text-sm",
+  lg: "h-12 px-7 text-base",
 };
 
 interface CommonProps {

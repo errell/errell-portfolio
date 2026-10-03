@@ -13,21 +13,21 @@ function StateColumn({
       className={
         "flex-1 rounded-2xl border p-6 " +
         (isTarget
-          ? "border-accent/40 bg-accent/[0.04]"
-          : "border-border bg-surface/40")
+          ? "border-accent/40 bg-surface"
+          : "border-border bg-surface")
       }
     >
       <div className="flex items-center gap-2">
         <span
           className={
-            "h-2 w-2 rounded-full " + (isTarget ? "bg-accent" : "bg-amber")
+            "h-2 w-2 rounded-full " + (isTarget ? "bg-accent" : "bg-muted")
           }
           aria-hidden
         />
         <h3
           className={
             "font-mono text-xs uppercase tracking-wider " +
-            (isTarget ? "text-accent" : "text-amber")
+            (isTarget ? "text-accent" : "text-muted")
           }
         >
           {state.title}
