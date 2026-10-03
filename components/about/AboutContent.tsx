@@ -22,7 +22,7 @@ export function AboutContent() {
       <section className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal className="flex items-center gap-6">
           {/* Drop a real photo at /public/images/profile.jpg then pass src="/images/profile.jpg" */}
-          <Avatar alt={site.name} size={140} className="shrink-0" />
+          <Avatar src="/images/profile.jpg" alt={site.name} size={140} className="shrink-0" />
           <div>
             <h1 className="font-sora text-3xl font-bold tracking-tight md:text-5xl">
               {site.name}
