@@ -51,6 +51,75 @@ function checkRateLimit(ip: string): boolean {
 }
 
 // Periodically prune stale entries to avoid unbounded growth in long-lived processes
+
+const TURNSTILE_VERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
+type TurnstileResult =
+  | { ok: true }
+  | { ok: false; status: number; error: string };
+
+async function verifyTurnstile(
+  token: string,
+  ip: string,
+): Promise<TurnstileResult> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    // Never send mail without a server-side check. Production must refuse;
+    // other environments refuse too so verification is not skipped.
+    console.error("TURNSTILE_SECRET_KEY is not configured.");
+    return {
+      ok: false,
+      status: 500,
+      error: "Captcha is not configured. Please email directly.",
+    };
+  }
+
+  if (!token) {
+    return {
+      ok: false,
+      status: 400,
+      error: "Captcha verification is required.",
+    };
+  }
+
+  try {
+    const params = new URLSearchParams();
+    params.set("secret", secret);
+    params.set("response", token);
+    if (ip && ip !== "unknown") params.set("remoteip", ip);
+
+    const res = await fetch(TURNSTILE_VERIFY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params,
+    });
+    const data = (await res.json()) as { success?: boolean };
+    if (!res.ok) {
+      return {
+        ok: false,
+        status: 502,
+        error: "Captcha verification failed. Please try again.",
+      };
+    }
+    if (!data.success) {
+      return {
+        ok: false,
+        status: 400,
+        error: "Captcha verification failed. Please try again.",
+      };
+    }
+    return { ok: true };
+  } catch (err) {
+    console.error("Turnstile verify error:", err);
+    return {
+      ok: false,
+      status: 502,
+      error: "Captcha verification failed. Please try again.",
+    };
+  }
+}
+
 function pruneRateLimitStore() {
   const now = Date.now();
   for (const [key, entry] of rateLimitStore) {
@@ -140,6 +209,12 @@ export async function POST(request: Request) {
       { error: "Message must be at least 20 characters." },
       { status: 400 },
     );
+  }
+
+  const turnstileToken = String(body.turnstileToken || "").trim();
+  const captcha = await verifyTurnstile(turnstileToken, ip);
+  if (!captcha.ok) {
+    return NextResponse.json({ error: captcha.error }, { status: captcha.status });
   }
 
   const resend = getResend();

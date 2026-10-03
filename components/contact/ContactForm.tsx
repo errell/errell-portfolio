@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { TurnstileWidget } from "@/components/contact/TurnstileWidget";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -10,16 +11,32 @@ const inputClass =
   "w-full rounded-xl border border-border bg-canvas/60 px-4 py-3 text-sm text-primary placeholder:text-primary/35 focus:border-accent/60 focus:outline-none focus:ring-1 focus:ring-accent/40";
 const labelClass = "block text-sm font-medium text-primary/80";
 
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
+
 export function ContactForm() {
   const { t } = useT();
   const c = t.contact;
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [resetSignal, setResetSignal] = useState(0);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("submitting");
     setError("");
+
+    if (!TURNSTILE_SITE_KEY) {
+      setStatus("error");
+      setError(c.captchaNotConfigured);
+      return;
+    }
+    if (!turnstileToken) {
+      setStatus("error");
+      setError(c.captchaRequired);
+      return;
+    }
+
+    setStatus("submitting");
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
@@ -28,7 +45,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, turnstileToken }),
       });
 
       if (!res.ok) {
@@ -37,10 +54,13 @@ export function ContactForm() {
       }
 
       setStatus("success");
+      setTurnstileToken("");
       form.reset();
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : c.errorGeneric);
+      setTurnstileToken("");
+      setResetSignal((n) => n + 1);
     }
   }
 
@@ -151,6 +171,26 @@ export function ContactForm() {
         />
       </div>
 
+      {TURNSTILE_SITE_KEY ? (
+        <div>
+          <p className={labelClass}>{c.captchaLabel}</p>
+          <div className="mt-1.5">
+            <TurnstileWidget
+              siteKey={TURNSTILE_SITE_KEY}
+              onToken={setTurnstileToken}
+              resetSignal={resetSignal}
+            />
+          </div>
+        </div>
+      ) : (
+        <p
+          role="alert"
+          className="rounded-xl border border-amber/40 bg-amber/[0.06] px-4 py-3 text-sm text-amber"
+        >
+          {c.captchaNotConfigured}
+        </p>
+      )}
+
       {status === "error" && (
         <p
           role="alert"
@@ -162,7 +202,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || !TURNSTILE_SITE_KEY}
         className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-onAccent transition-all hover:bg-accent/90 hover:shadow-[0_0_24px_-4px_rgba(0,212,255,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-60"
       >
         {status === "submitting" ? c.sending : c.send}

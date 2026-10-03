@@ -80,6 +80,26 @@ CONTACT_FROM_EMAIL=Portfolio Contact <onboarding@resend.dev>
 
 The API route lives at [`app/api/contact/route.ts`](app/api/contact/route.ts).
 
+### Cloudflare Turnstile (captcha)
+
+The contact form will not send until both Turnstile keys are set. Create a widget at
+[Cloudflare Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile), then add:
+
+```bash
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_site_key
+TURNSTILE_SECRET_KEY=your_secret_key
+```
+
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is public and renders the widget. If it is missing,
+  the form shows that captcha is not configured and the send button stays disabled.
+- `TURNSTILE_SECRET_KEY` stays on the server. The API verifies the token with
+  `https://challenges.cloudflare.com/turnstile/v0/siteverify` before Resend sends.
+  A missing or invalid token is rejected with 400. In production, mail is not sent
+  if the secret is missing.
+- For local testing only, Cloudflare publishes always-pass dummy keys (do not use
+  these in production): site `1x00000000000000000000AA`, secret
+  `1x0000000000000000000000000000000AA`.
+
 ---
 
 ## 5. Deploy to Vercel
@@ -88,7 +108,9 @@ The API route lives at [`app/api/contact/route.ts`](app/api/contact/route.ts).
 
 1. Push this repo to GitHub.
 2. Import it at [vercel.com/new](https://vercel.com/new).
-3. Add the environment variables from `.env.local` in the Vercel project settings.
+3. Add the environment variables from `.env.local` in the Vercel project settings:
+   `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`,
+   `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, and `TURNSTILE_SECRET_KEY`.
 4. Deploy.
 
 **CLI:**

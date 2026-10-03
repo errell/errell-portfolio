@@ -154,6 +154,10 @@ const en = {
     sendAnother: "Send another message",
     preferEmail: "Prefer email?",
     errorGeneric: "Something went wrong. Please try again.",
+    captchaLabel: "Verify you're human",
+    captchaRequired: "Please complete the captcha before sending.",
+    captchaNotConfigured:
+      "Captcha isn't configured, so this form can't send yet. Email uxtap@outlook.com instead.",
   },
   resume: {
     title: "Resume",
@@ -354,6 +358,10 @@ const tl: Dict = {
     sendAnother: "Magpadala ng isa pang mensahe",
     preferEmail: "Mas gusto mo ba ng email?",
     errorGeneric: "May nangyaring mali. Pakisubukan muli.",
+    captchaLabel: "Patunayan na tao ka",
+    captchaRequired: "Pakikumpleto muna ang captcha bago magpadala.",
+    captchaNotConfigured:
+      "Hindi naka-set up ang captcha, kaya hindi pa makakapagpadala ang form na ito. Mag-email na lang sa uxtap@outlook.com.",
   },
   resume: {
     title: "Resume",
