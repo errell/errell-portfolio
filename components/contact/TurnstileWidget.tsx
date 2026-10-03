@@ -6,6 +6,7 @@ import { useTheme } from "@/lib/theme";
 type TurnstileRenderOptions = {
   sitekey: string;
   theme?: "light" | "dark" | "auto";
+  appearance?: "always" | "execute" | "interaction-only";
   callback?: (token: string) => void;
   "expired-callback"?: () => void;
   "error-callback"?: () => void;
@@ -49,6 +50,8 @@ export function TurnstileWidget({ siteKey, onToken, resetSignal }: Props) {
       widgetIdRef.current = window.turnstile.render(containerRef.current, {
         sitekey: siteKey,
         theme,
+        // Keep the widget visible so visitors must complete the checkbox.
+        appearance: "always",
         callback: (token) => onTokenRef.current(token),
         "expired-callback": () => onTokenRef.current(""),
         "error-callback": () => onTokenRef.current(""),

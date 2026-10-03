@@ -202,7 +202,9 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={status === "submitting" || !TURNSTILE_SITE_KEY}
+        disabled={
+          status === "submitting" || !TURNSTILE_SITE_KEY || !turnstileToken
+        }
         className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-onAccent transition-all hover:bg-accent/90 hover:shadow-[0_0_24px_-4px_rgba(0,212,255,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-60"
       >
         {status === "submitting" ? c.sending : c.send}
