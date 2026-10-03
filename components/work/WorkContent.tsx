@@ -10,7 +10,7 @@ import { useT } from "@/lib/i18n";
 export function WorkContent() {
   const { t } = useT();
   return (
-    <div className="shell py-16 md:py-24">
+    <div className="shell py-10 md:py-14">
       <SectionHeading
         index="01"
         eyebrow={t.work.eyebrow}

@@ -11,7 +11,7 @@ export function ImpactBar() {
 
   return (
     <section aria-label={t.impact.eyebrow} className="border-b border-border">
-      <div className="shell py-16 md:py-24">
+      <div className="shell py-10 md:py-12">
         <Reveal>
           <p className="eyebrow">{t.impact.eyebrow}</p>
         </Reveal>
@@ -21,7 +21,7 @@ export function ImpactBar() {
             return (
               <Reveal key={i} delay={i * 0.04}>
                 <dt className="sr-only">{label}</dt>
-                <dd className="font-display text-5xl font-semibold tracking-[-0.02em] text-primary md:text-6xl">
+                <dd className="text-3xl font-semibold tracking-[-0.02em] text-primary md:text-4xl">
                   <AnimatedNumber
                     value={m.countTo ?? 0}
                     prefix={m.prefix}

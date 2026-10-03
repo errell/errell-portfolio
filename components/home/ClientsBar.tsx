@@ -8,7 +8,7 @@ export function ClientsBar() {
   const { t } = useT();
   return (
     <section className="border-y border-border">
-      <div className="shell py-16 md:py-20">
+      <div className="shell py-10 md:py-12">
         <Reveal>
           <p className="eyebrow flex items-center gap-3">
             <span className="text-accentSoft">03</span>

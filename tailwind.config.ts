@@ -37,44 +37,43 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
-        // Legacy class names: condensed display, body, tiny meta.
-        sora: ["var(--font-display)", "system-ui", "sans-serif"],
+        display: ["var(--font-inter)", "system-ui", "sans-serif"],
+        // Legacy class names now resolve to Inter.
+        sora: ["var(--font-inter)", "system-ui", "sans-serif"],
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-plex)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        canvas: "1340px",
+        canvas: "1180px",
         prose: "72ch",
       },
       borderRadius: {
         none: "0px",
         sm: "6px",
-        DEFAULT: "1rem",
-        md: "1rem",
-        lg: "1rem",
-        xl: "1rem",
-        "2xl": "1.25rem",
-        "3xl": "1.5rem",
+        DEFAULT: "8px",
+        md: "10px",
+        lg: "12px",
+        xl: "12px",
+        "2xl": "16px",
+        "3xl": "20px",
       },
       transitionTimingFunction: {
         expo: "cubic-bezier(.19, 1, .22, 1)",
       },
       transitionDuration: {
-        reveal: "650ms",
-        wipe: "500ms",
+        reveal: "450ms",
       },
       boxShadow: {
-        card: "none",
+        card: "0 1px 2px rgb(15 23 42 / 0.05)",
       },
       keyframes: {
         rise: {
-          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        rise: "rise 0.65s cubic-bezier(.19, 1, .22, 1) both",
+        rise: "rise 0.45s ease both",
       },
     },
   },

@@ -56,7 +56,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
     <article>
       <CaseStudyHeader study={study} />
 
-      <div className="shell space-y-20 py-20 md:py-24">
+      <div className="shell space-y-14 py-10 md:py-14">
         {/* 01 — Overview */}
         <section aria-labelledby="overview-heading">
           <SectionDivider number="01" title={cs.sections.overview} />

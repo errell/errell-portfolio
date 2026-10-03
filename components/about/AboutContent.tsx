@@ -17,7 +17,7 @@ import { useT } from "@/lib/i18n";
 export function AboutContent() {
   const { t } = useT();
   return (
-    <div className="shell py-16 md:py-24">
+    <div className="shell py-10 md:py-14">
       {/* Hero */}
       <section className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal className="flex items-center gap-6">

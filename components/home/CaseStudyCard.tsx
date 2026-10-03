@@ -29,12 +29,12 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
           {study.number}
         </span>
-        <span className="rounded-sm border border-border px-2 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+        <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent">
           {study.industry}
         </span>
       </div>
 
-      <h3 className="mt-4 font-display text-3xl font-semibold leading-[0.95] tracking-[-0.02em] text-primary">
+      <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] text-primary">
         {localized.title}
       </h3>
       <p
@@ -56,7 +56,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         {(expanded ? study.heroMetrics.slice(0, 4) : study.previewMetrics).map(
           (m) => (
             <div key={m.label}>
-              <dd className="font-display text-3xl font-semibold tracking-[-0.02em] text-primary">
+              <dd className="text-2xl font-semibold tracking-[-0.02em] text-primary">
                 {m.value}
               </dd>
               <dt className="mt-1 inline-flex items-start font-mono text-[11px] leading-snug text-muted">
@@ -70,7 +70,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         )}
       </dl>
 
-      <div className="mt-6 text-sm font-medium text-primary">
+      <div className="mt-6 text-sm font-medium text-accent">
         {t.work.readCase}
         <span
           aria-hidden

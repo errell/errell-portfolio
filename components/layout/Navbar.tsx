@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { navLinks, site } from "@/data/site";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LangToggle } from "@/components/ui/LangToggle";
-import { Button } from "@/components/ui/Button";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -30,101 +29,91 @@ export function Navbar() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  return (
-    <header className="no-print sticky top-0 z-50 border-b border-border bg-canvas/55 backdrop-blur-md">
-      <nav aria-label="Primary" className="shell flex h-16 items-center gap-4">
-        <Link href="/" className="flex min-w-0 items-baseline gap-2">
-          <span className="truncate font-display text-xl font-semibold tracking-tight">
-            {site.name}
-          </span>
-          <span className="hidden font-mono text-[11px] uppercase tracking-[0.16em] text-muted sm:inline">
-            UX
-          </span>
-        </Link>
+  const linkClass = (active: boolean) =>
+    cn(
+      "flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+      active
+        ? "bg-[rgb(123_104_238/0.18)] text-white shadow-[inset_3px_0_0_#7B68EE]"
+        : "text-railMuted hover:bg-white/5 hover:text-railText",
+    );
 
-        <div className="ml-auto hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => {
-            const active = isActive(link.href);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
-                  "text-sm transition-colors duration-150",
-                  active
-                    ? "text-primary underline decoration-1 underline-offset-[6px]"
-                    : "text-primary/65 hover:text-primary",
-                )}
-              >
-                {labelFor(link.href)}
-              </Link>
-            );
-          })}
-        </div>
-
-        <div className="ml-auto flex items-center gap-2 md:ml-2">
-          <LangToggle />
-          <ThemeToggle />
-          <Button href="/contact" className="hidden h-9 px-3.5 text-sm sm:inline-flex">
-            {t.nav.contact}
-          </Button>
-          <button
-            type="button"
-            className="grid h-9 w-9 place-items-center rounded-2xl border border-border text-primary md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+  const navItems = (
+    <nav aria-label="Primary" className="flex flex-col gap-0.5">
+      {navLinks.map((link) => {
+        const active = isActive(link.href);
+        return (
+          <Link
+            key={link.href}
+            href={link.href}
+            aria-current={active ? "page" : undefined}
+            className={linkClass(active)}
           >
-            <span className="relative block h-3.5 w-4">
-              <span
-                className={cn(
-                  "absolute left-0 top-0 h-px w-4 bg-current transition-transform duration-150",
-                  open && "translate-y-[6px] rotate-45",
-                )}
-              />
-              <span
-                className={cn(
-                  "absolute left-0 top-[6px] h-px w-4 bg-current transition-opacity duration-150",
-                  open && "opacity-0",
-                )}
-              />
-              <span
-                className={cn(
-                  "absolute bottom-0 left-0 h-px w-4 bg-current transition-transform duration-150",
-                  open && "-translate-y-[6px] -rotate-45",
-                )}
-              />
-            </span>
-          </button>
-        </div>
-      </nav>
+            {labelFor(link.href)}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+
+  return (
+    <>
+      <header className="no-print sticky top-0 z-50 flex h-14 items-center gap-3 border-b border-railBorder bg-rail px-4 text-railText md:hidden">
+        <Link href="/" className="min-w-0 truncate text-sm font-semibold tracking-tight">
+          {site.name}
+        </Link>
+        <button
+          type="button"
+          className="ml-auto grid h-9 w-9 place-items-center rounded-full text-railText"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="relative block h-3.5 w-4">
+            <span
+              className={cn(
+                "absolute left-0 top-0 h-px w-4 bg-current transition-transform duration-150",
+                open && "translate-y-[6px] rotate-45",
+              )}
+            />
+            <span
+              className={cn(
+                "absolute left-0 top-[6px] h-px w-4 bg-current transition-opacity duration-150",
+                open && "opacity-0",
+              )}
+            />
+            <span
+              className={cn(
+                "absolute bottom-0 left-0 h-px w-4 bg-current transition-transform duration-150",
+                open && "-translate-y-[6px] -rotate-45",
+              )}
+            />
+          </span>
+        </button>
+      </header>
 
       {open && (
-        <div className="border-t border-border bg-canvas md:hidden">
-          <div className="shell flex flex-col gap-1 py-3">
-            {navLinks.map((link) => {
-              const active = isActive(link.href);
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "px-1 py-2.5 text-sm",
-                    active ? "text-primary" : "text-primary/70",
-                  )}
-                >
-                  {labelFor(link.href)}
-                </Link>
-              );
-            })}
-            <Button href="/contact" className="mt-2 sm:hidden">
-              {t.nav.contact}
-            </Button>
+        <div className="no-print fixed inset-x-0 top-14 z-50 border-b border-railBorder bg-rail px-3 py-3 text-railText md:hidden">
+          {navItems}
+          <div className="mt-3 flex items-center gap-2 border-t border-railBorder pt-3">
+            <LangToggle tone="rail" />
+            <ThemeToggle tone="rail" />
           </div>
         </div>
       )}
-    </header>
+
+      <aside className="no-print fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-railBorder bg-rail text-railText md:flex">
+        <div className="px-5 pb-4 pt-5">
+          <Link href="/" className="block text-[15px] font-semibold tracking-tight text-railText">
+            {site.name}
+          </Link>
+          <p className="mt-0.5 text-xs text-railMuted">UX</p>
+        </div>
+        <div className="flex-1 px-2">{navItems}</div>
+        <div className="flex items-center gap-2 border-t border-railBorder px-3 py-3">
+          <LangToggle tone="rail" />
+          <ThemeToggle tone="rail" />
+        </div>
+      </aside>
+    </>
   );
 }

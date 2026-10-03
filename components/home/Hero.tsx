@@ -19,7 +19,7 @@ export function Hero() {
 
   return (
     <section className="home-hero border-b border-border">
-      <div className="shell grid items-end gap-12 py-20 md:py-28 lg:grid-cols-[minmax(0,1.4fr)_minmax(260px,0.72fr)] lg:gap-16">
+      <div className="shell grid items-start gap-8 py-10 md:py-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(260px,0.72fr)] lg:gap-10">
         <div>
           <p className="eyebrow animate-rise">{t.hero.badge}</p>
           <h1 className="hero-title mt-5 max-w-3xl animate-rise [animation-delay:80ms]">

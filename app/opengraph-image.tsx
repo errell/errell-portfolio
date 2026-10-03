@@ -15,13 +15,13 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#000000",
+          backgroundColor: "#F7F8FA",
           padding: "80px",
-          color: "#f2f2f2",
+          color: "#202227",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 22, letterSpacing: 4, color: "#8a8a8a" }}>
+        <div style={{ display: "flex", fontSize: 22, letterSpacing: 4, color: "#6B7280" }}>
           MANILA
         </div>
 
@@ -29,15 +29,15 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 84, fontWeight: 650, letterSpacing: -2, lineHeight: 1 }}>
             Errell Niño
           </div>
-          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600 }}>
+          <div style={{ fontSize: 36, marginTop: 18, fontWeight: 600, color: "#7B68EE" }}>
             UX Design Manager
           </div>
-          <div style={{ fontSize: 28, color: "#8a8a8a", marginTop: 12 }}>
+          <div style={{ fontSize: 28, color: "#6B7280", marginTop: 12 }}>
             Banking and fintech
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 36, fontSize: 26, color: "#f2f2f2" }}>
+        <div style={{ display: "flex", gap: 36, fontSize: 26, color: "#202227" }}>
           <span>₱2.1B AUM</span>
           <span>71% fewer errors</span>
           <span>58% less drop-off</span>

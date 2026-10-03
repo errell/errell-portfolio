@@ -12,11 +12,17 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          backgroundColor: "#000000",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#7B68EE",
           borderRadius: 8,
-          border: "2px solid #f2f2f2",
+          color: "#ffffff",
+          fontSize: 18,
+          fontWeight: 700,
         }}
-      />
+      >
+        E
+      </div>
     ),
     { ...size },
   );

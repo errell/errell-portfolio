@@ -19,7 +19,7 @@ export function CaseStudyHeader({ study }: { study: CaseStudy }) {
 
   return (
     <header className="border-b border-border">
-      <div className="shell py-16 md:py-24">
+      <div className="shell py-10 md:py-14">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <div className="flex flex-wrap items-center gap-3">
