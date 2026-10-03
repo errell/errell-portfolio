@@ -9,7 +9,7 @@ export function ToolsGrid() {
         <Reveal
           key={cat.title}
           delay={i * 0.06}
-          className="rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none"
+          className="dt-card p-6"
         >
           <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
             {cat.title}

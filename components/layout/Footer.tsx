@@ -18,17 +18,17 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto max-w-canvas px-5 py-12 md:px-8">
+      <div className="shell py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="font-sora text-base font-semibold tracking-tight">
+            <p className="text-base font-medium tracking-tight">
               {site.name}
             </p>
             <p className="mt-2 max-w-sm text-sm text-muted">{t.footer.tagline}</p>
             <p className="mt-2 text-sm text-muted">{site.location}</p>
             <a
               href={`mailto:${site.email}`}
-              className="mt-2 inline-block font-mono text-xs text-primary hover:text-accent"
+              className="mt-2 inline-block font-mono text-xs text-link hover:underline"
             >
               {site.email}
             </a>
@@ -39,7 +39,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted transition-colors duration-150 hover:text-accent"
+                className="text-muted transition-colors duration-150 hover:text-link"
               >
                 {labelFor(link.href)}
               </Link>
@@ -48,7 +48,7 @@ export function Footer() {
               href={site.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted transition-colors duration-150 hover:text-accent"
+              className="text-muted transition-colors duration-150 hover:text-link"
             >
               LinkedIn
             </a>
@@ -56,7 +56,7 @@ export function Footer() {
               href={site.credly}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted transition-colors duration-150 hover:text-accent"
+              className="text-muted transition-colors duration-150 hover:text-link"
             >
               Credly
             </a>

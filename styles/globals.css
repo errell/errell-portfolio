@@ -4,45 +4,49 @@
 
 /*
  * Theme tokens as space-separated RGB channels so Tailwind's <alpha-value>
- * (e.g. bg-surface/60) works. :root is light-first. .dark overrides.
- * Accent stays #1463FF in both themes.
+ * works. :root matches dark (the visual default). .light overrides.
+ * Accent is #4d5bff in both themes.
  */
 :root,
-.light {
-  --c-base: 246 243 238; /* #F6F3EE */
-  --c-surface: 255 255 255; /* #FFFFFF */
-  --c-elevated: 255 255 255;
-  --c-border: 228 224 216; /* #E4E0D8 */
-  --c-primary: 18 21 28; /* #12151C */
-  --c-accent: 20 99 255; /* #1463FF */
-  --c-on-accent: 255 255 255;
-  --c-muted: 92 99 112; /* #5C6370 */
-  --shadow-color: 18 21 28;
-  color-scheme: light;
-}
-
 .dark {
-  --c-base: 14 17 22; /* #0E1116 */
-  --c-surface: 22 27 34; /* #161B22 */
-  --c-elevated: 28 34 44; /* #1C222C */
-  --c-border: 42 48 58; /* #2A303A */
-  --c-primary: 244 241 234; /* #F4F1EA */
-  --c-accent: 20 99 255; /* #1463FF */
+  --c-base: 12 13 16; /* #0c0d10 */
+  --c-surface: 18 19 24;
+  --c-elevated: 24 26 32;
+  --c-border: 39 40 44; /* ~ white at 0x17 on #0c0d10 */
+  --c-primary: 233 237 244; /* #e9edf4 */
+  --c-accent: 77 91 255; /* #4d5bff */
+  --c-accent-soft: 166 174 255; /* #a6aeff */
+  --c-link: 201 206 255; /* #c9ceff */
   --c-on-accent: 255 255 255;
-  --c-muted: 167 173 184; /* #A7ADB8 */
+  --c-muted: 154 162 176;
   --shadow-color: 0 0 0;
   color-scheme: dark;
 }
 
-/* Persistent rail stays on the dark canvas in both themes. */
+.light {
+  --c-base: 246 243 238; /* warm off-white */
+  --c-surface: 255 252 247;
+  --c-elevated: 255 255 255;
+  --c-border: 214 208 198; /* hairline on warm paper */
+  --c-primary: 12 13 16; /* near-black */
+  --c-accent: 77 91 255;
+  --c-accent-soft: 61 74 214;
+  --c-link: 61 74 214;
+  --c-on-accent: 255 255 255;
+  --c-muted: 82 86 96;
+  --shadow-color: 12 13 16;
+  color-scheme: light;
+}
+
+/* Wireframe chrome stays on the dark canvas in both themes. */
 :root {
-  --c-rail: 14 17 22; /* #0E1116 */
-  --c-rail-text: 244 241 234; /* #F4F1EA */
-  --c-rail-muted: 167 173 184; /* #A7ADB8 */
-  --c-rail-border: 42 48 58; /* #2A303A */
-  --c-shipped: 62 122 87; /* #3E7A57 */
-  --c-review: 138 106 47; /* #8A6A2F */
-  --c-archived: 107 114 128; /* #6B7280 */
+  --c-rail: 12 13 16;
+  --c-rail-text: 233 237 244;
+  --c-rail-muted: 154 162 176;
+  --c-rail-border: 39 40 44;
+  --c-shipped: 62 122 87;
+  --c-review: 138 106 47;
+  --c-archived: 107 114 128;
 }
 
 @layer base {
@@ -53,7 +57,7 @@
   body {
     background-color: rgb(var(--c-base));
     color: rgb(var(--c-primary));
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-grotesk), system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -64,7 +68,7 @@
   }
 
   ::selection {
-    background-color: rgb(var(--c-accent) / 0.18);
+    background-color: rgb(var(--c-accent) / 0.28);
     color: rgb(var(--c-primary));
   }
 
@@ -72,8 +76,8 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-sora), system-ui, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-grotesk), system-ui, sans-serif;
+    letter-spacing: -0.035em;
   }
 
   :focus-visible {
@@ -85,11 +89,63 @@
 
 @layer components {
   .eyebrow {
-    font-family: var(--font-jetbrains), ui-monospace, monospace;
-    font-size: 12px;
-    letter-spacing: 0.16em;
+    font-family: var(--font-plex), ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgb(var(--c-muted));
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 1340px;
+    margin-inline: auto;
+    padding-inline: clamp(18px, 4.5vw, 56px);
+  }
+
+  .hero-title {
+    font-size: clamp(27px, 4.6vw, 50px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+  }
+
+  /* Dark gradient panels. Light theme uses a warm hairline panel. */
+  .dt-card {
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background-image: linear-gradient(160deg, #ffffff0d, #ffffff03);
+    box-shadow: inset 0 1px 0 #ffffff24;
+    transition: border-color 0.15s ease;
+  }
+
+  .dt-card:hover {
+    border-color: rgba(255, 255, 255, 0.26);
+  }
+
+  .dt-panel {
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background-image: linear-gradient(155deg, #ffffff1a, #ffffff05);
+    box-shadow: inset 0 1px 0 #ffffff24;
+  }
+
+  html.light .dt-card,
+  html.light .dt-panel {
+    border-color: rgba(12, 13, 16, 0.12);
+    box-shadow: inset 0 1px 0 #ffffff;
+  }
+
+  html.light .dt-card {
+    background-image: linear-gradient(160deg, rgba(12, 13, 16, 0.045), rgba(12, 13, 16, 0.015));
+  }
+
+  html.light .dt-card:hover {
+    border-color: rgba(12, 13, 16, 0.28);
+  }
+
+  html.light .dt-panel {
+    background-image: linear-gradient(155deg, rgba(12, 13, 16, 0.07), rgba(12, 13, 16, 0.02));
   }
 }
 
@@ -110,6 +166,8 @@
   }
   .print-surface {
     background: #ffffff !important;
+    background-image: none !important;
+    box-shadow: none !important;
     border: 1px solid #dddddd !important;
     color: #111111 !important;
   }

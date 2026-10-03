@@ -2,7 +2,7 @@ import type { Certification } from "@/data/certifications";
 
 export function CertBadge({ cert }: { cert: Certification }) {
   return (
-    <div className="flex h-full items-start gap-3 rounded-2xl border border-border bg-surface p-5 shadow-card dark:shadow-none">
+    <div className="flex h-full items-start gap-3 dt-card p-5">
       <span
         aria-hidden
         className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-border text-primary"

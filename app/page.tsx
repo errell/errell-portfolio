@@ -18,8 +18,9 @@ export default function HomePage() {
       <Hero />
       <ImpactBar />
 
-      <section className="mx-auto max-w-canvas px-5 py-24 md:px-8 md:py-32">
+      <section className="shell py-24 md:py-28">
         <SectionHeading
+          index="01"
           eyebrow={t.home.workEyebrow}
           title={t.home.workTitle}
           description={t.home.workDesc}
@@ -34,8 +35,8 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-canvas px-5 py-24 md:px-8 md:py-32">
-          <SectionHeading eyebrow={t.home.capsEyebrow} title={t.home.capsTitle} />
+        <div className="shell py-24 md:py-28">
+          <SectionHeading index="02" eyebrow={t.home.capsEyebrow} title={t.home.capsTitle} />
           <div className="mt-12">
             <SkillsGrid />
           </div>
@@ -45,9 +46,10 @@ export default function HomePage() {
       <ClientsBar />
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-canvas px-5 py-24 md:px-8 md:py-32">
+        <div className="shell py-24 md:py-28">
           <Reveal>
-            <h2 className="max-w-2xl font-sora text-3xl font-semibold tracking-tight md:text-5xl">
+            <p className="eyebrow">04</p>
+            <h2 className="mt-3 max-w-2xl font-sans text-3xl font-medium tracking-[-0.035em] md:text-5xl">
               {t.home.ctaTitle}
             </h2>
             <p className="mt-5 max-w-xl text-base text-muted">

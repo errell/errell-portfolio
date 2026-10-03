@@ -94,7 +94,7 @@ export function MetricCard({ metric, className }: MetricCardProps) {
   return (
     <div
       className={cn(
-        "flex h-full flex-col rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none",
+        "flex h-full flex-col dt-card p-6",
         className,
       )}
     >

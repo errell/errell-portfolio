@@ -10,8 +10,9 @@ import { useT } from "@/lib/i18n";
 export function WorkContent() {
   const { t } = useT();
   return (
-    <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
+    <div className="shell py-16 md:py-24">
       <SectionHeading
+        index="01"
         eyebrow={t.work.eyebrow}
         title={t.work.title}
         description={t.work.desc}

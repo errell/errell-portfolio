@@ -12,7 +12,7 @@ const emotionStyles: Record<
 
 export function JourneyMap({ stages }: { stages: JourneyStage[] }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-border bg-surface p-4 shadow-card dark:shadow-none md:p-6">
+    <div className="dt-card overflow-x-auto p-4 md:p-6">
       <div
         className="grid min-w-[640px] gap-3"
         style={{ gridTemplateColumns: `repeat(${stages.length}, minmax(0, 1fr))` }}
@@ -34,7 +34,7 @@ export function JourneyMap({ stages }: { stages: JourneyStage[] }) {
                   {s.stage}
                 </span>
               </div>
-              <div className="mt-3 flex-1 rounded-xl border border-border bg-canvas/40 p-4">
+              <div className="dt-card mt-3 flex-1 p-4">
                 <p className="text-sm font-medium text-primary">{s.action}</p>
                 <p className="mt-3 flex items-start gap-2 text-xs italic leading-relaxed text-primary/60">
                   <span aria-hidden className={cn("text-base leading-none", style.label)}>

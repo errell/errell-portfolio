@@ -11,13 +11,13 @@ export function ContactContent() {
   const c = t.contact;
 
   return (
-    <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
+    <div className="shell py-16 md:py-24">
       <SectionHeading eyebrow={c.eyebrow} title={c.title} description={c.desc} />
 
       <div className="mt-12 max-w-2xl">
         <Reveal>
-          <div className="rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none md:p-8">
-            <h2 className="font-sora text-xl font-semibold">{c.sendTitle}</h2>
+          <div className="dt-card p-6 md:p-8">
+            <h2 className="font-sans text-xl font-medium tracking-tight">{c.sendTitle}</h2>
             <p className="mt-1 text-sm text-muted">{c.sendDesc}</p>
             <div className="mt-6">
               <ContactForm />
@@ -28,7 +28,7 @@ export function ContactContent() {
                 {c.preferEmail}{" "}
                 <a
                   href={`mailto:${site.email}`}
-                  className="font-mono text-accent hover:underline"
+                  className="font-mono text-link hover:underline"
                 >
                   {site.email}
                 </a>

@@ -11,7 +11,7 @@ function StateColumn({
   return (
     <div
       className={
-        "flex-1 rounded-2xl border p-6 " +
+        "dt-card flex-1 p-6 " +
         (isTarget
           ? "border-accent/40 bg-surface"
           : "border-border bg-surface")

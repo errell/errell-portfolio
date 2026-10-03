@@ -8,7 +8,7 @@ export function KeyLearnings({ learnings }: { learnings: string[] }) {
           as="li"
           key={i}
           delay={(i % 2) * 0.08}
-          className="rounded-2xl border border-border bg-surface p-6"
+          className="dt-card p-6"
         >
           <span className="font-mono text-2xl font-bold text-muted">
             {String(i + 1).padStart(2, "0")}

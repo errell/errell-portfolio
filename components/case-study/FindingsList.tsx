@@ -9,7 +9,7 @@ export function FindingsList({ findings }: { findings: Finding[] }) {
           as="li"
           key={f.title}
           delay={i * 0.06}
-          className="flex gap-4 rounded-2xl border border-border bg-surface p-5"
+          className="dt-card flex gap-4 p-5"
         >
           <span className="font-mono text-sm font-medium text-muted">
             {String(i + 1).padStart(2, "0")}

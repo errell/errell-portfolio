@@ -19,7 +19,7 @@ export function CaseStudyHeader({ study }: { study: CaseStudy }) {
 
   return (
     <header className="border-b border-border">
-      <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
+      <div className="shell py-16 md:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <div className="flex flex-wrap items-center gap-3">
@@ -33,7 +33,7 @@ export function CaseStudyHeader({ study }: { study: CaseStudy }) {
               ))}
             </div>
 
-            <h1 className="mt-5 font-sora text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+            <h1 className="hero-title mt-5 font-medium">
               {localized.title}
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
@@ -64,7 +64,7 @@ export function CaseStudyHeader({ study }: { study: CaseStudy }) {
 
           {img && (
             <Reveal delay={0.1}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border shadow-card dark:shadow-none">
+              <div className="dt-card relative aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={img.src}
                   alt={img.alt}

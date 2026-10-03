@@ -25,8 +25,8 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Default matches the no-flash script (light unless a stored or system dark theme).
-  const [theme, setThemeState] = useState<Theme>("light");
+  // Default matches the no-flash script: dark unless a stored theme says otherwise.
+  const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
     // Read whatever the inline script already resolved onto <html>.

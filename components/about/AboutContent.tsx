@@ -17,14 +17,14 @@ import { useT } from "@/lib/i18n";
 export function AboutContent() {
   const { t } = useT();
   return (
-    <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
+    <div className="shell py-16 md:py-24">
       {/* Hero */}
       <section className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal className="flex items-center gap-6">
           {/* Drop a real photo at /public/images/profile.jpg then pass src="/images/profile.jpg" */}
           <Avatar alt={site.name} size={140} className="shrink-0" />
           <div>
-            <h1 className="font-sora text-3xl font-bold tracking-tight md:text-5xl">
+            <h1 className="hero-title font-medium">
               {site.name}
             </h1>
             <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">
@@ -34,7 +34,7 @@ export function AboutContent() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-border shadow-card dark:shadow-none">
+          <div className="dt-card relative aspect-[16/10] w-full overflow-hidden">
             <Image
               src={media.about.src}
               alt={media.about.alt}
@@ -92,9 +92,9 @@ export function AboutContent() {
       </section>
 
       {/* CTA */}
-      <section className="mt-24 rounded-2xl border border-border bg-surface p-10 shadow-card dark:shadow-none md:p-14">
+      <section className="dt-card mt-24 p-10 md:p-14">
         <Reveal>
-          <h2 className="font-sora text-2xl font-bold md:text-3xl">
+          <h2 className="font-sans text-2xl font-medium tracking-[-0.03em] md:text-3xl">
             {t.about.ctaTitle}
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-muted">

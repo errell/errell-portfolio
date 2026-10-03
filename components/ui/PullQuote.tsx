@@ -11,7 +11,7 @@ export function PullQuote({ children, cite, className }: PullQuoteProps) {
   return (
     <blockquote
       className={cn(
-        "relative rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none md:p-8",
+        "relative dt-card p-6 md:p-8",
         className,
       )}
     >

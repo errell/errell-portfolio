@@ -23,18 +23,18 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
   return (
     <Link
       href={`/work/${study.slug}`}
-      className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 shadow-card transition-colors duration-150 hover:border-primary/20 dark:shadow-none md:p-7"
+      className="dt-card group flex h-full flex-col p-6 md:p-7"
     >
       <div className="flex items-center justify-between gap-3">
         <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
           {study.number}
         </span>
-        <span className="rounded-full bg-shipped/10 px-2.5 py-1 font-mono text-[11px] text-shipped">
+        <span className="rounded-sm border border-border px-2 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
           {study.industry}
         </span>
       </div>
 
-      <h3 className="mt-4 font-sora text-xl font-semibold leading-snug tracking-tight text-primary md:text-2xl">
+      <h3 className="mt-4 font-sans text-xl font-medium leading-snug tracking-[-0.03em] text-primary md:text-2xl">
         {localized.title}
       </h3>
       <p
@@ -56,7 +56,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         {(expanded ? study.heroMetrics.slice(0, 4) : study.previewMetrics).map(
           (m) => (
             <div key={m.label}>
-              <dd className="font-sora text-2xl font-semibold tracking-tight text-primary">
+              <dd className="font-sans text-2xl font-medium tracking-[-0.03em] text-primary">
                 {m.value}
               </dd>
               <dt className="mt-1 inline-flex items-start font-mono text-[11px] leading-snug text-muted">
@@ -70,7 +70,7 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
         )}
       </dl>
 
-      <div className="mt-6 text-sm font-medium text-accent">
+      <div className="mt-6 text-sm font-medium text-link">
         {t.work.readCase}
         <span
           aria-hidden

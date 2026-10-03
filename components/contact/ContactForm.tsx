@@ -68,7 +68,7 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="rounded-2xl border border-border bg-surface shadow-card dark:shadow-none p-8 text-center"
+        className="dt-card p-8 text-center"
       >
         <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-shipped/10 text-shipped">
           <svg
@@ -84,7 +84,7 @@ export function ContactForm() {
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="mt-4 font-sora text-lg font-semibold">{c.successTitle}</h3>
+        <h3 className="mt-4 font-sans text-lg font-medium">{c.successTitle}</h3>
         <p className="mt-2 text-sm text-primary/60">{c.successDesc}</p>
         <button
           type="button"
@@ -203,7 +203,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting" || !TURNSTILE_SITE_KEY}
-        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-onAccent transition-colors duration-150 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-60"
+        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-accent px-6 text-sm font-medium text-onAccent transition-colors duration-150 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-60"
       >
         {status === "submitting" ? c.sending : c.send}
       </button>

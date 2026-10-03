@@ -13,9 +13,9 @@ export function SkillsGrid() {
         <Reveal
           key={cat.title}
           delay={i * 0.04}
-          className="rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none"
+          className="dt-card p-6"
         >
-          <h3 className="font-sora text-base font-semibold text-primary">
+          <h3 className="font-sans text-base font-medium tracking-tight text-primary">
             {t.home.skillTitles[i] ?? cat.title}
           </h3>
           <ul className="mt-4 flex flex-wrap gap-2">

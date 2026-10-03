@@ -11,7 +11,7 @@ function initials(name: string) {
 
 export function PersonaCard({ persona }: { persona: Persona }) {
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6 shadow-card dark:shadow-none">
+    <article className="flex h-full flex-col dt-card p-6">
       <div className="flex items-center gap-4">
         <div
           aria-hidden

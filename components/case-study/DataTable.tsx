@@ -6,7 +6,7 @@ interface DataTableProps {
 
 export function DataTable({ headers, rows, caption }: DataTableProps) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-border">
+    <div className="dt-card overflow-x-auto">
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>

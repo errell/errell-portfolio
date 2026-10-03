@@ -31,7 +31,7 @@ function Lead({ children }: { children: React.ReactNode }) {
 function SubHeading({ children }: { children: React.ReactNode }) {
   return (
     <Reveal>
-      <h3 className="mb-4 font-sora text-lg font-semibold text-primary">
+      <h3 className="mb-4 font-sans text-lg font-semibold text-primary">
         {children}
       </h3>
     </Reveal>
@@ -56,7 +56,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
     <article>
       <CaseStudyHeader study={study} />
 
-      <div className="mx-auto max-w-canvas space-y-20 px-5 py-20 md:px-8 md:py-24">
+      <div className="shell space-y-20 py-20 md:py-24">
         {/* 01 — Overview */}
         <section aria-labelledby="overview-heading">
           <SectionDivider number="01" title={cs.sections.overview} />
@@ -83,7 +83,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                     as="li"
                     key={o}
                     delay={i * 0.05}
-                    className="flex gap-3 rounded-xl border border-border bg-surface p-4 text-sm text-primary/75"
+                    className="dt-card flex gap-3 p-4 text-sm text-primary/75"
                   >
                     <span aria-hidden className="text-accent">
                       ◆
@@ -149,7 +149,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                     as="li"
                     key={h}
                     delay={i * 0.05}
-                    className="rounded-xl border-l-2 border-border bg-surface px-5 py-3 text-sm font-medium text-primary/85"
+                    className="dt-card border-l-2 px-5 py-3 text-sm font-medium text-primary/85"
                   >
                     {h}
                   </Reveal>
@@ -172,7 +172,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
                     as="li"
                     key={a}
                     delay={i * 0.05}
-                    className="flex gap-3 rounded-xl border border-border bg-surface p-4 text-sm text-primary/75"
+                    className="dt-card flex gap-3 p-4 text-sm text-primary/75"
                   >
                     <span aria-hidden className="text-accent">
                       ▹
@@ -248,12 +248,12 @@ export function CaseStudyContent({ study, prev, next }: Props) {
           {prev ? (
             <Link
               href={`/work/${prev.slug}`}
-              className="group rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/20"
+              className="group dt-card p-6 transition-colors hover:border-primary/20"
             >
               <span className="font-mono text-xs text-primary/40">
                 ← {cs.prev} · {prev.number}
               </span>
-              <p className="mt-2 font-sora font-semibold text-primary group-hover:text-accent">
+              <p className="mt-2 font-sans font-semibold text-primary group-hover:text-accent">
                 {localizedTitle(prev.slug)}
               </p>
             </Link>
@@ -263,24 +263,24 @@ export function CaseStudyContent({ study, prev, next }: Props) {
           {next ? (
             <Link
               href={`/work/${next.slug}`}
-              className="group rounded-2xl border border-border bg-surface p-6 text-right transition-colors hover:border-primary/20"
+              className="group dt-card p-6 text-right transition-colors hover:border-primary/20"
             >
               <span className="font-mono text-xs text-primary/40">
                 {cs.next} · {next.number} →
               </span>
-              <p className="mt-2 font-sora font-semibold text-primary group-hover:text-accent">
+              <p className="mt-2 font-sans font-semibold text-primary group-hover:text-accent">
                 {localizedTitle(next.slug)}
               </p>
             </Link>
           ) : (
             <Link
               href="/work"
-              className="group rounded-2xl border border-border bg-surface p-6 text-right transition-colors hover:border-primary/20"
+              className="group dt-card p-6 text-right transition-colors hover:border-primary/20"
             >
               <span className="font-mono text-xs text-primary/40">
                 {cs.allWork} →
               </span>
-              <p className="mt-2 font-sora font-semibold text-primary group-hover:text-accent">
+              <p className="mt-2 font-sans font-semibold text-primary group-hover:text-accent">
                 {cs.backToAll}
               </p>
             </Link>

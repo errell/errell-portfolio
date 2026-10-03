@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { navLinks, site } from "@/data/site";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LangToggle } from "@/components/ui/LangToggle";
+import { Button } from "@/components/ui/Button";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -30,19 +31,18 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <>
-      <aside className="site-rail no-print fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-railBorder bg-rail text-railText md:flex">
-        <Link
-          href="/"
-          className="px-6 pb-2 pt-8 font-sora text-lg font-semibold tracking-tight text-railText"
-        >
-          {site.name}
+    <header className="no-print sticky top-0 z-50 border-b border-border bg-canvas/90 backdrop-blur-md">
+      <nav aria-label="Primary" className="shell flex h-16 items-center gap-4">
+        <Link href="/" className="flex min-w-0 items-baseline gap-2">
+          <span className="truncate text-[15px] font-medium tracking-tight">
+            {site.name}
+          </span>
+          <span className="hidden font-mono text-[11px] uppercase tracking-[0.16em] text-muted sm:inline">
+            UX
+          </span>
         </Link>
-        <p className="px-6 font-mono text-[11px] uppercase tracking-[0.16em] text-railMuted">
-          {site.location}
-        </p>
 
-        <nav aria-label="Primary" className="mt-10 flex flex-1 flex-col gap-1 px-3">
+        <div className="ml-auto hidden items-center gap-7 md:flex">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
@@ -51,94 +51,78 @@ export function Navbar() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-lg border-l-2 px-4 py-2.5 text-sm font-medium transition-colors duration-150",
-                  active
-                    ? "border-accent text-accent"
-                    : "border-transparent text-railMuted hover:text-railText",
+                  "text-sm transition-colors duration-150",
+                  active ? "text-link" : "text-primary/75 hover:text-link",
                 )}
               >
                 {labelFor(link.href)}
               </Link>
             );
           })}
-        </nav>
-
-        <div className="flex items-center gap-2 px-5 pb-6">
-          <LangToggle tone="rail" />
-          <ThemeToggle tone="rail" />
         </div>
-      </aside>
 
-      <header className="site-mobile-nav no-print sticky top-0 z-50 border-b border-border bg-canvas md:hidden">
-        <nav
-          aria-label="Primary"
-          className="flex h-16 items-center justify-between px-5"
-        >
-          <Link
-            href="/"
-            className="font-sora text-base font-semibold tracking-tight"
+        <div className="ml-auto flex items-center gap-2 md:ml-2">
+          <LangToggle />
+          <ThemeToggle />
+          <Button href="/contact" className="hidden h-9 px-3.5 text-sm sm:inline-flex">
+            {t.nav.contact}
+          </Button>
+          <button
+            type="button"
+            className="grid h-9 w-9 place-items-center rounded border border-border text-primary md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
           >
-            {site.name}
-          </Link>
-          <div className="flex items-center gap-2">
-            <LangToggle />
-            <ThemeToggle />
-            <button
-              type="button"
-              className="grid h-10 w-10 place-items-center rounded-full border border-border text-primary"
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
-              onClick={() => setOpen((v) => !v)}
-            >
-              <span className="relative block h-4 w-5">
-                <span
-                  className={cn(
-                    "absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-150",
-                    open && "translate-y-[7px] rotate-45",
-                  )}
-                />
-                <span
-                  className={cn(
-                    "absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity duration-150",
-                    open && "opacity-0",
-                  )}
-                />
-                <span
-                  className={cn(
-                    "absolute bottom-0 left-0 h-0.5 w-5 bg-current transition-transform duration-150",
-                    open && "-translate-y-[7px] -rotate-45",
-                  )}
-                />
-              </span>
-            </button>
-          </div>
-        </nav>
+            <span className="relative block h-3.5 w-4">
+              <span
+                className={cn(
+                  "absolute left-0 top-0 h-px w-4 bg-current transition-transform duration-150",
+                  open && "translate-y-[6px] rotate-45",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 top-[6px] h-px w-4 bg-current transition-opacity duration-150",
+                  open && "opacity-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute bottom-0 left-0 h-px w-4 bg-current transition-transform duration-150",
+                  open && "-translate-y-[6px] -rotate-45",
+                )}
+              />
+            </span>
+          </button>
+        </div>
+      </nav>
 
-        {open && (
-          <div className="border-t border-border bg-canvas">
-            <div className="flex flex-col gap-1 px-3 py-3">
-              {navLinks.map((link) => {
-                const active = isActive(link.href);
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "rounded-lg border-l-2 px-4 py-3 text-base font-medium",
-                      active
-                        ? "border-accent text-accent"
-                        : "border-transparent text-primary/80",
-                    )}
-                  >
-                    {labelFor(link.href)}
-                  </Link>
-                );
-              })}
-            </div>
+      {open && (
+        <div className="border-t border-border bg-canvas md:hidden">
+          <div className="shell flex flex-col gap-1 py-3">
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "px-1 py-2.5 text-sm",
+                    active ? "text-link" : "text-primary/80",
+                  )}
+                >
+                  {labelFor(link.href)}
+                </Link>
+              );
+            })}
+            <Button href="/contact" className="mt-2 sm:hidden">
+              {t.nav.contact}
+            </Button>
           </div>
-        )}
-      </header>
-    </>
+        </div>
+      )}
+    </header>
   );
 }

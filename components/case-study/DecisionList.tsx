@@ -9,7 +9,7 @@ export function DecisionList({ decisions }: { decisions: DesignDecision[] }) {
           as="li"
           key={d.title}
           delay={i * 0.05}
-          className="flex gap-4 rounded-2xl border border-border bg-surface p-5"
+          className="dt-card flex gap-4 p-5"
         >
           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl border border-border font-mono text-sm font-medium text-muted">
             {i + 1}

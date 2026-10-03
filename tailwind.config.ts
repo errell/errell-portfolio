@@ -23,6 +23,8 @@ const config: Config = {
         border: withVar("--c-border"),
         primary: withVar("--c-primary"),
         accent: withVar("--c-accent"),
+        accentSoft: withVar("--c-accent-soft"),
+        link: withVar("--c-link"),
         muted: withVar("--c-muted"),
         onAccent: withVar("--c-on-accent"),
         rail: withVar("--c-rail"),
@@ -34,16 +36,29 @@ const config: Config = {
         archived: withVar("--c-archived"),
       },
       fontFamily: {
-        sora: ["var(--font-sora)", "system-ui", "sans-serif"],
-        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
+        sans: ["var(--font-grotesk)", "system-ui", "sans-serif"],
+        display: ["var(--font-grotesk)", "system-ui", "sans-serif"],
+        // Legacy class names now resolve to Space Grotesk.
+        sora: ["var(--font-grotesk)", "system-ui", "sans-serif"],
+        inter: ["var(--font-grotesk)", "system-ui", "sans-serif"],
+        mono: ["var(--font-plex)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        canvas: "1200px",
+        canvas: "1340px",
         prose: "72ch",
       },
+      borderRadius: {
+        none: "0px",
+        sm: "2px",
+        DEFAULT: "4px",
+        md: "4px",
+        lg: "4px",
+        xl: "4px",
+        "2xl": "6px",
+        "3xl": "6px",
+      },
       boxShadow: {
-        card: "0 8px 24px rgba(18, 21, 28, 0.06)",
+        card: "none",
       },
       keyframes: {
         rise: {
