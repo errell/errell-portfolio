@@ -82,22 +82,7 @@ The API route lives at [`app/api/contact/route.ts`](app/api/contact/route.ts).
 
 ---
 
-## 5. Set up Cal.com (booking embed)
-
-1. Create a free account at [cal.com](https://cal.com).
-2. Create a **30 Min Meeting** event type (the embed expects the `30min` slug).
-3. Set your username in `.env.local`:
-
-```bash
-NEXT_PUBLIC_CAL_USERNAME=your-cal-username
-```
-
-If the inline widget can't load, the contact page automatically shows a direct
-"Book on Cal.com" link as a fallback.
-
----
-
-## 6. Deploy to Vercel
+## 5. Deploy to Vercel
 
 **One-click / dashboard:**
 
@@ -138,7 +123,7 @@ data/
   tools.ts                  # Tools by category
   skills.ts                 # Skills grid + clients
   impact-metrics.ts         # Homepage impact bar
-  site.ts                   # Name, email, phone, socials, Cal username
+  site.ts                   # Name, email, socials, and site metadata
 ```
 
 Each case study is a typed `CaseStudy` object (see [`types/case-study.ts`](types/case-study.ts)).

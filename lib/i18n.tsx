@@ -153,11 +153,6 @@ const en = {
     successDesc: "Thanks for reaching out — I'll get back to you shortly.",
     sendAnother: "Send another message",
     preferEmail: "Prefer email?",
-    phoneLabel: "Phone / Viber:",
-    bookTitle: "Prefer to talk? Book a 30-min call.",
-    bookDesc: "Grab a slot that works for you — no back-and-forth.",
-    bookFallback: "The inline booking widget couldn't load here.",
-    bookCta: "Book on Cal.com →",
     errorGeneric: "Something went wrong. Please try again.",
   },
   resume: {
@@ -358,11 +353,6 @@ const tl: Dict = {
     successDesc: "Salamat sa pakikipag-ugnayan — babalikan kita agad.",
     sendAnother: "Magpadala ng isa pang mensahe",
     preferEmail: "Mas gusto mo ba ng email?",
-    phoneLabel: "Telepono / Viber:",
-    bookTitle: "Mas gusto mong mag-usap? Mag-book ng 30-min na tawag.",
-    bookDesc: "Pumili ng oras na bagay sa'yo — walang paulit-ulit na pabalik-balik.",
-    bookFallback: "Hindi ma-load dito ang inline booking widget.",
-    bookCta: "Mag-book sa Cal.com →",
     errorGeneric: "May nangyaring mali. Pakisubukan muli.",
   },
   resume: {

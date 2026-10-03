@@ -54,7 +54,6 @@ export function ResumeContent() {
           <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-primary/60 print:text-gray-700">
             <span>{site.location}</span>
             <span>{site.email}</span>
-            <span>{site.phone}</span>
             <span>www.linkedin.com/in/e-nino</span>
           </p>
         </header>

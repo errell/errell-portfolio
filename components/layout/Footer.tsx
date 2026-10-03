@@ -103,14 +103,6 @@ export function Footer() {
                     {site.email}
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={`tel:${site.phone.replace(/\s/g, "")}`}
-                    className="font-mono text-xs text-primary/70 transition-colors hover:text-accent"
-                  >
-                    {site.phone}
-                  </a>
-                </li>
               </ul>
             </div>
           </div>

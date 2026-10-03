@@ -1,7 +1,6 @@
 "use client";
 
 import { ContactForm } from "@/components/contact/ContactForm";
-import { CalEmbed } from "@/components/contact/CalEmbed";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/data/site";
@@ -15,8 +14,7 @@ export function ContactContent() {
     <div className="mx-auto max-w-canvas px-5 py-16 md:px-8 md:py-24">
       <SectionHeading eyebrow={c.eyebrow} title={c.title} description={c.desc} />
 
-      <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-12">
-        {/* Left — form */}
+      <div className="mt-12 max-w-2xl">
         <Reveal>
           <div className="rounded-3xl border border-border bg-surface/40 p-6 md:p-8">
             <h2 className="font-sora text-xl font-semibold">{c.sendTitle}</h2>
@@ -35,29 +33,10 @@ export function ContactContent() {
                   {site.email}
                 </a>
               </p>
-              <p className="mt-2">
-                {c.phoneLabel}{" "}
-                <a
-                  href={`tel:${site.phone.replace(/\s/g, "")}`}
-                  className="font-mono text-accent hover:underline"
-                >
-                  {site.phone}
-                </a>
-              </p>
             </div>
           </div>
         </Reveal>
 
-        {/* Right — booking */}
-        <Reveal delay={0.1}>
-          <div className="rounded-3xl border border-border bg-surface/40 p-6 md:p-8">
-            <h2 className="font-sora text-xl font-semibold">{c.bookTitle}</h2>
-            <p className="mt-1 text-sm text-primary/55">{c.bookDesc}</p>
-            <div className="mt-6">
-              <CalEmbed />
-            </div>
-          </div>
-        </Reveal>
       </div>
     </div>
   );

@@ -8,17 +8,16 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   },
-  // Allow Cal.com embed + Unsplash images + Google fonts used by next/font.
+  // Allow Unsplash images + Google fonts used by next/font.
   {
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.cal.com https://cal.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://images.unsplash.com",
       "font-src 'self' data:",
-      "connect-src 'self' https://app.cal.com https://api.resend.com",
-      "frame-src https://app.cal.com https://cal.com",
+      "connect-src 'self' https://api.resend.com",
       "frame-ancestors 'self'",
       "base-uri 'self'",
       "form-action 'self'",
