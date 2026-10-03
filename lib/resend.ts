@@ -11,7 +11,7 @@ export function getResend(): Resend | null {
 }
 
 export const CONTACT_TO_EMAIL =
-  process.env.CONTACT_TO_EMAIL || "uxtap@outlook.com";
+  process.env.CONTACT_TO_EMAIL || "hello@uxtap.com";
 
 export const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";

@@ -157,7 +157,7 @@ const en = {
     captchaLabel: "Verify you're human",
     captchaRequired: "Please complete the captcha before sending.",
     captchaNotConfigured:
-      "Captcha isn't configured, so this form can't send yet. Email uxtap@outlook.com instead.",
+      "Captcha isn't configured, so this form can't send yet. Email hello@uxtap.com instead.",
   },
   resume: {
     title: "Resume",
@@ -361,7 +361,7 @@ const tl: Dict = {
     captchaLabel: "Patunayan na tao ka",
     captchaRequired: "Pakikumpleto muna ang captcha bago magpadala.",
     captchaNotConfigured:
-      "Hindi naka-set up ang captcha, kaya hindi pa makakapagpadala ang form na ito. Mag-email na lang sa uxtap@outlook.com.",
+      "Hindi naka-set up ang captcha, kaya hindi pa makakapagpadala ang form na ito. Mag-email na lang sa hello@uxtap.com.",
   },
   resume: {
     title: "Resume",

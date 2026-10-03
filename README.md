@@ -70,13 +70,13 @@ cp .env.local.example .env.local
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxxxx
-CONTACT_TO_EMAIL=uxtap@outlook.com
-CONTACT_FROM_EMAIL=Portfolio Contact <onboarding@resend.dev>
+CONTACT_TO_EMAIL=hello@uxtap.com
+CONTACT_FROM_EMAIL=UXTap <hello@uxtap.com>
 ```
 
 - `CONTACT_FROM_EMAIL` must use a **Resend-verified domain**. Until you verify one,
   use Resend's sandbox sender `onboarding@resend.dev` (works for testing).
-- Form submissions are delivered to `CONTACT_TO_EMAIL` (defaults to `uxtap@outlook.com`).
+- Form submissions are delivered to `CONTACT_TO_EMAIL` (defaults to `hello@uxtap.com`).
 
 The API route lives at [`app/api/contact/route.ts`](app/api/contact/route.ts).
 
