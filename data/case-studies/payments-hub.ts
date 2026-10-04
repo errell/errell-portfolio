@@ -1,70 +1,8 @@
 import type { CaseStudy } from "@/types/case-study";
+import { paymentsHubPreview } from "./previews";
 
 export const paymentsHub: CaseStudy = {
-  slug: "payments-hub",
-  number: "03",
-  title: "Unified Payments & Transfer Hub",
-  subtitle:
-    "Collapsing seven tangled payment paths into one confident flow — built around 'who am I paying?' instead of 'which rail?' — ahead of the QR Ph v2.0 launch.",
-  industry: "Payments",
-  timeline: "14 Weeks · 3.5 Sprints",
-  team: "1 UX Lead, 3 UX Designers, 1 Content Designer, 1 Accessibility Specialist",
-  tags: ["Payments", "Banking", "Fintech"],
-  heroMetrics: [
-    {
-      value: "71%",
-      label: "Payment error rate",
-      tooltip: "Share of payment attempts that failed due to user or input mistakes.",
-      baseline: "19% → 5.5%",
-      direction: "down",
-      countTo: 71,
-      suffix: "%",
-      icon: "trend-down",
-    },
-    {
-      value: "68%",
-      label: "Fewer support calls",
-      tooltip: "Reduction in hotline volume about failed or confusing payments.",
-      baseline: "45K → 14.4K/mo",
-      direction: "down",
-      countTo: 68,
-      suffix: "%",
-      icon: "trend-down",
-    },
-    {
-      value: "₱12.2M",
-      label: "Monthly savings",
-      tooltip: "Estimated monthly support-cost savings from fewer payment-related calls.",
-      baseline: "support cost",
-      countTo: 12.2,
-      prefix: "₱",
-      suffix: "M",
-      decimals: 1,
-      icon: "peso",
-    },
-    {
-      value: "3×",
-      label: "QR Ph adoption",
-      tooltip: "Share of users paying via QR Ph, the Philippines’ national QR payment standard.",
-      baseline: "8% → 24%",
-      direction: "up",
-      countTo: 3,
-      suffix: "×",
-      icon: "trend-up",
-    },
-  ],
-  previewMetrics: [
-    {
-      value: "71%",
-      label: "Error rate reduction",
-      tooltip: "How much the payment error rate fell after the unified hub shipped.",
-      direction: "down",
-    },
-    {
-      value: "₱12.2M",
-      label: "Monthly support savings",
-      tooltip: "Estimated monthly support-cost savings from fewer payment-related calls.",    },
-  ],
+  ...paymentsHubPreview,
   sections: {
     overview: {
       problem:

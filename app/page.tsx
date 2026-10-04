@@ -8,7 +8,7 @@ import { ClientsBar } from "@/components/home/ClientsBar";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { caseStudies } from "@/data/case-studies";
+import { caseStudyPreviews } from "@/data/case-studies/previews";
 import { useT } from "@/lib/i18n";
 
 export default function HomePage() {
@@ -26,7 +26,7 @@ export default function HomePage() {
           description={t.home.workDesc}
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {caseStudies.map((study, i) => (
+          {caseStudyPreviews.map((study, i) => (
             <Reveal key={study.slug} delay={i * 0.1} as="div" className="h-full">
               <CaseStudyCard study={study} />
             </Reveal>

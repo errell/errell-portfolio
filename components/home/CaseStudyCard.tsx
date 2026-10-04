@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { CaseStudy } from "@/types/case-study";
+import type { CaseStudyPreview } from "@/data/case-studies/previews";
 import { Tag } from "@/components/ui/Tag";
 import { InfoTooltip } from "@/components/ui/InfoTooltip";
 import { useT } from "@/lib/i18n";
@@ -10,7 +10,7 @@ import { caseImages } from "@/data/media";
 import { cn } from "@/lib/utils";
 
 interface CaseStudyCardProps {
-  study: CaseStudy;
+  study: CaseStudyPreview;
   /** Expanded variant used on the /work index. */
   expanded?: boolean;
 }

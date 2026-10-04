@@ -4,7 +4,7 @@ import { CaseStudyCard } from "@/components/home/CaseStudyCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Tag } from "@/components/ui/Tag";
-import { caseStudies } from "@/data/case-studies";
+import { caseStudyPreviews } from "@/data/case-studies/previews";
 import { useT } from "@/lib/i18n";
 
 export function WorkContent() {
@@ -32,7 +32,7 @@ export function WorkContent() {
       </Reveal>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {caseStudies.map((study, i) => (
+        {caseStudyPreviews.map((study, i) => (
           <Reveal key={study.slug} delay={i * 0.1} className="h-full">
             <CaseStudyCard study={study} expanded />
           </Reveal>

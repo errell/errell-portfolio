@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy, getCaseStudyNav } from "@/data/case-studies";
 import { CaseStudyContent } from "@/components/case-study/CaseStudyContent";
+import { CaseStudyGate } from "@/components/case-study/CaseStudyGate";
+import { isCaseStudyUnlocked } from "@/lib/case-study-gate";
+
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -31,6 +35,10 @@ export default function CaseStudyPage({
 }) {
   const study = getCaseStudy(params.slug);
   if (!study) notFound();
+
+  if (!isCaseStudyUnlocked()) {
+    return <CaseStudyGate slug={study.slug} />;
+  }
 
   const { prev, next } = getCaseStudyNav(study.slug);
 

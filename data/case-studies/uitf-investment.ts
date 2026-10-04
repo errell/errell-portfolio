@@ -1,69 +1,8 @@
 import type { CaseStudy } from "@/types/case-study";
+import { uitfInvestmentPreview } from "./previews";
 
 export const uitfInvestment: CaseStudy = {
-  slug: "uitf-investment",
-  number: "02",
-  title: "Mobile-First UITF Investment Platform",
-  subtitle:
-    "Turning first-time savers into first-time investors by reframing a compliance form as a guided conversation — and 'UITF' as a goal you can picture.",
-  industry: "Wealth & Investments",
-  timeline: "20 Weeks · 5 Sprints",
-  team: "1 UX Lead, 2 UX Designers, 1 Researcher, 1 Financial Content Specialist",
-  tags: ["Banking", "Wealth", "Fintech"],
-  heroMetrics: [
-    {
-      value: "+142%",
-      label: "New UITF investors",
-      tooltip: "First-time customers who invested in a Unit Investment Trust Fund via the product.",
-      baseline: "vs. prior year",
-      direction: "up",
-      countTo: 142,
-      prefix: "+",
-      suffix: "%",
-      icon: "trend-up",
-    },
-    {
-      value: "₱2.1B",
-      label: "New AUM",
-      tooltip: "Assets Under Management — total customer money invested through the product.",
-      baseline: "within 6 months",
-      countTo: 2.1,
-      prefix: "₱",
-      suffix: "B",
-      decimals: 1,
-      icon: "peso",
-    },
-    {
-      value: "91%",
-      label: "Task success rate",
-      tooltip: "Share of usability-test participants who completed the primary investment task.",
-      countTo: 91,
-      suffix: "%",
-      icon: "check",
-    },
-    {
-      value: "44%",
-      label: "Fewer support tickets",
-      tooltip: "Reduction in UITF-related help requests after the redesign.",
-      baseline: "UITF-related",
-      direction: "down",
-      countTo: 44,
-      suffix: "%",
-      icon: "trend-down",
-    },
-  ],
-  previewMetrics: [
-    {
-      value: "₱2.1B",
-      label: "New AUM in 6 months",
-      tooltip: "Assets Under Management — customer money invested in the first six months.",    },
-    {
-      value: "+142%",
-      label: "New UITF investors",
-      tooltip: "First-time customers who invested in a Unit Investment Trust Fund via the product.",
-      direction: "up",
-    },
-  ],
+  ...uitfInvestmentPreview,
   sections: {
     overview: {
       problem:
