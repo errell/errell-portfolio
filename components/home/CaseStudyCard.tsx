@@ -68,9 +68,9 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
           </p>
         )}
 
-        <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-6">
-          {(expanded ? study.heroMetrics.slice(0, 4) : study.previewMetrics).map(
-            (m) => (
+        {expanded && (
+          <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-6">
+            {study.heroMetrics.slice(0, 4).map((m) => (
               <div key={m.label}>
                 <dd className="font-mono text-2xl font-bold text-amber md:text-3xl">
                   {m.direction === "down" && <span aria-hidden className="mr-0.5">↓</span>}
@@ -84,9 +84,9 @@ export function CaseStudyCard({ study, expanded = false }: CaseStudyCardProps) {
                   ) : null}
                 </dt>
               </div>
-            ),
-          )}
-        </dl>
+            ))}
+          </dl>
+        )}
 
         <div className="mt-6 flex items-center gap-1 text-sm font-medium text-accent">
           {t.work.readCase}
