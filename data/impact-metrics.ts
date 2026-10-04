@@ -34,9 +34,9 @@ export const impactMetrics: Metric[] = [
     suffix: "+",
   },
   {
-    value: "3",
+    value: "6",
     label: "PH Bank Products Shipped",
     tooltip: "Major Philippine bank digital products taken from research through production.",
-    countTo: 3,
+    countTo: 6,
   },
 ];
