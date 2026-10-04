@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 import { unlockCaseStudy, type GateState } from "@/app/work/actions";
 import { Button } from "@/components/ui/Button";
@@ -15,11 +16,33 @@ function SubmitButton() {
   );
 }
 
+function leaveGate(router: ReturnType<typeof useRouter>) {
+  // Client navigations do not update document.referrer, so history is the
+  // reliable way back to the screen they came from.
+  if (window.history.length > 1) {
+    router.back();
+    return;
+  }
+  router.push("/work");
+}
+
 export function CaseStudyGate({ slug }: { slug: string }) {
+  const router = useRouter();
   const [state, action] = useFormState(unlockCaseStudy, initialState);
+  const leave = () => leaveGate(router);
 
   return (
-    <section className="mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-5 py-24">
+    <section className="relative mx-auto flex min-h-[70vh] max-w-md flex-col justify-center px-5 py-24">
+      <button
+        type="button"
+        onClick={leave}
+        aria-label="Close"
+        className="absolute right-5 top-8 inline-flex h-10 w-10 items-center justify-center rounded-full text-primary/70 transition-colors hover:bg-surface/60 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      >
+        <span aria-hidden="true" className="text-xl leading-none">
+          ×
+        </span>
+      </button>
       <p className="font-sora text-2xl font-semibold tracking-tight text-primary md:text-3xl">
         This case study is private.
       </p>
@@ -44,6 +67,9 @@ export function CaseStudyGate({ slug }: { slug: string }) {
         ) : null}
         <SubmitButton />
       </form>
+      <Button type="button" variant="ghost" className="mt-3 w-full" onClick={leave}>
+        Back
+      </Button>
     </section>
   );
 }
