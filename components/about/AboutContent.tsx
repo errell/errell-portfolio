@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Avatar } from "@/components/ui/Avatar";
 import { Timeline } from "@/components/about/Timeline";
 import { CertBadge } from "@/components/about/CertBadge";
@@ -11,8 +11,36 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { certifications } from "@/data/certifications";
 import { site } from "@/data/site";
-import { media } from "@/data/media";
 import { useT } from "@/lib/i18n";
+
+function AboutVideo() {
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduceMotion(media.matches);
+    apply();
+    media.addEventListener("change", apply);
+    return () => media.removeEventListener("change", apply);
+  }, []);
+
+  return (
+    <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-border shadow-xl">
+      <video
+        className="h-full w-full bg-canvas object-cover"
+        src="/videos/about.mp4"
+        poster="/images/about-poster.jpg"
+        autoPlay={!reduceMotion}
+        muted
+        loop
+        playsInline
+        controls
+        preload="auto"
+        aria-label="About video"
+      />
+    </div>
+  );
+}
 
 export function AboutContent() {
   const { t } = useT();
@@ -34,16 +62,7 @@ export function AboutContent() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="img-overlay relative aspect-[16/10] w-full overflow-hidden rounded-3xl border border-border shadow-xl">
-            <Image
-              src={media.about.src}
-              alt={media.about.alt}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
+          <AboutVideo />
         </Reveal>
       </section>
 
