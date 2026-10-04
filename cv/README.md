@@ -11,4 +11,4 @@ Regenerate:
 ./cv/build-pdf.sh
 ```
 
-Requires Google Chrome / Chromium. Keep UITF investment work under the IBM 2015–2018 tenure (aligned with `data/experience.ts`).
+Requires Google Chrome / Chromium. Keep UITF investment work under the IBM Dec 2019–Nov 2020 tenure (aligned with `data/experience.ts`).
