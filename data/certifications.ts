@@ -17,10 +17,6 @@ export const certifications: Certification[] = [
     issuer: "IBM",
   },
   {
-    name: "Agile Scrum Master Certification",
-    issuer: "Scrum Alliance",
-  },
-  {
     name: "Certified Design Sprint Facilitator",
     issuer: "DLSU Graduate School of Business / SixSigma PH",
   },
