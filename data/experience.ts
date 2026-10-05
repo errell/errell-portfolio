@@ -16,7 +16,7 @@ export interface ExperienceEntry {
 // Employer names are described by type per confidentiality constraints.
 export const experience: ExperienceEntry[] = [
   {
-    period: "Mar 2022 – Present",
+    period: "Feb 2022 – Present",
     role: "UX Design Manager / Squad UX Lead",
     org: "Major Philippine Universal Bank (via Accenture)",
     context: "Digital Banking · Payments",

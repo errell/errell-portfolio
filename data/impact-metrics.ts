@@ -27,10 +27,10 @@ export const impactMetrics: Metric[] = [
     direction: "down",
   },
   {
-    value: "10+",
+    value: "15+",
     label: "Years Enterprise UX",
     tooltip: "Years designing and shipping enterprise digital products, mainly banking & fintech.",
-    countTo: 10,
+    countTo: 15,
     suffix: "+",
   },
   {

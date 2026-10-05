@@ -31,7 +31,7 @@ const en = {
     titleA: "Designing Banking Experiences",
     titleAccent: "Filipinos Actually Trust",
     subtitle:
-      "Senior UX Design Manager · 15 Years · Manila, Philippines · Banking & Fintech",
+      "Senior UX Design Manager · 15+ Years · Manila, Philippines · Banking & Fintech",
     viewWork: "View My Work",
     downloadCV: "Download CV",
   },
@@ -111,9 +111,9 @@ const en = {
     role: "Senior UX Design Manager",
     bio: "I design digital banking and fintech products that people trust with their money — leading research, design, and delivery across multiple Agile squads for one of the Philippines' largest banks.",
     storyEyebrow: "My Story",
-    storyTitle: "Fifteen years in the deep end",
+    storyTitle: "15+ years in the deep end",
     storyQuote:
-      "I've spent 15 years at the intersection of people, products, and enterprise complexity — from IBM's AI platform teams to leading 5 Agile squads simultaneously at one of the Philippines' largest banks.",
+      "I've spent 15+ years at the intersection of people, products, and enterprise complexity — from IBM's AI platform teams to leading 5 Agile squads simultaneously at one of the Philippines' largest banks.",
     expEyebrow: "Experience",
     expTitle: "Where I've done the work",
     certEyebrow: "Credentials",
@@ -235,7 +235,7 @@ const tl: Dict = {
     titleA: "Nagdidisenyo ng Banking Experiences na",
     titleAccent: "Talagang Pinagkakatiwalaan ng mga Pinoy",
     subtitle:
-      "Senior UX Design Manager · 15 Taon · Maynila, Pilipinas · Banking & Fintech",
+      "Senior UX Design Manager · 15+ Taon · Maynila, Pilipinas · Banking & Fintech",
     viewWork: "Tingnan ang Trabaho",
     downloadCV: "I-download ang CV",
   },
@@ -315,9 +315,9 @@ const tl: Dict = {
     role: "Senior UX Design Manager",
     bio: "Nagdidisenyo ako ng digital banking at fintech na produktong pinagkakatiwalaan ng tao sa kanilang pera — pinapamunuan ang research, disenyo, at delivery sa maraming Agile squad para sa isa sa pinakamalalaking bangko sa Pilipinas.",
     storyEyebrow: "Ang Kwento Ko",
-    storyTitle: "Labinlimang taon sa gitna ng kumplikado",
+    storyTitle: "15+ taon sa gitna ng kumplikado",
     storyQuote:
-      "Labinlimang taon akong nasa pinagtagpuan ng tao, produkto, at kumplikadong enterprise — mula sa AI platform teams ng IBM hanggang sa pamumuno ng 5 Agile squad nang sabay-sabay sa isa sa pinakamalalaking bangko sa Pilipinas.",
+      "15+ taon akong nasa pinagtagpuan ng tao, produkto, at kumplikadong enterprise — mula sa AI platform teams ng IBM hanggang sa pamumuno ng 5 Agile squad nang sabay-sabay sa isa sa pinakamalalaking bangko sa Pilipinas.",
     expEyebrow: "Karanasan",
     expTitle: "Kung saan ko ginawa ang trabaho",
     certEyebrow: "Mga Kredensyal",
@@ -378,7 +378,7 @@ const tl: Dict = {
       tools: "Mga Tool & Teknolohiya",
     },
     summaryBody:
-      "Senior UX Design Manager na may mahigit 15 taong karanasan sa pagdidisenyo at paglulunsad ng enterprise digital products sa banking, fintech, at technology consulting. May napatunayang track record sa pamumuno ng maraming Agile squad at pagsasalin ng research tungo sa nasusukat na resulta — bawas na onboarding abandonment, bilyon-bilyong bagong AUM, at milyon-milyong pisong tipid sa suporta. Malalim ang kaalaman sa BSP-regulated na financial experiences, accessibility (WCAG 2.1 AA), at design leadership.",
+      "Senior UX Design Manager na may 15+ taong karanasan sa pagdidisenyo at paglulunsad ng enterprise digital products sa banking, fintech, at technology consulting. May napatunayang track record sa pamumuno ng maraming Agile squad at pagsasalin ng research tungo sa nasusukat na resulta — bawas na onboarding abandonment, bilyon-bilyong bagong AUM, at milyon-milyong pisong tipid sa suporta. Malalim ang kaalaman sa BSP-regulated na financial experiences, accessibility (WCAG 2.1 AA), at design leadership.",
     educationBody:
       "Certified Design Sprint Facilitator — DLSU Graduate School of Business. Tuloy-tuloy na propesyonal na edukasyon sa design leadership, product innovation, at enterprise design thinking.",
     achievements: [

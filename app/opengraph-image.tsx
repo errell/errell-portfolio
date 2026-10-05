@@ -57,7 +57,7 @@ export default function OpengraphImage() {
             Designing Banking Experiences Filipinos Actually Trust
           </div>
           <div style={{ fontSize: 30, color: "#9a9aae", marginTop: 28 }}>
-            Errell Niño · 15 Years · Banking &amp; Fintech · Manila
+            Errell Niño · 15+ Years · Banking &amp; Fintech · Manila
           </div>
         </div>
 

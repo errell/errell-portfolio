@@ -2,7 +2,7 @@ export const site = {
   name: "Errell Niño",
   role: "UX Design Manager",
   tagline: "Banking & Fintech · Manila",
-  url: "https://errellnino.com",
+  url: "https://uxtap.me",
   email: "hello@uxtap.com",
   location: "Manila, Philippines",
   linkedin: "https://www.linkedin.com/in/e-nino",
