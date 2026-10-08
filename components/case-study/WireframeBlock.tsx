@@ -1,9 +1,13 @@
 import type { WireframeSpec } from "@/types/case-study";
+import { SignaturePrototype } from "@/components/case-study/signature/SignaturePrototype";
 
 // The wireframe renders as a "terminal" that stays dark in both themes (a code
 // surface reads best dark), so its inner text uses fixed light colors rather
 // than theme tokens.
+// When the spec names a coded prototype screen, that phone mockup is shown
+// instead; the ASCII rows remain as the fallback.
 export function WireframeBlock({ spec }: { spec: WireframeSpec }) {
+  if (spec.screen) return <SignaturePrototype spec={spec} screen={spec.screen} />;
   return (
     <figure className="overflow-hidden rounded-2xl border border-border bg-[#0d0d16]">
       <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">

@@ -187,6 +187,7 @@ export const uitfInvestment: CaseStudy = {
       ],
       wireframe: {
         title: "Goal-First Entry",
+        screen: "goal-first",
         caption:
           "The first screen asks about the person's life, not the bank's product catalog.",
         rows: [

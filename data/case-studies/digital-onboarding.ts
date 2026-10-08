@@ -214,6 +214,7 @@ export const digitalOnboarding: CaseStudy = {
       ],
       wireframe: {
         title: "ID Capture — Camera Coach",
+        screen: "camera-coach",
         caption:
           "Live framing guidance replaces post-hoc rejection. The frame turns cyan only when the shot will pass.",
         rows: [

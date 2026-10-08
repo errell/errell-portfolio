@@ -83,11 +83,16 @@ export interface DesignDecision {
   detail: string;
 }
 
+/** Coded phone-prototype screens available for a signature interaction. */
+export type SignatureScreen = "camera-coach" | "confirm-payment" | "goal-first";
+
 export interface WireframeSpec {
   title: string;
   caption: string;
   /** Simple structured rows for the wireframe block renderer */
   rows: string[];
+  /** When set, render this coded phone prototype instead of the ASCII rows */
+  screen?: SignatureScreen;
 }
 
 export interface DesignSection {

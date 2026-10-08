@@ -194,7 +194,7 @@ export function CaseStudyContent({ study, prev, next }: Props) {
               <DecisionList decisions={design.decisions} />
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
               <div>
                 <SubHeading>{cs.sub.signature}</SubHeading>
                 <Reveal delay={0.05}>

@@ -200,6 +200,7 @@ export const paymentsHub: CaseStudy = {
       ],
       wireframe: {
         title: "Full-Page Confirm",
+        screen: "confirm-payment",
         caption:
           "Spelling the amount in words is the single most effective guard against decimal and wrong-number errors.",
         rows: [

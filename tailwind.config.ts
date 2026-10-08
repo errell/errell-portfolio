@@ -44,10 +44,29 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        // Signature prototype screens (used behind motion-safe:)
+        framePulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.45" },
+        },
+        scanLine: {
+          "0%": { top: "0%", opacity: "0" },
+          "15%": { opacity: "1" },
+          "85%": { opacity: "1" },
+          "100%": { top: "100%", opacity: "0" },
+        },
+        holdFill: {
+          "0%, 12%": { width: "0%" },
+          "78%, 92%": { width: "100%" },
+          "100%": { width: "0%" },
+        },
       },
       animation: {
         pulseDot: "pulseDot 2s ease-in-out infinite",
         rise: "rise 0.6s cubic-bezier(0.22,1,0.36,1) both",
+        framePulse: "framePulse 2.4s ease-in-out infinite",
+        scanLine: "scanLine 2.8s ease-in-out infinite",
+        holdFill: "holdFill 4s cubic-bezier(0.4,0,0.2,1) infinite",
       },
     },
   },
