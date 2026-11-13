@@ -35,4 +35,8 @@ export const caseImages: Record<string, { src: string; alt: string }> = {
     src: unsplash("1526304640581-d334cdbbf45e", 1000),
     alt: "Scanning a QR code to pay with a phone",
   },
+  "bench-cv-exporter": {
+    src: "/images/case-studies/bench-cv-exporter/00-landing-hero.webp",
+    alt: "Bench CV Exporter landing page with a Sign in with Microsoft button and a CV quality score preview",
+  },
 };

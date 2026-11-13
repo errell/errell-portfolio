@@ -213,8 +213,37 @@ export const paymentsHubPreview: CaseStudyPreview = {
   ],
 };
 
+export const benchCvExporterPreview: CaseStudyPreview = {
+  slug: "bench-cv-exporter",
+  number: "04",
+  title: "Bench CV Exporter",
+  subtitle:
+    "An enterprise M365 web portal where bench resources enter their profile and experience once at roll-in, then export a brand-compliant CV in one click, with AI-assisted, keyword-optimized bullet suggestions.",
+  industry: "Enterprise · Internal Tools",
+  timeline: "Sprint 17 · Oct 19–30, 2026",
+  team: "10 FTEs · UI/UX",
+  tags: ["Enterprise", "M365", "AI-assisted"],
+  heroMetrics: [
+    { value: "10", label: "FTEs" },
+    { value: "400", label: "Project hours" },
+    { value: "7", label: "Key features" },
+    { value: "Sprint 17", label: "Oct 19–30, 2026" },
+  ],
+  previewMetrics: [
+    { value: "10", label: "FTEs" },
+    { value: "400", label: "Project hours" },
+  ],
+};
+
+/** Home page shows the three core studies. */
 export const caseStudyPreviews: CaseStudyPreview[] = [
   digitalOnboardingPreview,
   uitfInvestmentPreview,
   paymentsHubPreview,
+];
+
+/** /work index and sitemap list every study, including showcase work. */
+export const workPreviews: CaseStudyPreview[] = [
+  ...caseStudyPreviews,
+  benchCvExporterPreview,
 ];

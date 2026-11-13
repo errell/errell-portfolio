@@ -135,3 +135,86 @@ export interface CaseStudy {
   keyLearnings: string[];
   prototypes: PrototypeScreen[];
 }
+
+/* ------------------------------------------------------------------ */
+/* Showcase case study: a lighter, feature-led format for concept work */
+/* (no research/outcome metrics), e.g. Bench CV Exporter.              */
+/* ------------------------------------------------------------------ */
+
+export interface ShowcaseImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+export interface ShowcaseCallout {
+  title: string;
+  detail: string;
+}
+
+export interface ShowcasePoint {
+  title: string;
+  detail: string;
+}
+
+export interface ShowcaseFeature {
+  id: string;
+  title: string;
+  /** One-line summary used in the overview grid */
+  summary: string;
+  /** Longer subtitle shown above the screen */
+  lead: string;
+  screens: ShowcaseImage[];
+  callouts: ShowcaseCallout[];
+}
+
+export interface ShowcaseVideo {
+  src: string;
+  poster: string;
+  type: string;
+  width: number;
+  height: number;
+  /** Duration label, e.g. "9:23" */
+  duration: string;
+  title: string;
+  description: string;
+  /** Optional WebVTT captions track */
+  captions?: { src: string; srcLang: string; label: string };
+}
+
+export interface ShowcaseMilestone {
+  dates: string;
+  title: string;
+  detail: string;
+}
+
+export interface ShowcaseCaseStudy
+  extends Pick<
+    CaseStudy,
+    | "slug"
+    | "number"
+    | "title"
+    | "subtitle"
+    | "industry"
+    | "timeline"
+    | "team"
+    | "tags"
+    | "heroMetrics"
+    | "previewMetrics"
+  > {
+  kind: "showcase";
+  tagline: string;
+  disclaimer: string;
+  video: ShowcaseVideo;
+  challenge: ShowcasePoint[];
+  opportunity: { headline: string; detail: string };
+  solution: ShowcasePoint[];
+  features: ShowcaseFeature[];
+  delivery: {
+    intro: string;
+    process: string[];
+    milestones: ShowcaseMilestone[];
+    next: string;
+  };
+}

@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { getCaseStudy } from "@/data/case-studies";
+import { getCaseStudy, getShowcaseStudy } from "@/data/case-studies";
 import { grantCaseStudyAccess, passwordsMatch } from "@/lib/case-study-gate";
 
 export type GateState = { error?: string };
@@ -21,7 +21,7 @@ export async function unlockCaseStudy(
 
   grantCaseStudyAccess();
 
-  if (getCaseStudy(slug)) {
+  if (getCaseStudy(slug) || getShowcaseStudy(slug)) {
     redirect(`/work/${slug}`);
   }
   redirect("/work");

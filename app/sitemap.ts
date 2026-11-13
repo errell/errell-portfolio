@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { caseStudyPreviews } from "@/data/case-studies/previews";
+import { workPreviews } from "@/data/case-studies/previews";
 import { site } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  const caseRoutes = caseStudyPreviews.map((c) => ({
+  const caseRoutes = workPreviews.map((c) => ({
     url: `${base}/work/${c.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

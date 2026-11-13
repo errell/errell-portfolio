@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import type { CaseStudy } from "@/types/case-study";
+import type { CaseStudyPreview } from "@/data/case-studies/previews";
 import { Tag } from "@/components/ui/Tag";
 import { MetricCard } from "./MetricCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { useT } from "@/lib/i18n";
 import { caseImages } from "@/data/media";
 
-export function CaseStudyHeader({ study }: { study: CaseStudy }) {
+export function CaseStudyHeader({ study }: { study: CaseStudyPreview }) {
   const { t } = useT();
   const slug = study.slug as keyof typeof t.caseStudies;
   const localized = t.caseStudies[slug] ?? {

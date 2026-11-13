@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { caseStudies, getCaseStudy, getCaseStudyNav } from "@/data/case-studies";
+import {
+  caseStudies,
+  getCaseStudy,
+  getCaseStudyNav,
+  getShowcaseStudy,
+  showcaseStudies,
+} from "@/data/case-studies";
 import { CaseStudyContent } from "@/components/case-study/CaseStudyContent";
+import { ShowcaseContent } from "@/components/case-study/ShowcaseContent";
 import { CaseStudyGate } from "@/components/case-study/CaseStudyGate";
 import { isCaseStudyUnlocked } from "@/lib/case-study-gate";
 
 export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
-  return caseStudies.map((c) => ({ slug: c.slug }));
+  return [...caseStudies, ...showcaseStudies].map((c) => ({ slug: c.slug }));
 }
 
 export function generateMetadata({
@@ -16,7 +23,7 @@ export function generateMetadata({
 }: {
   params: { slug: string };
 }): Metadata {
-  const study = getCaseStudy(params.slug);
+  const study = getCaseStudy(params.slug) ?? getShowcaseStudy(params.slug);
   if (!study) return { title: "Case Study Not Found" };
   return {
     title: `${study.title} — Case Study`,
@@ -33,6 +40,20 @@ export default function CaseStudyPage({
 }: {
   params: { slug: string };
 }) {
+  const showcase = getShowcaseStudy(params.slug);
+  if (showcase) {
+    if (!isCaseStudyUnlocked()) {
+      return <CaseStudyGate slug={showcase.slug} />;
+    }
+    const last = caseStudies[caseStudies.length - 1];
+    return (
+      <ShowcaseContent
+        study={showcase}
+        prev={last ? { slug: last.slug, number: last.number } : undefined}
+      />
+    );
+  }
+
   const study = getCaseStudy(params.slug);
   if (!study) notFound();
 

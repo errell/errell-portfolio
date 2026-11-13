@@ -1,7 +1,8 @@
-import type { CaseStudy } from "@/types/case-study";
+import type { CaseStudy, ShowcaseCaseStudy } from "@/types/case-study";
 import { digitalOnboarding } from "./digital-onboarding";
 import { uitfInvestment } from "./uitf-investment";
 import { paymentsHub } from "./payments-hub";
+import { benchCvExporter } from "./bench-cv-exporter";
 
 // Ordered 01 → 02 → 03. This order drives prev/next navigation and listings.
 export const caseStudies: CaseStudy[] = [
@@ -9,6 +10,14 @@ export const caseStudies: CaseStudy[] = [
   uitfInvestment,
   paymentsHub,
 ];
+
+// Feature-led showcase studies (concept work without research/outcome metrics).
+// Rendered by the same /work/[slug] route and gate, listed after the core three.
+export const showcaseStudies: ShowcaseCaseStudy[] = [benchCvExporter];
+
+export function getShowcaseStudy(slug: string): ShowcaseCaseStudy | undefined {
+  return showcaseStudies.find((c) => c.slug === slug);
+}
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return caseStudies.find((c) => c.slug === slug);
@@ -30,4 +39,5 @@ export {
   digitalOnboarding,
   uitfInvestment,
   paymentsHub,
+  benchCvExporter,
 };
