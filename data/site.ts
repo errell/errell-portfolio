@@ -3,7 +3,7 @@ export const site = {
   role: "UX Design Manager",
   tagline: "Banking & Fintech · Manila",
   url: "https://uxtap.me",
-  email: "hello@uxtap.com",
+  email: "uxtap@outlook.com",
   location: "Manila, Philippines",
   linkedin: "https://www.linkedin.com/in/e-nino",
   credly: "https://www.credly.com/users/errell/",

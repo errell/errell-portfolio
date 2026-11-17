@@ -76,7 +76,7 @@ CONTACT_FROM_EMAIL=UXTap <hello@uxtap.com>
 
 - `CONTACT_FROM_EMAIL` must use a **Resend-verified domain**. Until you verify one,
   use Resend's sandbox sender `onboarding@resend.dev` (works for testing).
-- Form submissions are delivered to `CONTACT_TO_EMAIL` (defaults to `uxtap@outlook.com`). The public address stays `hello@uxtap.com`.
+- Form submissions are delivered to `CONTACT_TO_EMAIL` (defaults to `uxtap@outlook.com`). The public address is `uxtap@outlook.com`.
 
 The API route lives at [`app/api/contact/route.ts`](app/api/contact/route.ts).
 
