@@ -174,14 +174,14 @@ const en = {
       tools: "Tools & Technologies",
     },
     summaryBody:
-      "Senior UX Design Manager with 15+ years designing and shipping enterprise digital products across banking, fintech, and technology consulting. Proven record leading multiple Agile squads and translating research into measurable business outcomes — reduced onboarding abandonment, billions in new AUM, and multi-million-peso support savings. Deep expertise in BSP-regulated financial experiences, accessibility (WCAG 2.1 AA), and design leadership.",
+      "Senior UX Design Manager and design leader with 15+ years building and scaling high-performing teams across banking, fintech, and technology consulting. Leads and mentors 10–15 UX designers across Agile squads delivering regulated digital banking products. Proven record translating research into measurable outcomes — reduced onboarding abandonment, billions in new AUM, and multi-million-peso support savings. Hands-on with Microsoft 365 Copilot Studio and early-phase enterprise AI platform testing and prototyping; uses Claude, ChatGPT and Copilot to identify and validate UX use cases and prioritise backlogs. Deep expertise in BSP-regulated financial experiences, accessibility (WCAG 2.1 AA), and design leadership.",
     educationBody:
       "Certified Design Sprint Facilitator — DLSU Graduate School of Business. Continuous professional education in design leadership, product innovation, and enterprise design thinking.",
     achievements: [
       "Cut digital account-opening abandonment by 58% and shifted 67% of eKYC volume out of branches.",
       "Generated ₱2.1B in new AUM within six months via a goal-first UITF investment platform (+142% new investors).",
       "Reduced payment errors 71% and support costs by ₱12.2M/month through a unified payments hub.",
-      "Led UX across 5+ concurrent Agile squads for a major Philippine universal bank.",
+      "Lead and mentor 10–15 UX designers across 5 concurrent Agile squads; contributed to early-phase enterprise AI platform testing and prototyping, including Microsoft 365 Copilot Studio and AI training rollout.",
     ],
   },
   footer: {
@@ -378,14 +378,14 @@ const tl: Dict = {
       tools: "Mga Tool & Teknolohiya",
     },
     summaryBody:
-      "Senior UX Design Manager na may 15+ taong karanasan sa pagdidisenyo at paglulunsad ng enterprise digital products sa banking, fintech, at technology consulting. May napatunayang track record sa pamumuno ng maraming Agile squad at pagsasalin ng research tungo sa nasusukat na resulta — bawas na onboarding abandonment, bilyon-bilyong bagong AUM, at milyon-milyong pisong tipid sa suporta. Malalim ang kaalaman sa BSP-regulated na financial experiences, accessibility (WCAG 2.1 AA), at design leadership.",
+      "Senior UX Design Manager at design leader na may 15+ taong karanasan sa pagbuo at pagpapalago ng high-performing na mga team sa banking, fintech, at technology consulting. Namumuno at nagme-mentor sa 10–15 UX designer sa mga Agile squad na naghahatid ng regulated digital banking products. May napatunayang track record sa pagsasalin ng research tungo sa nasusukat na resulta — bawas na onboarding abandonment, bilyon-bilyong bagong AUM, at milyon-milyong pisong tipid sa suporta. Hands-on sa Microsoft 365 Copilot Studio at sa early-phase na testing at prototyping ng enterprise AI platform; gumagamit ng Claude, ChatGPT at Copilot upang tukuyin at i-validate ang UX use cases at i-prioritise ang mga backlog. Malalim ang kaalaman sa BSP-regulated na financial experiences, accessibility (WCAG 2.1 AA), at design leadership.",
     educationBody:
       "Certified Design Sprint Facilitator — DLSU Graduate School of Business. Tuloy-tuloy na propesyonal na edukasyon sa design leadership, product innovation, at enterprise design thinking.",
     achievements: [
       "Binawasan ang abandonment sa digital account-opening ng 58% at inilipat ang 67% ng eKYC volume palabas ng branches.",
       "Nakalikom ng ₱2.1B bagong AUM sa loob ng anim na buwan sa pamamagitan ng goal-first na UITF investment platform (+142% bagong investors).",
       "Binawasan ang payment errors ng 71% at ang gastos sa suporta ng ₱12.2M/buwan sa pamamagitan ng pinag-isang payments hub.",
-      "Pinamunuan ang UX sa 5+ sabay-sabay na Agile squad para sa isang malaking universal bank sa Pilipinas.",
+      "Namumuno at nagme-mentor sa 10–15 UX designer sa 5 sabay-sabay na Agile squad; tumulong sa early-phase na testing at prototyping ng enterprise AI platform, kabilang ang Microsoft 365 Copilot Studio at AI training rollout.",
     ],
   },
   footer: {

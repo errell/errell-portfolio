@@ -1,16 +1,17 @@
 # CV source
 
-The downloadable résumé PDF is now **supplied directly by Errell**.
+The live downloadable résumé is `../public/errell-nino-cv.pdf` (linked from the Hero and `/resume` as `/errell-nino-cv.pdf`).
 
-- **Live file:** `../public/errell-nino-cv.pdf` (linked from the Hero and `/resume` as `/errell-nino-cv.pdf`)
-- **Source of truth:** the PDF Errell provides. To update it, replace `public/errell-nino-cv.pdf` with his new file byte-for-byte (keep the filename so existing links keep working). Do not regenerate it from the HTML.
+## Current generator
 
-## Legacy HTML source (may be out of date)
-
-`errell-nino-cv.html` and `build-pdf.sh` were used to generate earlier versions of the PDF. They are kept for reference only and may not match the current PDF.
+`build_cv.py` writes `errell-nino-cv.docx` in the existing dark-header Word style and converts it to the live PDF with LibreOffice.
 
 ```bash
-./cv/build-pdf.sh   # legacy: would overwrite the supplied PDF, don't run unless asked
+python3 cv/build_cv.py
 ```
 
-Requires Google Chrome / Chromium.
+Keep the filename `errell-nino-cv.pdf` so existing links keep working. The CV is UX-first (UX Design Manager headline and summary). It uses `errellnino@gmail.com` and no phone number.
+
+## Legacy HTML source
+
+`errell-nino-cv.html` and `build-pdf.sh` generated earlier HTML-based versions and may be out of date. Prefer `build_cv.py`.

@@ -21,7 +21,9 @@ export const experience: ExperienceEntry[] = [
     org: "Major Philippine Universal Bank (via Accenture)",
     context: "Digital Banking · Payments",
     points: [
-      "Lead UX across 5+ Agile squads shipping digital onboarding and payments products.",
+      "Lead UX across 5 concurrent Agile squads delivering eKYC onboarding and a unified payments hub, and mentor 10–15 UX designers.",
+      "Part of the early phases of the organisation's enterprise AI platform as a front-line tester and prototype builder; hands-on with Microsoft 365 Copilot Studio and ran AI training rollout sessions.",
+      "Use Claude, ChatGPT and Copilot to identify and validate UX use cases and prioritise backlog items; align delivery with BSP, security, brand and WCAG 2.1 AA.",
       "Owned the eKYC account-opening redesign that cut abandonment by 58% and shifted volume out of branches.",
       "Directed the unified payments hub that reduced errors 71% and support costs by ₱12.2M/month.",
     ],

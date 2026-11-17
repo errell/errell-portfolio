@@ -25,7 +25,7 @@ export const toolCategories: ToolCategory[] = [
   },
   {
     title: "AI & Vibe Coding",
-    items: ["Claude (Anthropic)", "ChatGPT (OpenAI)", "Copilot", "GitHub"],
+    items: ["Microsoft 365 Copilot Studio", "Claude (Anthropic)", "ChatGPT (OpenAI)", "Copilot", "GitHub"],
   },
   {
     title: "Methodologies",

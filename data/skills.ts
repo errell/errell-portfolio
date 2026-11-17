@@ -25,6 +25,7 @@ export const skillCategories: SkillCategory[] = [
       "Design System Strategy",
       "Reusable Component Libraries",
       "Accessibility (WCAG 2.1 AA)",
+      "Resilient flows (auto-save, resume)",
     ],
   },
   {
@@ -36,6 +37,8 @@ export const skillCategories: SkillCategory[] = [
       "Cross-Functional Team Leadership",
       "MVP Definition",
       "Scope & Business Development",
+      "AI use-case identification & validation",
+      "Use-case prioritisation",
     ],
   },
   {
@@ -47,6 +50,7 @@ export const skillCategories: SkillCategory[] = [
       "Payments & Transfers",
       "Cloud Computing & AI",
       "Enterprise SaaS Platforms",
+      "BSP-regulated delivery",
     ],
   },
 ];
