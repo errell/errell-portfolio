@@ -381,7 +381,7 @@ def build():
     section_bar(doc, "Professional Experience", content_width_dxa)
 
     # Accenture
-    job_heading(doc, "UX Design Manager / Squad UX Lead", "Mar 2022 – Present", content_width_dxa)
+    job_heading(doc, "UX Design Manager / Project Manager / Squad UX Lead", "Mar 2022 – Present", content_width_dxa)
     para(doc, "Accenture Philippines · Embedded: Major Philippine Universal Bank (Confidential)",
          size=9, color=MUTED, before=0, after=0, space=1.0)
     para(doc,
@@ -405,7 +405,7 @@ def build():
            "Lead and mentor 10–15 UX designers across squads, fostering a culture of evidence-based design and continuous professional growth.")
 
     # EY
-    job_heading(doc, "User Experience Design Manager", "Nov 2020 – Nov 2021", content_width_dxa)
+    job_heading(doc, "User Experience Design Manager / Project Manager", "Nov 2020 – Nov 2021", content_width_dxa)
     para(doc, "Ernst & Young (EY) Global Consulting · Philippines",
          size=9, color=MUTED, before=0, after=0, space=1.0)
     para(doc,
@@ -421,7 +421,7 @@ def build():
            "Identified new opportunities and contributed to revenue growth by scoping and authoring proposals for future client engagements.")
 
     # IBM
-    job_heading(doc, "Senior UX Designer / UX Technical Lead", "Dec 2019 – Nov 2020", content_width_dxa)
+    job_heading(doc, "Senior UX Designer / UX Technical Lead / Project Manager", "Dec 2019 – Nov 2020", content_width_dxa)
     para(doc, "IBM · American Technology Company (Hardware, Software, Cloud & AI Services)",
          size=9, color=MUTED, before=0, after=0, space=1.0)
     para(doc,

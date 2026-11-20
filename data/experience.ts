@@ -17,7 +17,7 @@ export interface ExperienceEntry {
 export const experience: ExperienceEntry[] = [
   {
     period: "Mar 2022 – Present",
-    role: "UX Design Manager / Squad UX Lead",
+    role: "UX Design Manager / Project Manager / Squad UX Lead",
     org: "Major Philippine Universal Bank (via Accenture)",
     context: "Digital Banking · Payments",
     points: [
@@ -30,7 +30,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     period: "Nov 2020 – Nov 2021",
-    role: "UX Design Manager",
+    role: "UX Design Manager / Project Manager",
     org: "Global Professional Services Firm (EY)",
     context: "Enterprise Consulting",
     points: [
@@ -41,7 +41,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     period: "Dec 2019 – Nov 2020",
-    role: "UX/UI Lead",
+    role: "UX/UI Lead / Project Manager",
     org: "American Technology Company (IBM)",
     context: "AI Platform Teams · Wealth",
     points: [
