@@ -5,8 +5,6 @@ export type CvLeadSource = "resume-view" | "cv-download";
 
 export type CvLead = {
   email: string;
-  name: string | null;
-  company: string | null;
   source: CvLeadSource;
   userAgent: string | null;
   ip: string;
@@ -49,8 +47,6 @@ export async function storeLead(lead: CvLead): Promise<"stored" | "skipped" | "f
       },
       body: JSON.stringify({
         email: lead.email,
-        name: lead.name,
-        company: lead.company,
         source: lead.source,
         user_agent: lead.userAgent,
         ip_hash: hashIp(lead.ip),
@@ -97,16 +93,12 @@ export async function emailLead(
         <div style="font-family: system-ui, sans-serif; line-height: 1.6; color: #111;">
           <h2 style="margin:0 0 12px;">New CV request on uxtap.me</h2>
           <p><strong>Email:</strong> ${escapeHtml(lead.email)}</p>
-          ${lead.name ? `<p><strong>Name:</strong> ${escapeHtml(lead.name)}</p>` : ""}
-          ${lead.company ? `<p><strong>Company:</strong> ${escapeHtml(lead.company)}</p>` : ""}
           <p><strong>Source:</strong> ${sourceLabel}</p>
           <p><strong>When:</strong> ${escapeHtml(when)} (Manila)</p>
           <p style="color:#666;font-size:13px;">${storage}</p>
         </div>
       `,
-      text: `New CV request on uxtap.me\n\nEmail: ${lead.email}\n${
-        lead.name ? `Name: ${lead.name}\n` : ""
-      }${lead.company ? `Company: ${lead.company}\n` : ""}Source: ${sourceLabel}\nWhen: ${when} (Manila)\n\n${storage}`,
+      text: `New CV request on uxtap.me\n\nEmail: ${lead.email}\nSource: ${sourceLabel}\nWhen: ${when} (Manila)\n\n${storage}`,
     });
     if (error) {
       console.error("Resend error (cv lead):", error);

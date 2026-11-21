@@ -190,10 +190,6 @@ const en = {
     intro: "One quick step. You'll get instant access to the resume and the PDF.",
     email: "Email",
     emailPlaceholder: "Email (required)",
-    name: "Name",
-    namePlaceholder: "Name (optional)",
-    company: "Company",
-    companyPlaceholder: "Company (optional)",
     consent:
       "Your email is used only to share my CV and follow up. It isn't sold or shared.",
     submitView: "View resume",
@@ -416,10 +412,6 @@ const tl: Dict = {
     intro: "Isang mabilis na hakbang lang. Agad mong makikita ang resume at ang PDF.",
     email: "Email",
     emailPlaceholder: "Email (kailangan)",
-    name: "Pangalan",
-    namePlaceholder: "Pangalan (opsyonal)",
-    company: "Kumpanya",
-    companyPlaceholder: "Kumpanya (opsyonal)",
     consent:
       "Gagamitin lang ang email mo para ibahagi ang CV ko at mag-follow up. Hindi ito ibinebenta o ibinabahagi.",
     submitView: "Tingnan ang resume",

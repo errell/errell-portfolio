@@ -53,8 +53,6 @@ export function CvGate({ source }: { source: Source }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          name: String(form.get("name") || ""),
-          company: String(form.get("company") || ""),
           website: String(form.get("website") || ""),
           source,
           turnstileToken,
@@ -109,30 +107,6 @@ export function CvGate({ source }: { source: Source }) {
           maxLength={254}
           className={inputClass}
           placeholder={g.emailPlaceholder}
-        />
-        <label htmlFor="cv-gate-name" className="sr-only">
-          {g.name}
-        </label>
-        <input
-          id="cv-gate-name"
-          name="name"
-          type="text"
-          autoComplete="name"
-          maxLength={100}
-          className={inputClass}
-          placeholder={g.namePlaceholder}
-        />
-        <label htmlFor="cv-gate-company" className="sr-only">
-          {g.company}
-        </label>
-        <input
-          id="cv-gate-company"
-          name="company"
-          type="text"
-          autoComplete="organization"
-          maxLength={100}
-          className={inputClass}
-          placeholder={g.companyPlaceholder}
         />
         {/* Honeypot for bots; hidden from people and assistive tech. */}
         <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">

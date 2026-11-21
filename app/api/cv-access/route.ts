@@ -8,8 +8,6 @@ export const dynamic = "force-dynamic";
 
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]{2,}$/;
 const MAX_EMAIL = 254;
-const MAX_NAME = 100;
-const MAX_COMPANY = 100;
 
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
@@ -68,16 +66,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
+  // Email only: any other fields in the body (e.g. name, company) are ignored.
   const email = clean(body.email, MAX_EMAIL).toLowerCase();
-  const name = clean(body.name, MAX_NAME);
-  const company = clean(body.company, MAX_COMPANY);
   const source: CvLeadSource = body.source === "cv-download" ? "cv-download" : "resume-view";
 
   if (!email || email.length > MAX_EMAIL || !EMAIL_RE.test(email)) {
     return NextResponse.json({ error: "A valid email address is required." }, { status: 400 });
-  }
-  if (name.length > MAX_NAME || company.length > MAX_COMPANY) {
-    return NextResponse.json({ error: "Name or company is too long." }, { status: 400 });
   }
   // Honeypot: real visitors never fill this hidden field.
   if (clean(body.website, 200)) {
@@ -102,8 +96,6 @@ export async function POST(request: Request) {
 
   const lead = {
     email,
-    name: name || null,
-    company: company || null,
     source,
     userAgent: clean(request.headers.get("user-agent"), 512).slice(0, 512) || null,
     ip,
