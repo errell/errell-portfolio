@@ -51,7 +51,7 @@ Until then, a styled silhouette placeholder is shown automatically.
 Replace the placeholder file at:
 
 ```
-public/errell-nino-cv.pdf
+private/errell-nino-cv.pdf   (gated; served by /cv/download)
 ```
 
 The **Download CV** buttons (home, hero, resume page) all point here.

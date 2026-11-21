@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the downloadable portfolio CV (Word style) and write public/errell-nino-cv.pdf.
+"""Build the downloadable portfolio CV (Word style) and write private/errell-nino-cv.pdf.
 
 Matches the existing dark-header Calibri/Carlito layout. Content is UX-first:
 product ownership and AI-enabled delivery are supporting strengths.
@@ -19,7 +19,7 @@ from docx.shared import Cm, Inches, Pt, RGBColor, Twips, Emu
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DOCX = ROOT / "cv" / "errell-nino-cv.docx"
-OUT_PDF = ROOT / "public" / "errell-nino-cv.pdf"
+OUT_PDF = ROOT / "private" / "errell-nino-cv.pdf"
 
 HEADER_BG = RGBColor(0x0D, 0x11, 0x17)
 SECTION_BG = RGBColor(0x1A, 0x1A, 0x2E)

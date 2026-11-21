@@ -45,7 +45,9 @@ export function Button(props: ButtonAsLink | ButtonAsButton) {
     const isExternal = href.startsWith("http");
     // Static files in /public (e.g. the CV PDF) should use a plain anchor so the
     // browser handles them directly instead of the Next.js client router.
-    const isFile = /\.(pdf|zip|csv|docx?|png|jpe?g)$/i.test(href);
+    // The gated CV route (/cv/download) is a file response too.
+    const isFile =
+      /\.(pdf|zip|csv|docx?|png|jpe?g)$/i.test(href) || href.startsWith("/cv/download");
     if (isExternal || isFile) {
       return (
         <a

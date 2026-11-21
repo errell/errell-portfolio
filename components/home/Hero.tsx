@@ -48,7 +48,7 @@ export function Hero() {
               {t.hero.viewWork}
               <span aria-hidden>→</span>
             </Button>
-            <Button href="/errell-nino-cv.pdf" size="lg" variant="secondary">
+            <Button href="/cv/download" size="lg" variant="secondary">
               {t.hero.downloadCV}
             </Button>
           </div>

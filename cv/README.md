@@ -1,6 +1,6 @@
 # CV source
 
-The live downloadable résumé is `../public/errell-nino-cv.pdf` (linked from the Hero and `/resume` as `/errell-nino-cv.pdf`).
+The live downloadable résumé is `../private/errell-nino-cv.pdf`. It is not public: visitors leave an email at the gate (`/cv` or `/resume`), which sets the signed `cv_access` cookie, and `/cv/download` serves the file only with that cookie. The old `/errell-nino-cv.pdf` URL redirects to `/cv/download`.
 
 ## Current generator
 
@@ -10,7 +10,7 @@ The live downloadable résumé is `../public/errell-nino-cv.pdf` (linked from th
 python3 cv/build_cv.py
 ```
 
-Keep the filename `errell-nino-cv.pdf` so existing links keep working. The CV is UX-first (UX Design Manager headline and summary). It uses `errellnino@gmail.com` and no phone number.
+Keep the filename and the `private/` location; `app/cv/download/route.ts` reads it from there. The CV is UX-first (UX Design Manager headline and summary). It uses `errellnino@gmail.com` and no phone number.
 
 ## Legacy HTML source
 

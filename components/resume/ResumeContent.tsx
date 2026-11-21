@@ -35,7 +35,7 @@ export function ResumeContent() {
           </p>
         </div>
         <div className="flex gap-3">
-          <Button href="/errell-nino-cv.pdf" size="md">
+          <Button href="/cv/download" size="md">
             {r.download}
           </Button>
         </div>

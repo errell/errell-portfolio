@@ -39,6 +39,17 @@ const nextConfig = {
       },
     ],
   },
+  // The CV PDF lives outside /public and is served by the gated /cv/download route.
+  experimental: {
+    outputFileTracingIncludes: {
+      "/cv/download": ["./private/**/*"],
+    },
+  },
+  async redirects() {
+    return [
+      { source: "/errell-nino-cv.pdf", destination: "/cv/download", permanent: false },
+    ];
+  },
   async headers() {
     return [
       {

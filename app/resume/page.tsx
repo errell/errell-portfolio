@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { ResumeContent } from "@/components/resume/ResumeContent";
+import { CvGate } from "@/components/resume/CvGate";
+import { isCvUnlocked } from "@/lib/cv-gate";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Resume — ATS CV",
@@ -8,5 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function ResumePage() {
+  if (!isCvUnlocked()) return <CvGate source="resume-view" />;
   return <ResumeContent />;
 }
